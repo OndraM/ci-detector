@@ -37,3 +37,11 @@ $ci = OndraM\CiDetector::detect();
 var_dump($ci); // bool(false)
 
 ```
+
+## Installation
+
+Install using [Composer](http://getcomposer.org/):
+
+```sh
+$ composer require ondram/ci-detector
+```

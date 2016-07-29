@@ -1,6 +1,16 @@
 {
     "name": "ondram/ci-detector",
-    "description": "Detect current continuous integration server and access its environment variables",
+    "description": "Detect current continuous integration server and provide unified access to properties of current build",
+    "keywords": [
+        "continuous integration",
+        "adapter",
+        "interface",
+        "jenkins",
+        "travis",
+        "circleci",
+        "bamboo",
+        "teamcity"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
