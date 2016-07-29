@@ -1,0 +1,12 @@
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.4/phpunit.xsd"
+    bootstrap="./vendor/autoload.php"
+    colors="true"
+>
+    <testsuites>
+        <testsuite name="PHPT tests">
+            <directory suffix=".phpt">./tests/phpt/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

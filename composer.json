@@ -1,0 +1,27 @@
+{
+    "name": "ondram/ci-detector",
+    "description": "Detect current continuous integration server and access its environment variables",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ondřej Machulda",
+            "email": "ondrej.machulda@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "OndraM\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OndraM\\Tests\\": "tests/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4",
+        "friendsofphp/php-cs-fixer": "^1.11"
+    }
+}
