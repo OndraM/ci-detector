@@ -1,5 +1,9 @@
 # CI detector
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
+[![Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
+[![License](https://img.shields.io/packagist/l/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
+
 Simple PHP library to detect in what continuous integration server is current script being run and to provide unified 
 interface for accessing the build properties.
  
