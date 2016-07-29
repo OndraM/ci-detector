@@ -18,8 +18,9 @@ These CI servers are currently recognized:
 
  - [Jenkins](https://jenkins.io/)
  - [Travis CI](https://travis-ci.org/)
+ - [Bamboo](https://www.atlassian.com/software/bamboo)
  
-More coming soon - Circle CI, TeamCity, Bamboo... (or send a pull request).
+More coming soon - Circle CI, TeamCity... (or send a pull request).
 
 ## Installation
 

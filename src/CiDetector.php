@@ -11,6 +11,7 @@ class CiDetector
 {
     const CI_JENKINS = 'Jenkins';
     const CI_TRAVIS = 'Travis CI';
+    const CI_BAMBOO = 'Bamboo';
 
     /**
      * @return string[]
@@ -20,6 +21,7 @@ class CiDetector
         return [
             Ci\Jenkins::class,
             Ci\Travis::class,
+            Ci\Bamboo::class,
         ];
     }
 
