@@ -9,8 +9,8 @@ interface for accessing the build properties.
  
 The detection is based on environment variables injected to the build environment by each of continuous integration 
 server. However, these variables are named differently in each CI. This library contains adapter for each supported
-CI server which handles these differences so you don't have to and you can make your scripts portable for multiple build
-environments.
+CI server which handles these differences so you don't have to and you can make your scripts (and especially CLI tools)
+portable for multiple build environments.
 
 ## Supported continuous integration servers
 
@@ -21,9 +21,19 @@ These CI servers are currently recognized:
  
 More coming soon - Circle CI, TeamCity, Bamboo... (or send a pull request).
 
+## Installation
+
+Install using [Composer](http://getcomposer.org/):
+
+```sh
+$ composer require ondram/ci-detector
+```
+
 ## Example usage
 
 ```php
+<?php
+
 $ci = OndraM\CiDetector::detect(); // Will return instance implementing CiInterface
 
 // Example outputs when run in Travis
@@ -40,12 +50,4 @@ echo $ci->getGitCommit(); // fad3f7bdbf3515d1e9285b8aa80feeff74507bdd
 $ci = OndraM\CiDetector::detect();
 var_dump($ci); // bool(false)
 
-```
-
-## Installation
-
-Install using [Composer](http://getcomposer.org/):
-
-```sh
-$ composer require ondram/ci-detector
 ```
