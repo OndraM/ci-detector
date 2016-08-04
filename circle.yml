@@ -1,0 +1,13 @@
+machine:
+  timezone: Europe/Prague
+
+  php:
+    version: 7.0.7
+
+dependencies:
+  override:
+    - composer update --no-interaction
+
+test:
+  override:
+    - php dump-current.php
