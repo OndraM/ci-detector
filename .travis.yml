@@ -10,6 +10,7 @@ install:
   - travis_retry composer update --no-interaction
 
 before_script:
+  - php dump-current.php
   - unset TRAVIS # To not interfere with tests
 
 script:
