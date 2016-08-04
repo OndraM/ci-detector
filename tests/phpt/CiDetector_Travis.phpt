@@ -23,7 +23,6 @@ TRAVIS_BUILD_DIR=/home/travis/build/OndraM/ci-detector
 TRAVIS_BUILD_NUMBER=1
 TRAVIS_TAG=tag
 
-
 --FILE--
 <?php
 

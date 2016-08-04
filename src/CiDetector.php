@@ -11,6 +11,7 @@ class CiDetector
 {
     const CI_JENKINS = 'Jenkins';
     const CI_TRAVIS = 'Travis CI';
+    const CI_CIRCLE = 'CircleCI';
     const CI_BAMBOO = 'Bamboo';
 
     /**
@@ -21,6 +22,7 @@ class CiDetector
         return [
             Ci\Jenkins::class,
             Ci\Travis::class,
+            Ci\Circle::class,
             Ci\Bamboo::class,
         ];
     }
