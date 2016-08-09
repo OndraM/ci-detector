@@ -9,10 +9,11 @@ use OndraM\Ci\AbstractCi;
  */
 class CiDetector
 {
-    const CI_JENKINS = 'Jenkins';
-    const CI_TRAVIS = 'Travis CI';
-    const CI_CIRCLE = 'CircleCI';
     const CI_BAMBOO = 'Bamboo';
+    const CI_CIRCLE = 'CircleCI';
+    const CI_JENKINS = 'Jenkins';
+    const CI_TEAMCITY = 'TeamCity';
+    const CI_TRAVIS = 'Travis CI';
 
     /**
      * @return string[]
@@ -20,10 +21,11 @@ class CiDetector
     protected static function getCiServers()
     {
         return [
-            Ci\Jenkins::class,
-            Ci\Travis::class,
-            Ci\Circle::class,
             Ci\Bamboo::class,
+            Ci\Circle::class,
+            Ci\Jenkins::class,
+            Ci\TeamCity::class,
+            Ci\Travis::class,
         ];
     }
 
