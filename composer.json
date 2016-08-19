@@ -9,7 +9,8 @@
         "travis",
         "circleci",
         "bamboo",
-        "teamcity"
+        "teamcity",
+        "gitlab"
     ],
     "type": "library",
     "license": "MIT",

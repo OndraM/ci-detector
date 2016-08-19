@@ -21,8 +21,9 @@ These CI servers are currently recognized:
  - [CircleCI](https://circleci.com/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
+ - [GitLab](https://about.gitlab.com/gitlab-ci/)
  
-More coming soon - GitLab CI, Codeship... (or you can send a pull request).
+More (like Codeship) may come soon (or you can send a pull request).
 
 ## Installation
 
