@@ -11,6 +11,7 @@ class CiDetector
 {
     const CI_BAMBOO = 'Bamboo';
     const CI_CIRCLE = 'CircleCI';
+    const CI_CODESHIP = 'Codeship';
     const CI_GITLAB = 'GitLab';
     const CI_JENKINS = 'Jenkins';
     const CI_TEAMCITY = 'TeamCity';
@@ -24,6 +25,7 @@ class CiDetector
         return [
             Ci\Bamboo::class,
             Ci\Circle::class,
+            Ci\Codeship::class,
             Ci\GitLab::class,
             Ci\Jenkins::class,
             Ci\TeamCity::class,

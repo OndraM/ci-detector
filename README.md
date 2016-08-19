@@ -18,12 +18,13 @@ These CI servers are currently recognized:
 
  - [Jenkins](https://jenkins.io/)
  - [Travis CI](https://travis-ci.org/)
- - [CircleCI](https://circleci.com/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
- - [TeamCity](https://www.jetbrains.com/teamcity/)
+ - [CircleCI](https://circleci.com/)
+ - [Codeship](https://codeship.com/)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
- 
-More (like Codeship) may come soon (or you can send a pull request).
+ - [TeamCity](https://www.jetbrains.com/teamcity/)
+
+If your favorite CI server is missing, feel free to send a pull-request!
 
 ## Installation
 

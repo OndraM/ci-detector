@@ -10,7 +10,8 @@
         "circleci",
         "bamboo",
         "teamcity",
-        "gitlab"
+        "gitlab",
+        "codeship"
     ],
     "type": "library",
     "license": "MIT",
