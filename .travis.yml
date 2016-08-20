@@ -1,6 +1,7 @@
 language: php
 
 php:
+  # - 5.5 Though PHP 5.5 may be supported, the support is not guaranteed, as we cannot run PHPUnit 5.x there
   - 5.6
   - 7.0
   - 7.1
