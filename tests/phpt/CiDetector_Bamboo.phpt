@@ -49,6 +49,8 @@ echo "Build url:\n";
 var_dump($ci->getBuildUrl());
 echo "Git commit:\n";
 var_dump($ci->getGitCommit());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Class:
@@ -61,3 +63,5 @@ Build url:
 string(44) "https://bamboo.foo.bar/browse/KEY-FOO-JOB1-3"
 Git commit:
 string(40) "3e01b71b3434c0441b24563f1c180bc615f9467d"
+Git branch:
+string(11) "branch-name"

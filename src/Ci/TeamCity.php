@@ -31,4 +31,9 @@ class TeamCity extends AbstractCi
     {
         return $this->env->get('BUILD_VCS_NUMBER');
     }
+
+    public function getGitBranch()
+    {
+        return ''; // unsupported
+    }
 }

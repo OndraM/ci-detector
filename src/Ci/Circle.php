@@ -31,4 +31,9 @@ class Circle extends AbstractCi
     {
         return $this->env->get('CIRCLE_SHA1');
     }
+
+    public function getGitBranch()
+    {
+        return $this->env->get('CIRCLE_BRANCH');
+    }
 }

@@ -35,6 +35,8 @@ echo "Build url:\n";
 var_dump($ci->getBuildUrl());
 echo "Git commit:\n";
 var_dump($ci->getGitCommit());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Class:
@@ -47,3 +49,5 @@ Build url:
 string(52) "https://codeship.com/projects/169447/builds/17594878"
 Git commit:
 string(40) "26e646685c1e625939f6b2de0e5f30b59cc34d60"
+Git branch:
+string(13) "test-codeship"

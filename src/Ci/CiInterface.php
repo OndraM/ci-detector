@@ -41,4 +41,11 @@ interface CiInterface
      * @return string
      */
     public function getGitCommit();
+
+    /**
+     * Get name of the git branch which is being built
+     *
+     * @return string
+     */
+    public function getGitBranch();
 }

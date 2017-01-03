@@ -39,6 +39,8 @@ echo "Build url:\n";
 var_dump($ci->getBuildUrl());
 echo "Git commit:\n";
 var_dump($ci->getGitCommit());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Class:
@@ -51,3 +53,5 @@ Build url:
 string(55) "https://travis-ci.org/OndraM/ci-detector/jobs/148395137"
 Git commit:
 string(40) "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
+Git branch:
+string(18) "test-travis-branch"

@@ -11,6 +11,7 @@ if ($ci instanceof \OndraM\Ci\CiInterface) {
     var_dump($ci->getBuildNumber());
     var_dump($ci->getBuildUrl());
     var_dump($ci->getGitCommit());
+    var_dump($ci->getGitBranch());
 } else {
     echo "No CI detected\n";
 }
