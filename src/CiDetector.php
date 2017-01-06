@@ -18,9 +18,28 @@ class CiDetector
     const CI_TRAVIS = 'Travis CI';
 
     /**
+     * Detect current CI server and return instance of its settings
+     *
+     * @return AbstractCi|false Adapter for detected CI server or false if CI server not detected
+     */
+    public function detect()
+    {
+        $env = new Env();
+
+        $ciServers = $this->getCiServers();
+        foreach ($ciServers as $ciClass) {
+            if (call_user_func([$ciClass, 'isDetected'], $env)) {
+                return new $ciClass($env);
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @return string[]
      */
-    protected static function getCiServers()
+    protected function getCiServers()
     {
         return [
             Ci\Bamboo::class,
@@ -31,24 +50,5 @@ class CiDetector
             Ci\TeamCity::class,
             Ci\Travis::class,
         ];
-    }
-
-    /**
-     * Detect current CI server and return instance of its settings
-     *
-     * @return AbstractCi|false Adapter for detected CI server or false if CI server not detected
-     */
-    public static function detect()
-    {
-        $env = new Env();
-
-        $ciServers = static::getCiServers();
-        foreach ($ciServers as $ciClass) {
-            if (call_user_func([$ciClass, 'isDetected'], $env)) {
-                return new $ciClass($env);
-            }
-        }
-
-        return false;
     }
 }

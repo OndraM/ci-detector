@@ -21,7 +21,7 @@ TEAMCITY_PROCESS_FLOW_ID=376437994027122
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = OndraM\CiDetector::detect();
+$ci = (new OndraM\CiDetector())->detect();
 echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
