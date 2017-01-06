@@ -54,3 +54,16 @@ if (!$ci instanceof OndraM\Ci\CiInterface) {
     echo $ci->getRepositoryUrl();   // "" (empty string) - unsupported on Travis, will return eg. "ssh://git@gitserver:7999/project/repo.git" on Jenkins etc.)
 }
 ```
+
+## Testing
+
+Run unit-tests:
+
+```sh
+vendor/bin/phpunit
+```
+
+Check codestyle:
+```sh
+vendor/bin/php-cs-fixer fix --diff --dry-run # remove the --dry-run option to fix the codestyle
+```
