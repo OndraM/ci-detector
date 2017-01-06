@@ -23,12 +23,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "OndraM\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "OndraM\\Tests\\": "tests/"
+            "OndraM\\CiDetector\\": "src/"
         }
     },
     "require": {

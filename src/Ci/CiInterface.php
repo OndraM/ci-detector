@@ -1,8 +1,8 @@
 <?php
 
-namespace OndraM\Ci;
+namespace OndraM\CiDetector\Ci;
 
-use OndraM\Env;
+use OndraM\CiDetector\Env;
 
 interface CiInterface
 {

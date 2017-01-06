@@ -21,7 +21,7 @@ TEAMCITY_PROCESS_FLOW_ID=376437994027122
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = (new OndraM\CiDetector())->detect();
+$ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
@@ -39,7 +39,7 @@ var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Class:
-string(18) "OndraM\Ci\TeamCity"
+string(29) "OndraM\CiDetector\Ci\TeamCity"
 CI name:
 string(8) "TeamCity"
 Build number:

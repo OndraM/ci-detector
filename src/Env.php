@@ -1,6 +1,6 @@
 <?php
 
-namespace OndraM;
+namespace OndraM\CiDetector;
 
 /**
  * Encapsulate access to the environment variables

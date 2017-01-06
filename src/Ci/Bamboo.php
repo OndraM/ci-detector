@@ -1,9 +1,9 @@
 <?php
 
-namespace OndraM\Ci;
+namespace OndraM\CiDetector\Ci;
 
-use OndraM\CiDetector;
-use OndraM\Env;
+use OndraM\CiDetector\CiDetector;
+use OndraM\CiDetector\Env;
 
 class Bamboo extends AbstractCi
 {

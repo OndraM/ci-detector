@@ -8,7 +8,7 @@ FOO=bar
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$env = new OndraM\Env();
+$env = new OndraM\CiDetector\Env();
 
 var_dump($env->get('FOO'));
 var_dump($env->get('NOT_EXISTING'));

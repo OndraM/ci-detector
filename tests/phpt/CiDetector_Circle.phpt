@@ -28,7 +28,7 @@ CIRCLE_PROJECT_REPONAME=ci-detector
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = (new OndraM\CiDetector())->detect();
+$ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
@@ -46,7 +46,7 @@ var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Class:
-string(16) "OndraM\Ci\Circle"
+string(27) "OndraM\CiDetector\Ci\Circle"
 CI name:
 string(8) "CircleCI"
 Build number:

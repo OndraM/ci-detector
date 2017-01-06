@@ -4,9 +4,9 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$ci = (new \OndraM\CiDetector())->detect();
+$ci = (new \OndraM\CiDetector\CiDetector())->detect();
 
-if ($ci instanceof \OndraM\Ci\CiInterface) {
+if ($ci instanceof \OndraM\CiDetector\Ci\CiInterface) {
     var_dump($ci->getCiName());
     var_dump($ci->getBuildNumber());
     var_dump($ci->getBuildUrl());
