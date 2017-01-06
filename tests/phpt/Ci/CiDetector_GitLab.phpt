@@ -35,7 +35,10 @@ PHP_VERSION=7.0.10
 --FILE--
 <?php
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
+
+echo "Is CI detected:\n";
+var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
 
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Class:\n";
@@ -54,6 +57,8 @@ echo "Repository url:\n";
 var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
+Is CI detected:
+bool(true)
 Class:
 string(27) "OndraM\CiDetector\Ci\GitLab"
 CI name:
