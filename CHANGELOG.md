@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 1.1.0 - 2017-01-06
 - Add `getGitBranch()` method to detect Git branch of the build (supported by all CIs except TeamCity).
 - Add `getRepositoryUrl()` method to detect repository source URL (not supported Codeship, TeamCity, Travis).
 
