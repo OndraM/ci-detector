@@ -38,7 +38,7 @@ bamboo_shortJobKey=JOB1
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = (new OndraM\CiDetector())->detect();
+$ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
@@ -56,7 +56,7 @@ var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Class:
-string(16) "OndraM\Ci\Bamboo"
+string(27) "OndraM\CiDetector\Ci\Bamboo"
 CI name:
 string(6) "Bamboo"
 Build number:

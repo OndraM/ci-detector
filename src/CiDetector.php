@@ -1,8 +1,8 @@
 <?php
 
-namespace OndraM;
+namespace OndraM\CiDetector;
 
-use OndraM\Ci\AbstractCi;
+use OndraM\CiDetector\Ci\AbstractCi;
 
 /**
  * Unified way to get environment variables from current continuous integration server

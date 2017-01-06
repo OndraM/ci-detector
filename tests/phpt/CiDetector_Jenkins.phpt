@@ -24,7 +24,7 @@ BUILD_NUMBER=1337
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = (new OndraM\CiDetector())->detect();
+$ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
@@ -42,7 +42,7 @@ var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Class:
-string(17) "OndraM\Ci\Jenkins"
+string(28) "OndraM\CiDetector\Ci\Jenkins"
 CI name:
 string(7) "Jenkins"
 Build number:

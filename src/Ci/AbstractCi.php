@@ -1,8 +1,8 @@
 <?php
 
-namespace OndraM\Ci;
+namespace OndraM\CiDetector\Ci;
 
-use OndraM\Env;
+use OndraM\CiDetector\Env;
 
 /**
  * Unified adapter to retrieve environment variables from current continuous integration server

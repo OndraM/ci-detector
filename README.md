@@ -39,9 +39,9 @@ $ composer require ondram/ci-detector
 ```php
 <?php
 
-$ci = (new OndraM\CiDetector())->detect(); // Will return false or instance implementing CiInterface
+$ci = (new OndraM\CiDetector\CiDetector())->detect(); // Will return false or instance implementing CiInterface
 
-if (!$ci instanceof OndraM\Ci\CiInterface) {
+if (!$ci instanceof OndraM\CiDetector\Ci\CiInterface) {
     // false is returned from the CiDetector::detect() method if CI server was not detected
     echo "CI not detected";
 } else {
