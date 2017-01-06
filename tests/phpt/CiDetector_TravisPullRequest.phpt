@@ -29,7 +29,7 @@ TRAVIS_PULL_REQUEST_BRANCH=test-travis-branch
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = OndraM\CiDetector::detect();
+$ci = (new OndraM\CiDetector())->detect();
 var_dump($ci->getGitBranch());
 
 --EXPECT--

@@ -8,7 +8,7 @@ Return false if CI server is not detected
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-var_dump(OndraM\CiDetector::detect());
+var_dump((new OndraM\CiDetector())->detect());
 
 --EXPECT--
 bool(false)

@@ -28,7 +28,7 @@ TRAVIS_TAG=tag
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$ci = OndraM\CiDetector::detect();
+$ci = (new OndraM\CiDetector())->detect();
 echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
