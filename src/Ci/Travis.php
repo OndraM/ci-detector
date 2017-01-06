@@ -41,7 +41,13 @@ class Travis extends AbstractCi
 
     public function getGitBranch()
     {
-        return $this->env->get('TRAVIS_BRANCH');
+        if ($this->env->get('TRAVIS_PULL_REQUEST') === 'false') {
+            return $this->env->get('TRAVIS_BRANCH');
+        }
+
+        // If the build is for PR, return name of the branch with the PR, not the target PR branch
+        // https://github.com/travis-ci/travis-ci/issues/6652
+        return $this->env->get('TRAVIS_PULL_REQUEST_BRANCH');
     }
 
     public function getRepositoryUrl()
