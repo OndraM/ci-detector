@@ -43,4 +43,9 @@ class Travis extends AbstractCi
     {
         return $this->env->get('TRAVIS_BRANCH');
     }
+
+    public function getRepositoryUrl()
+    {
+        return ''; // unsupported
+    }
 }
