@@ -39,20 +39,18 @@ $ composer require ondram/ci-detector
 ```php
 <?php
 
-$ci = OndraM\CiDetector::detect(); // Will return instance implementing CiInterface
+$ci = OndraM\CiDetector::detect(); // Will return false or instance implementing CiInterface
 
-// Example outputs when run in Travis
-echo $ci->getCiName(); // "Travis CI"
-echo $ci->getBuildNumber(); // "35.1"
-echo $ci->getBuildUrl(); // https://travis-ci.org/OndraM/ci-detector/jobs/148395137
-echo $ci->getGitCommit(); // fad3f7bdbf3515d1e9285b8aa80feeff74507bdd
-
-```
-
-```php
-// false is returned from the CiDetector::detect() method if CI server was not detected
-
-$ci = OndraM\CiDetector::detect();
-var_dump($ci); // bool(false)
-
+if (!$ci instanceof OndraM\Ci\CiInterface) {
+    // false is returned from the CiDetector::detect() method if CI server was not detected
+    echo "CI not detected";
+} else {
+    // Example outputs when run in Travis
+    echo $ci->getCiName();          // "Travis CI"
+    echo $ci->getBuildNumber();     // "35.1"
+    echo $ci->getBuildUrl();        // "https://travis-ci.org/OndraM/ci-detector/jobs/148395137"
+    echo $ci->getGitCommit();       // "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
+    echo $ci->getGitBranch();       // "feature/foo-bar"
+    echo $ci->getRepositoryUrl();   // "" (empty string) - unsupported on Travis, will return eg. "ssh://git@gitserver:7999/project/repo.git" on Jenkins etc.)
+}
 ```
