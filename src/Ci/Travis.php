@@ -38,4 +38,9 @@ class Travis extends AbstractCi
     {
         return $this->env->get('TRAVIS_COMMIT');
     }
+
+    public function getGitBranch()
+    {
+        return $this->env->get('TRAVIS_BRANCH');
+    }
 }

@@ -48,6 +48,8 @@ echo "Build url:\n";
 var_dump($ci->getBuildUrl());
 echo "Git commit:\n";
 var_dump($ci->getGitCommit());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Class:
@@ -60,3 +62,5 @@ Build url:
 string(41) "https://gitlab.com/foo/bar/builds/3265050"
 Git commit:
 string(40) "1e50d546a67287e3111707283eb28bfff50584a9"
+Git branch:
+string(11) "test-gitlab"

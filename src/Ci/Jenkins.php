@@ -31,4 +31,9 @@ class Jenkins extends AbstractCi
     {
         return $this->env->get('GIT_COMMIT');
     }
+
+    public function getGitBranch()
+    {
+        return $this->env->get('GIT_BRANCH');
+    }
 }

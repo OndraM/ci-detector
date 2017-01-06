@@ -31,4 +31,9 @@ class Codeship extends AbstractCi
     {
         return $this->env->get('COMMIT_ID');
     }
+
+    public function getGitBranch()
+    {
+        return $this->env->get('CI_BRANCH');
+    }
 }

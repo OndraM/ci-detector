@@ -35,6 +35,8 @@ echo "Build url:\n";
 var_dump($ci->getBuildUrl());
 echo "Git commit:\n";
 var_dump($ci->getGitCommit());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Class:
@@ -47,3 +49,5 @@ Build url:
 string(41) "http://jenkins.foo/job/foo_job_name/1337/"
 Git commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74ccd"
+Git branch:
+string(17) "origin/branchname"
