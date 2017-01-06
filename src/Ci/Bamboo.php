@@ -36,4 +36,9 @@ class Bamboo extends AbstractCi
     {
         return $this->env->get('bamboo_planRepository_branch');
     }
+
+    public function getRepositoryUrl()
+    {
+        return $this->env->get('bamboo_planRepository_repositoryUrl');
+    }
 }

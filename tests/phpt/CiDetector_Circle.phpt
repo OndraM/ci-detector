@@ -41,6 +41,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Repository url:\n";
+var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Class:
@@ -55,3 +57,5 @@ Git commit:
 string(40) "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
 Git branch:
 string(13) "test-circleci"
+Repository url:
+string(37) "https://github.com/OndraM/ci-detector"

@@ -36,4 +36,9 @@ class GitLab extends AbstractCi
     {
         return $this->env->get('CI_BUILD_REF_NAME');
     }
+
+    public function getRepositoryUrl()
+    {
+        return $this->env->get('CI_BUILD_REPO');
+    }
 }

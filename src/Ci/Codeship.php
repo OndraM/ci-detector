@@ -36,4 +36,9 @@ class Codeship extends AbstractCi
     {
         return $this->env->get('CI_BRANCH');
     }
+
+    public function getRepositoryUrl()
+    {
+        return ''; // unsupported
+    }
 }

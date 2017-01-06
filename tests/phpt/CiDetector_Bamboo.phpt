@@ -51,6 +51,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Repository url:\n";
+var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Class:
@@ -65,3 +67,5 @@ Git commit:
 string(40) "3e01b71b3434c0441b24563f1c180bc615f9467d"
 Git branch:
 string(11) "branch-name"
+Repository url:
+string(41) "ssh://git@gitserver:7999/project/repo.git"

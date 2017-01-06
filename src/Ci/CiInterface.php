@@ -48,4 +48,11 @@ interface CiInterface
      * @return string
      */
     public function getGitBranch();
+
+    /**
+     * Get URL of the git repository which is being built
+     *
+     * @return string
+     */
+    public function getRepositoryUrl();
 }

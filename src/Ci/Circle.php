@@ -36,4 +36,9 @@ class Circle extends AbstractCi
     {
         return $this->env->get('CIRCLE_BRANCH');
     }
+
+    public function getRepositoryUrl()
+    {
+        return $this->env->get('CIRCLE_REPOSITORY_URL');
+    }
 }
