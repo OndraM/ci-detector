@@ -2,7 +2,8 @@
 
 namespace OndraM\CiDetector;
 
-use OndraM\CiDetector\Ci\AbstractCi;
+use OndraM\CiDetector\Ci\CiInterface;
+use OndraM\CiDetector\Exception\CiNotDetectedException;
 
 /**
  * Unified way to get environment variables from current continuous integration server
@@ -18,22 +19,32 @@ class CiDetector
     const CI_TRAVIS = 'Travis CI';
 
     /**
+     * Is current environment an recognized CI server?
+     *
+     * @return bool
+     */
+    public function isCiDetected()
+    {
+        $ciServer = $this->detectCurrentCiServer();
+
+        return ($ciServer instanceof CiInterface);
+    }
+
+    /**
      * Detect current CI server and return instance of its settings
      *
-     * @return AbstractCi|false Adapter for detected CI server or false if CI server not detected
+     * @throws CiNotDetectedException
+     * @return CiInterface Adapter for detected CI server
      */
     public function detect()
     {
-        $env = new Env();
+        $ciServer = $this->detectCurrentCiServer();
 
-        $ciServers = $this->getCiServers();
-        foreach ($ciServers as $ciClass) {
-            if (call_user_func([$ciClass, 'isDetected'], $env)) {
-                return new $ciClass($env);
-            }
+        if (!$ciServer instanceof CiInterface) {
+            throw new CiNotDetectedException('No CI server detected in current environment');
         }
 
-        return false;
+        return $ciServer;
     }
 
     /**
@@ -50,5 +61,22 @@ class CiDetector
             Ci\TeamCity::class,
             Ci\Travis::class,
         ];
+    }
+
+    /**
+     * @return bool
+     */
+    protected function detectCurrentCiServer()
+    {
+        $env = new Env();
+
+        $ciServers = $this->getCiServers();
+        foreach ($ciServers as $ciClass) {
+            if (call_user_func([$ciClass, 'isDetected'], $env)) {
+                return new $ciClass($env);
+            }
+        }
+
+        return false;
     }
 }
