@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 2.0.0 - 2017-01-07
 - BC: The `detect()` method of `CiDetector` class is no longer static.
 - BC: Rearrange namespaces, all classes are now in `CiDetector` sub-namespace.
 - Added `isCiDetected()` method to detect if current environment is CI.
