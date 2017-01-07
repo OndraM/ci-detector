@@ -5,9 +5,14 @@ php:
   - 7.0
   - 7.1
 
+matrix:
+  include:
+    - php: 7.0
+      env: dependencies="--prefer-lowest"
+
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer update --no-interaction
+  - travis_retry composer update --no-interaction $dependencies
 
 before_script:
   - php dump-current.php
