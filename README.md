@@ -1,4 +1,4 @@
-# CI detector
+# CI Detector
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
 [![Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
@@ -25,6 +25,11 @@ These CI servers are currently recognized:
  - [TeamCity](https://www.jetbrains.com/teamcity/)
 
 If your favorite CI server is missing, feel free to send a pull-request!
+
+## Standalone CLI version
+If you want to use CI Detector as a standalone CLI command (ie. without using inside code of PHP project),
+see [ci-detector-standalone](https://github.com/OndraM/ci-detector-standalone) repository, where you can
+download CI Detector as a standalone PHAR file with simple command line interface.
 
 ## Installation
 
