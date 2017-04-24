@@ -33,7 +33,7 @@ download CI Detector as a standalone PHAR file with simple command line interfac
 
 ## Installation
 
-Install using [Composer](http://getcomposer.org/):
+Install using [Composer](https://getcomposer.org/):
 
 ```sh
 $ composer require ondram/ci-detector
