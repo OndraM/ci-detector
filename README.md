@@ -18,6 +18,7 @@ These CI servers are currently recognized:
 
  - [Jenkins](https://jenkins.io/)
  - [Travis CI](https://travis-ci.org/)
+ - [AppVeyor](https://www.appveyor.com/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)
