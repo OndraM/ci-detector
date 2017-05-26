@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 2.1.0 - 2017-05-26
 - Add AppVeyor (Windows cloud CI) support.
 
 ## 2.0.0 - 2017-01-07
