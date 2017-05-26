@@ -16,11 +16,11 @@ install:
 
 before_script:
   - php dump-current.php
-  - unset TRAVIS # To not interfere with tests
+  - unset TRAVIS # Unset the variable to not interfere with tests
 
 script:
   - vendor/bin/php-cs-fixer fix --diff --dry-run
   - vendor/bin/phpunit
 
 after_script:
-  - env
+  - env # list current environment variables
