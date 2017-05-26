@@ -1,7 +1,8 @@
 # CI Detector
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
-[![Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
+[![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square)](https://ci.appveyor.com/project/OndraM/ci-detector)
 [![License](https://img.shields.io/packagist/l/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
 
 Simple PHP library to detect in what continuous integration server is current script being run and to provide unified 
@@ -18,6 +19,7 @@ These CI servers are currently recognized:
 
  - [Jenkins](https://jenkins.io/)
  - [Travis CI](https://travis-ci.org/)
+ - [AppVeyor](https://www.appveyor.com/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)

@@ -10,6 +10,7 @@ use OndraM\CiDetector\Exception\CiNotDetectedException;
  */
 class CiDetector
 {
+    const CI_APPVEYOR = 'AppVeyor';
     const CI_BAMBOO = 'Bamboo';
     const CI_CIRCLE = 'CircleCI';
     const CI_CODESHIP = 'Codeship';
@@ -53,6 +54,7 @@ class CiDetector
     protected function getCiServers()
     {
         return [
+            Ci\AppVeyor::class,
             Ci\Bamboo::class,
             Ci\Circle::class,
             Ci\Codeship::class,

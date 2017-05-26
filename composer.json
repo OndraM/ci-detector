@@ -8,6 +8,7 @@
         "jenkins",
         "travis",
         "circleci",
+        "appveyor",
         "bamboo",
         "teamcity",
         "gitlab",

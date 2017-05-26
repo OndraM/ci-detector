@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Add AppVeyor (Windows cloud CI) support.
 
 ## 2.0.0 - 2017-01-07
 - BC: The `detect()` method of `CiDetector` class is no longer static.
