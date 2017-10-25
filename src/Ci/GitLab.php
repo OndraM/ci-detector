@@ -9,7 +9,7 @@ class GitLab extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('GITLAB_CI') !== false;
+        return $env->get('GITLAB_CI') !== false;
     }
 
     public function getCiName()

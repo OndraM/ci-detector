@@ -9,7 +9,7 @@ class Circle extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('CIRCLECI') !== false;
+        return $env->get('CIRCLECI') !== false;
     }
 
     public function getCiName()

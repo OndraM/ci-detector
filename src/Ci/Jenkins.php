@@ -9,7 +9,7 @@ class Jenkins extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('JENKINS_URL') !== false;
+        return $env->get('JENKINS_URL') !== false;
     }
 
     public function getCiName()

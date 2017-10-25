@@ -11,7 +11,7 @@ class Travis extends AbstractCi
 
     public static function isDetected(Env $env)
     {
-        return getenv('TRAVIS') !== false;
+        return $env->get('TRAVIS') !== false;
     }
 
     public function getCiName()

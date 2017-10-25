@@ -9,7 +9,7 @@ class TeamCity extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('TEAMCITY_VERSION') !== false;
+        return $env->get('TEAMCITY_VERSION') !== false;
     }
 
     public function getCiName()

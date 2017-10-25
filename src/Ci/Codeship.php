@@ -9,7 +9,7 @@ class Codeship extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('CI_NAME') === 'codeship';
+        return $env->get('CI_NAME') === 'codeship';
     }
 
     public function getCiName()

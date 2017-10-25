@@ -9,7 +9,7 @@ class AppVeyor extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('APPVEYOR') === 'True';
+        return $env->get('APPVEYOR') === 'True';
     }
 
     public function getCiName()

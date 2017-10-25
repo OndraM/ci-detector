@@ -9,7 +9,7 @@ class Bamboo extends AbstractCi
 {
     public static function isDetected(Env $env)
     {
-        return getenv('bamboo_buildKey') !== false;
+        return $env->get('bamboo_buildKey') !== false;
     }
 
     public function getCiName()
