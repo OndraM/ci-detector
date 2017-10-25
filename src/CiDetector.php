@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector;
 
@@ -21,27 +21,24 @@ class CiDetector
 
     /**
      * Is current environment an recognized CI server?
-     *
-     * @return bool
      */
-    public function isCiDetected()
+    public function isCiDetected(): bool
     {
         $ciServer = $this->detectCurrentCiServer();
 
-        return ($ciServer instanceof CiInterface);
+        return ($ciServer !== null);
     }
 
     /**
      * Detect current CI server and return instance of its settings
      *
      * @throws CiNotDetectedException
-     * @return CiInterface Adapter for detected CI server
      */
-    public function detect()
+    public function detect(): CiInterface
     {
         $ciServer = $this->detectCurrentCiServer();
 
-        if (!$ciServer instanceof CiInterface) {
+        if ($ciServer === null) {
             throw new CiNotDetectedException('No CI server detected in current environment');
         }
 
@@ -51,7 +48,7 @@ class CiDetector
     /**
      * @return string[]
      */
-    protected function getCiServers()
+    protected function getCiServers(): array
     {
         return [
             Ci\AppVeyor::class,
@@ -65,20 +62,17 @@ class CiDetector
         ];
     }
 
-    /**
-     * @return bool
-     */
-    protected function detectCurrentCiServer()
+    protected function detectCurrentCiServer(): ?CiInterface
     {
         $env = new Env();
-
         $ciServers = $this->getCiServers();
+
         foreach ($ciServers as $ciClass) {
             if (call_user_func([$ciClass, 'isDetected'], $env)) {
                 return new $ciClass($env);
             }
         }
 
-        return false;
+        return null;
     }
 }

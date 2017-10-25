@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector\Ci;
 
@@ -7,38 +7,38 @@ use OndraM\CiDetector\Env;
 
 class Circle extends AbstractCi
 {
-    public static function isDetected(Env $env)
+    public static function isDetected(Env $env): bool
     {
         return $env->get('CIRCLECI') !== false;
     }
 
-    public function getCiName()
+    public function getCiName(): string
     {
         return CiDetector::CI_CIRCLE;
     }
 
-    public function getBuildNumber()
+    public function getBuildNumber(): string
     {
-        return $this->env->get('CIRCLE_BUILD_NUM');
+        return $this->env->getString('CIRCLE_BUILD_NUM');
     }
 
-    public function getBuildUrl()
+    public function getBuildUrl(): string
     {
-        return $this->env->get('CIRCLE_BUILD_URL');
+        return $this->env->getString('CIRCLE_BUILD_URL');
     }
 
-    public function getGitCommit()
+    public function getGitCommit(): string
     {
-        return $this->env->get('CIRCLE_SHA1');
+        return $this->env->getString('CIRCLE_SHA1');
     }
 
-    public function getGitBranch()
+    public function getGitBranch(): string
     {
-        return $this->env->get('CIRCLE_BRANCH');
+        return $this->env->getString('CIRCLE_BRANCH');
     }
 
-    public function getRepositoryUrl()
+    public function getRepositoryUrl(): string
     {
-        return $this->env->get('CIRCLE_REPOSITORY_URL');
+        return $this->env->getString('CIRCLE_REPOSITORY_URL');
     }
 }

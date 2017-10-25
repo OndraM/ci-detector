@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector;
 
@@ -14,5 +14,10 @@ class Env
     public function get($name)
     {
         return getenv($name);
+    }
+
+    public function getString($name): string
+    {
+        return (string) $this->get($name);
     }
 }

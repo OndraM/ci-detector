@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector\Ci;
 
@@ -8,51 +8,36 @@ interface CiInterface
 {
     /**
      * Return true if this CI was detected
-     *
-     * @param Env $env
-     * @return bool
      */
-    public static function isDetected(Env $env);
+    public static function isDetected(Env $env): bool;
 
     /**
      * Get name of the CI server type
-     *
-     * @return string
      */
-    public function getCiName();
+    public function getCiName(): string;
 
     /**
      * Get number of this concrete build
-     *
-     * @return string
      */
-    public function getBuildNumber();
+    public function getBuildNumber(): string;
 
     /**
      * Get URL to this build
-     *
-     * @return string
      */
-    public function getBuildUrl();
+    public function getBuildUrl(): string;
 
     /**
      * Get git commit being built
-     *
-     * @return string
      */
-    public function getGitCommit();
+    public function getGitCommit(): string;
 
     /**
      * Get name of the git branch which is being built
-     *
-     * @return string
      */
-    public function getGitBranch();
+    public function getGitBranch(): string;
 
     /**
      * Get URL of the git repository which is being built
-     *
-     * @return string
      */
-    public function getRepositoryUrl();
+    public function getRepositoryUrl(): string;
 }
