@@ -9,17 +9,23 @@ matrix:
   include:
     - php: 7.0
       env: dependencies="--prefer-lowest"
+    - php: 7.1
+      env: CHECK_CODESTYLE=1
+      before_install:
+        - phpenv config-rm xdebug.ini
+      before_script: ~
+      script: vendor/bin/php-cs-fixer fix --diff --dry-run -vvv
+      after_script: ~
 
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer update --no-interaction $dependencies
+  - travis_retry composer update --no-interaction $DEPENDENCIES
 
 before_script:
   - php dump-current.php
   - unset TRAVIS # Unset the variable to not interfere with tests
 
 script:
-  - vendor/bin/php-cs-fixer fix --diff --dry-run
   - vendor/bin/phpunit
 
 after_script:

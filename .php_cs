@@ -1,45 +1,80 @@
 <?php
 
-$finder = Symfony\CS\Finder\DefaultFinder::create()
-    ->in([__DIR__ . '/src', __DIR__ . '/tests']);
+$finder = PhpCsFixer\Finder::create()
+    ->in([__DIR__ . '/src', __DIR__ . '/tests'])
+    ->notName('*.phpt');
 
-return Symfony\CS\Config\Config::create()
-    ->fixers([
-        // some symfony codestyle level checks
-        'duplicate_semicolon',
-        'extra_empty_lines',
-        'function_typehint_space',
-        'multiline_array_trailing_comma',
-        'namespace_no_leading_whitespace',
-        'new_with_braces',
-        'no_blank_lines_after_class_opening',
-        'no_empty_lines_after_phpdocs',
-        'object_operator',
-        'operators_spaces',
-        'phpdoc_indent',
-        'phpdoc_no_access',
-        'phpdoc_no_empty_return',
-        'phpdoc_no_package',
-        'phpdoc_scalar',
-        'phpdoc_trim',
-        'phpdoc_types',
-        'remove_leading_slash_use',
-        'remove_lines_between_uses',
-        'self_accessor',
-        'single_array_no_trailing_comma',
-        'single_blank_line_before_namespace',
-        'single_quote',
-        'spaces_cast',
-        'trim_array_spaces',
-        'unused_use',
-        'whitespacy_lines',
-
-        // contrib checks
-        'newline_after_open_tag',
-        'phpdoc_order',
-        'short_array_syntax',
-
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'binary_operator_spaces' => true,
+        'blank_line_before_return' => true,
+        'cast_spaces' => true,
+        'concat_space' => ['spacing' => 'one'],
+        'declare_strict_types' => true,
+        'function_typehint_space' => true,
+        'lowercase_cast' => true,
+        'mb_str_functions' => true,
+        'method_separation' => true,
+        'native_function_casing' => true,
+        'new_with_braces' => true,
+        'no_alias_functions' => true,
+        'no_blank_lines_after_class_opening' => true,
+        'no_blank_lines_after_phpdoc' => true,
+        'no_empty_comment' => true,
+        'no_empty_phpdoc' => true,
+        'no_empty_statement' => true,
+        'no_extra_consecutive_blank_lines' => [
+            'use',
+            'break',
+            'continue',
+            'extra',
+            'return',
+            'throw',
+            'useTrait',
+            'curly_brace_block',
+            'parenthesis_brace_block',
+            'square_brace_block',
+        ],
+        'no_leading_import_slash' => true,
+        'no_leading_namespace_whitespace' => true,
+        'no_singleline_whitespace_before_semicolons' => true,
+        'no_trailing_comma_in_singleline_array' => true,
+        'no_unreachable_default_argument_value' => true,
+        'no_unused_imports' => true,
+        'no_useless_else' => true,
+        'no_useless_return' => true,
+        'no_whitespace_in_blank_line' => true,
+        'object_operator_without_whitespace' => true,
+        'ordered_imports' => true,
+        'php_unit_construct' => true,
+        'php_unit_dedicate_assert' => true,
+        'phpdoc_add_missing_param_annotation' => true,
+        'phpdoc_indent' => true,
+        'phpdoc_no_access' => true,
+        'phpdoc_no_empty_return' => true,
+        'phpdoc_no_package' => true,
+        'phpdoc_order' => true,
+        'phpdoc_scalar' => true,
+        'phpdoc_single_line_var_spacing' => true,
+        'phpdoc_trim' => true,
+        'phpdoc_types' => true,
+        'psr4' => true,
+        'return_type_declaration' => true,
+        'self_accessor' => true,
+        'short_scalar_cast' => true,
+        'single_blank_line_before_namespace' => true,
+        'single_quote' => true,
+        'space_after_semicolon' => true,
+        'standardize_not_equals' => true,
+        'ternary_to_null_coalescing' => true,
+        'ternary_operator_spaces' => true,
+        'trailing_comma_in_multiline_array' => true,
+        'trim_array_spaces' => true,
+        'unary_operator_spaces' => true,
+        'void_return' => true,
+        'whitespace_after_comma_in_array' => true,
     ])
-    ->level(Symfony\CS\FixerInterface::PSR2_LEVEL)
-    ->setUsingCache(true)
-    ->finder($finder);
+    ->setFinder($finder)
+    ->setRiskyAllowed(true);
