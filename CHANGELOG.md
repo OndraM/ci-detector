@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 3.0.0 - 2017-10-27
 - Require PHP 7.1, use strict types.
 
 ## 2.1.0 - 2017-05-26
