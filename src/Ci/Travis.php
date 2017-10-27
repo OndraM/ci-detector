@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector\Ci;
 
@@ -9,22 +9,22 @@ class Travis extends AbstractCi
 {
     const TRAVIS_BASE_URL = 'https://travis-ci.org';
 
-    public static function isDetected(Env $env)
+    public static function isDetected(Env $env): bool
     {
-        return getenv('TRAVIS') !== false;
+        return $env->get('TRAVIS') !== false;
     }
 
-    public function getCiName()
+    public function getCiName(): string
     {
         return CiDetector::CI_TRAVIS;
     }
 
-    public function getBuildNumber()
+    public function getBuildNumber(): string
     {
-        return $this->env->get('TRAVIS_JOB_NUMBER');
+        return $this->env->getString('TRAVIS_JOB_NUMBER');
     }
 
-    public function getBuildUrl()
+    public function getBuildUrl(): string
     {
         return sprintf(
             '%s/%s/jobs/%s',
@@ -34,23 +34,23 @@ class Travis extends AbstractCi
         );
     }
 
-    public function getGitCommit()
+    public function getGitCommit(): string
     {
-        return $this->env->get('TRAVIS_COMMIT');
+        return $this->env->getString('TRAVIS_COMMIT');
     }
 
-    public function getGitBranch()
+    public function getGitBranch(): string
     {
-        if ($this->env->get('TRAVIS_PULL_REQUEST') === 'false') {
-            return $this->env->get('TRAVIS_BRANCH');
+        if ($this->env->getString('TRAVIS_PULL_REQUEST') === 'false') {
+            return $this->env->getString('TRAVIS_BRANCH');
         }
 
         // If the build is for PR, return name of the branch with the PR, not the target PR branch
         // https://github.com/travis-ci/travis-ci/issues/6652
-        return $this->env->get('TRAVIS_PULL_REQUEST_BRANCH');
+        return $this->env->getString('TRAVIS_PULL_REQUEST_BRANCH');
     }
 
-    public function getRepositoryUrl()
+    public function getRepositoryUrl(): string
     {
         return ''; // unsupported
     }

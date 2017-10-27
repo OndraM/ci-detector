@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector\Ci;
 
@@ -7,38 +7,38 @@ use OndraM\CiDetector\Env;
 
 class Bamboo extends AbstractCi
 {
-    public static function isDetected(Env $env)
+    public static function isDetected(Env $env): bool
     {
-        return getenv('bamboo_buildKey') !== false;
+        return $env->get('bamboo_buildKey') !== false;
     }
 
-    public function getCiName()
+    public function getCiName(): string
     {
         return CiDetector::CI_BAMBOO;
     }
 
-    public function getBuildNumber()
+    public function getBuildNumber(): string
     {
-        return $this->env->get('bamboo_buildNumber');
+        return $this->env->getString('bamboo_buildNumber');
     }
 
-    public function getBuildUrl()
+    public function getBuildUrl(): string
     {
-        return $this->env->get('bamboo_resultsUrl');
+        return $this->env->getString('bamboo_resultsUrl');
     }
 
-    public function getGitCommit()
+    public function getGitCommit(): string
     {
-        return $this->env->get('bamboo_planRepository_revision');
+        return $this->env->getString('bamboo_planRepository_revision');
     }
 
-    public function getGitBranch()
+    public function getGitBranch(): string
     {
-        return $this->env->get('bamboo_planRepository_branch');
+        return $this->env->getString('bamboo_planRepository_branch');
     }
 
-    public function getRepositoryUrl()
+    public function getRepositoryUrl(): string
     {
-        return $this->env->get('bamboo_planRepository_repositoryUrl');
+        return $this->env->getString('bamboo_planRepository_repositoryUrl');
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector\Ci;
 
@@ -12,9 +12,6 @@ abstract class AbstractCi implements CiInterface
     /** @var Env */
     protected $env;
 
-    /**
-     * @param Env $env
-     */
     public function __construct(Env $env)
     {
         $this->env = $env;

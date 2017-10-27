@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace OndraM\CiDetector\Ci;
 
@@ -7,37 +7,37 @@ use OndraM\CiDetector\Env;
 
 class TeamCity extends AbstractCi
 {
-    public static function isDetected(Env $env)
+    public static function isDetected(Env $env): bool
     {
-        return getenv('TEAMCITY_VERSION') !== false;
+        return $env->get('TEAMCITY_VERSION') !== false;
     }
 
-    public function getCiName()
+    public function getCiName(): string
     {
         return CiDetector::CI_TEAMCITY;
     }
 
-    public function getBuildNumber()
+    public function getBuildNumber(): string
     {
-        return $this->env->get('BUILD_NUMBER');
+        return $this->env->getString('BUILD_NUMBER');
     }
 
-    public function getBuildUrl()
-    {
-        return ''; // unsupported
-    }
-
-    public function getGitCommit()
-    {
-        return $this->env->get('BUILD_VCS_NUMBER');
-    }
-
-    public function getGitBranch()
+    public function getBuildUrl(): string
     {
         return ''; // unsupported
     }
 
-    public function getRepositoryUrl()
+    public function getGitCommit(): string
+    {
+        return $this->env->getString('BUILD_VCS_NUMBER');
+    }
+
+    public function getGitBranch(): string
+    {
+        return ''; // unsupported
+    }
+
+    public function getRepositoryUrl(): string
     {
         return ''; // unsupported
     }
