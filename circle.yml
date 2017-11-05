@@ -2,7 +2,7 @@ machine:
   timezone: Europe/Prague
 
   php:
-    version: 7.1.0
+    version: 7.1.9
 
 dependencies:
   override:
