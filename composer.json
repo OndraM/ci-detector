@@ -12,7 +12,8 @@
         "bamboo",
         "teamcity",
         "gitlab",
-        "codeship"
+        "codeship",
+        "continuousphp"
     ],
     "type": "library",
     "license": "MIT",

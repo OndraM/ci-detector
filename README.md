@@ -23,6 +23,7 @@ These CI servers are currently recognized:
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)
+ - [continuousphp](https://continuousphp.com/)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
 
