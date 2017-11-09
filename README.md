@@ -24,6 +24,7 @@ These CI servers are currently recognized:
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)
  - [continuousphp](https://continuousphp.com/)
+ - [drone](https://github.com/drone/drone/)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
 
