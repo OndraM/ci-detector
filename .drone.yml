@@ -1,0 +1,6 @@
+pipeline:
+  build:
+    image: php:7.1-alpine
+    commands:
+      - env
+      - php dump-current.php
