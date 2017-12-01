@@ -2,12 +2,13 @@ language: php
 
 php:
   - 7.1
+  - 7.2
 
 matrix:
   include:
-    - php: 7.1
+    - php: 7.2
       env: dependencies="--prefer-lowest"
-    - php: 7.1
+    - php: 7.2
       env: CHECK_CODESTYLE=1
       before_install:
         - phpenv config-rm xdebug.ini
@@ -16,8 +17,6 @@ matrix:
         - vendor/bin/php-cs-fixer fix --diff --dry-run -vvv
         - vendor/bin/phpstan.phar analyze ./src --level 7
       after_script: ~
-  allow_failures:
-    - php: 7.2
 
 install:
   - travis_retry composer self-update && composer --version
