@@ -15,6 +15,7 @@ class CiDetector
     const CI_CIRCLE = 'CircleCI';
     const CI_CODESHIP = 'Codeship';
     const CI_CONTINUOUSPHP = 'continuousphp';
+    const CI_DRONE = 'drone';
     const CI_GITLAB = 'GitLab';
     const CI_JENKINS = 'Jenkins';
     const CI_TEAMCITY = 'TeamCity';
@@ -57,6 +58,7 @@ class CiDetector
             Ci\Circle::class,
             Ci\Codeship::class,
             Ci\Continuousphp::class,
+            Ci\Drone::class,
             Ci\GitLab::class,
             Ci\Jenkins::class,
             Ci\TeamCity::class,
