@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 3.1.0 - 2018-02-19
 - Add continuousphp CI support.
 - Add drone CI support.
 
