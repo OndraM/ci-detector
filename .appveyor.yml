@@ -14,29 +14,28 @@ cache:
 
 init:
  - SET PHP=1
- - SET PATH=C:\tools\php71;%PATH%
+ - SET PATH=C:\tools\php;%PATH%
 
 install:
-  - IF EXIST c:\tools\php71 (SET PHP=0)
+  - IF EXIST c:\tools\php (SET PHP=0)
   - IF %PHP%==1 cinst -y OpenSSL.Light
-  - IF %PHP%==1 cinst -y php
-  - cd C:\tools\php71
+  - IF %PHP%==1 cinst -y php --params "/InstallDir:C:\tools\php" # we could use -version to specify exact version, but we rather use the latest available
+  - cd C:\tools\php
   - IF %PHP%==1 copy php.ini-production php.ini /Y
-  - IF %PHP%==1 echo date.timezone="UTC" >> php.ini
   - IF %PHP%==1 echo extension_dir=ext >> php.ini
   - IF %PHP%==1 echo extension=php_openssl.dll >> php.ini
   - IF %PHP%==1 echo extension=php_mbstring.dll >> php.ini
-  - cd C:\projects\ci-detector
+  - cd %APPVEYOR_BUILD_FOLDER%
   - appveyor DownloadFile https://getcomposer.org/composer.phar
   - php composer.phar update --no-interaction --no-progress
 
 before_test:
-  - cd C:\projects\ci-detector
+  - cd %APPVEYOR_BUILD_FOLDER%\
   - php dump-current.php
   - SET APPVEYOR=0 # Reset the variable to not interfere with tests
 
 test_script:
-  - cd C:\projects\ci-detector
+  - cd %APPVEYOR_BUILD_FOLDER%\
   - vendor/bin/phpunit --colors=always
 
 after_test:
