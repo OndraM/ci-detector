@@ -34,8 +34,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^6.4",
-        "friendsofphp/php-cs-fixer": "^2.7",
-        "phpstan/phpstan-shim": "^0.9.1"
+        "phpstan/phpstan-shim": "^0.9.1",
+        "lmc/coding-standard": "^1.0"
     },
     "scripts": {
         "all": [
@@ -43,7 +43,7 @@
             "./vendor/bin/phpunit --colors=always"
         ],
         "analyze": [
-            "./vendor/bin/php-cs-fixer fix --diff --dry-run -vvv --ansi",
+            "./vendor/bin/ecs check ./src/ ./tests/ --ansi",
             "./vendor/bin/phpstan.phar analyze ./src ./tests --level 7 --ansi"
         ]
     }
