@@ -33,9 +33,9 @@
         "php" : "^7.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4",
+        "lmc/coding-standard": "^1.0",
         "phpstan/phpstan-shim": "^0.9.1",
-        "lmc/coding-standard": "^1.0"
+        "phpunit/phpunit": "^7.1"
     },
     "scripts": {
         "all": [
@@ -46,5 +46,8 @@
             "./vendor/bin/ecs check ./src/ ./tests/ --ansi",
             "./vendor/bin/phpstan.phar analyze ./src ./tests --level 7 --ansi"
         ]
+    },
+    "config": {
+        "sort-packages": true
     }
 }
