@@ -1,0 +1,2 @@
+imports:
+    - { resource: '%vendor_dir%/lmc/coding-standard/easy-coding-standard.yaml' }
