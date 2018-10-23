@@ -34,7 +34,8 @@
     },
     "require-dev": {
         "lmc/coding-standard": "^1.0",
-        "phpstan/phpstan-shim": "^0.9.1",
+        "phpstan/phpstan-phpunit": "^0.10.0",
+        "phpstan/phpstan-shim": "^0.10.5",
         "phpunit/phpunit": "^7.1"
     },
     "scripts": {
@@ -44,7 +45,7 @@
         ],
         "analyze": [
             "./vendor/bin/ecs check ./src/ ./tests/ --ansi",
-            "./vendor/bin/phpstan.phar analyze ./src ./tests --level 7 --ansi"
+            "./vendor/bin/phpstan.phar analyze ./src ./tests -c phpstan.neon --level 7 --ansi"
         ]
     },
     "config": {
