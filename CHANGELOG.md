@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Fix Gitlab 9.0+ support (environment variables were renamed in GitLab 9.0+).
 
 ## 3.1.0 - 2018-02-19
 - Add continuousphp CI support.
