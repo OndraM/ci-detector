@@ -36,7 +36,7 @@
         "lmc/coding-standard": "^1.0",
         "phpstan/phpstan-phpunit": "^0.10.0",
         "phpstan/phpstan-shim": "^0.10.5",
-        "phpunit/phpunit": "^7.1"
+        "phpunit/phpunit": "^7.1 || ^8.0"
     },
     "scripts": {
         "all": [
