@@ -34,8 +34,8 @@
     },
     "require-dev": {
         "lmc/coding-standard": "^1.0",
-        "phpstan/phpstan-phpunit": "^0.11.2",
-        "phpstan/phpstan-shim": "^0.11.19",
+        "phpstan/phpstan-phpunit": "^0.12.1",
+        "phpstan/phpstan": "^0.12.0",
         "phpunit/phpunit": "^7.1 || ^8.0"
     },
     "scripts": {

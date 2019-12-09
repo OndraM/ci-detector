@@ -8,15 +8,14 @@ namespace OndraM\CiDetector;
 class Env
 {
     /**
-     * @param string $name Environment variable name
      * @return string|false Environment variable value or false if the variable does not exist
      */
-    public function get($name)
+    public function get(string $name)
     {
         return getenv($name);
     }
 
-    public function getString($name): string
+    public function getString(string $name): string
     {
         return (string) $this->get($name);
     }
