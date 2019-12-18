@@ -4,6 +4,7 @@ php:
   - '7.1'
   - '7.2'
   - '7.3'
+  - '7.4'
 
 matrix:
   include:
@@ -11,7 +12,7 @@ matrix:
       php: '7.1'
       env: dependencies="--prefer-lowest"
     - name: 'Code-style check'
-      php: '7.3'
+      php: '7.4'
       env: CHECK_CODESTYLE=1
       before_install:
         - phpenv config-rm xdebug.ini
