@@ -6,20 +6,6 @@ php:
   - '7.3'
   - '7.4'
 
-matrix:
-  include:
-    - name: 'Lowest dependencies build'
-      php: '7.1'
-      env: dependencies="--prefer-lowest"
-    - name: 'Code-style check'
-      php: '7.4'
-      env: CHECK_CODESTYLE=1
-      before_install:
-        - phpenv config-rm xdebug.ini
-      before_script: ~
-      script: composer analyze
-      after_script: ~
-
 install:
   - travis_retry composer self-update && composer --version
   - travis_retry composer update --no-interaction $DEPENDENCIES
