@@ -17,6 +17,7 @@ class CiDetector
     const CI_CONTINUOUSPHP = 'continuousphp';
     const CI_DRONE = 'drone';
     const CI_GITLAB = 'GitLab';
+    const CI_GITHUB_ACTIONS = 'GitHub Actions';
     const CI_JENKINS = 'Jenkins';
     const CI_TEAMCITY = 'TeamCity';
     const CI_TRAVIS = 'Travis CI';
@@ -60,6 +61,7 @@ class CiDetector
             Ci\Continuousphp::class,
             Ci\Drone::class,
             Ci\GitLab::class,
+            Ci\GitHubActions::class,
             Ci\Jenkins::class,
             Ci\TeamCity::class,
             Ci\Travis::class,
