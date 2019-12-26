@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Add GitHub Actions support.
 
 ## 3.1.1 - 2019-11-11
 - Fix Gitlab 9.0+ support (environment variables were renamed in GitLab 9.0+).

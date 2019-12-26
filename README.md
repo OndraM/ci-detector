@@ -1,9 +1,9 @@
 # CI Detector
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
+[![GitHub Actions Build Status](https://img.shields.io/github/workflow/status/OndraM/ci-detector/PHP?style=flat-square)](https://github.com/OndraM/ci-detector/actions)
 [![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square)](https://ci.appveyor.com/project/OndraM/ci-detector)
-[![License](https://img.shields.io/packagist/l/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
 
 Simple PHP library to detect in what continuous integration server is current script being run and to provide unified 
 interface for accessing the build properties.
@@ -25,6 +25,7 @@ These CI servers are currently recognized:
  - [Codeship](https://codeship.com/)
  - [continuousphp](https://continuousphp.com/)
  - [drone](https://github.com/drone/drone/)
+ - [GitHub Actions](https://github.com/features/actions)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
 
