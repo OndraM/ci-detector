@@ -1,0 +1,64 @@
+name: PHP
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron:  '0 3 * * *'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-versions: ['7.1', '7.2', '7.3', '7.4']
+        dependencies: ['', '--prefer-lowest']
+        exclude:
+          # Run lowest dependencies only on PHP 7.1
+          - { php-versions: '7.2', dependencies: '--prefer-lowest' }
+          - { php-versions: '7.3', dependencies: '--prefer-lowest' }
+          - { php-versions: '7.4', dependencies: '--prefer-lowest' }
+
+    name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v1
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, intl
+
+      - name: Install dependencies
+        run: composer update --no-interaction ${{ matrix.dependencies }}
+
+      - name: Dump current build properties
+        run: php dump-current.php
+
+      - name: Run tests
+        run: |
+          unset GITHUB_ACTIONS
+          vendor/bin/phpunit --colors=always
+
+      - name: Dump current environment variables
+        run: env
+
+  codestyle:
+      name: "Code style and static analysis"
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+
+        - name: Setup PHP
+          uses: shivammathur/setup-php@v1
+          with:
+            php-version: '7.4'
+            extensions: mbstring, intl
+
+        - name: Install dependencies
+          run: composer update --no-interaction
+
+        - name: Run checks
+          run: composer analyze
