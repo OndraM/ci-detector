@@ -46,6 +46,11 @@ class GitHubActions extends AbstractCi
         return preg_replace('~^refs/heads/~', '', $gitReference);
     }
 
+    public function getRepositoryName(): string
+    {
+        return $this->env->getString('GITHUB_REPOSITORY');
+    }
+
     public function getRepositoryUrl(): string
     {
         return sprintf(

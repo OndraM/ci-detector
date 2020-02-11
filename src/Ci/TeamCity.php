@@ -37,6 +37,11 @@ class TeamCity extends AbstractCi
         return ''; // unsupported
     }
 
+    public function getRepositoryName(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryUrl(): string
     {
         return ''; // unsupported

@@ -37,6 +37,11 @@ interface CiInterface
     public function getGitBranch(): string;
 
     /**
+     * Get name of the git repository which is being built
+     */
+    public function getRepositoryName(): string;
+
+    /**
      * Get URL of the git repository which is being built
      */
     public function getRepositoryUrl(): string;

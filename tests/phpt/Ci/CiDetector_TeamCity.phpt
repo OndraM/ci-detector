@@ -37,6 +37,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Repository name:\n";
+var_dump($ci->getRepositoryName());
 echo "Repository url:\n";
 var_dump($ci->getRepositoryUrl());
 
@@ -54,6 +56,8 @@ string(0) ""
 Git commit:
 string(40) "1ee546f280c093f1e24ecc149db4a0a100c8d609"
 Git branch:
+string(0) ""
+Repository name:
 string(0) ""
 Repository url:
 string(0) ""

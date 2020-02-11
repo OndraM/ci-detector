@@ -95,6 +95,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Repository name:\n";
+var_dump($ci->getRepositoryName());
 echo "Repository url:\n";
 var_dump($ci->getRepositoryUrl());
 
@@ -113,5 +115,7 @@ Git commit:
 string(40) "5d25f4849bbd812e4e64e78d4aaa94a72e6cab5c"
 Git branch:
 string(11) "test-gitlab"
+Repository name:
+string(18) "OndraM/ci-detector"
 Repository url:
 string(78) "https://gitlab-ci-token:xxxxxxxxxxxxxxxxxxxx@gitlab.com/OndraM/ci-detector.git"

@@ -63,6 +63,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Repository name:\n";
+var_dump($ci->getRepositoryName());
 echo "Repository url:\n";
 var_dump($ci->getRepositoryUrl());
 
@@ -81,5 +83,7 @@ Git commit:
 string(40) "87bf5720b148a6fee6c8e70888800a4360a13e08"
 Git branch:
 string(25) "test-continuousphp-branch"
+Repository name:
+string(0) ""
 Repository url:
 string(0) ""
