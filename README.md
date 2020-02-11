@@ -5,12 +5,12 @@
 [![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square)](https://ci.appveyor.com/project/OndraM/ci-detector)
 
-Simple PHP library to detect in what continuous integration server is current script being run and to provide unified 
-interface for accessing the build properties.
+A simple PHP library to detect in what continuous integration server is the current script being run and to provide
+unified interface to read the build properties.
  
 The detection is based on environment variables injected to the build environment by each of continuous integration 
 server. However, these variables are named differently in each CI. This library contains adapter for each supported
-CI server which handles these differences so you don't have to and you can make your scripts (and especially CLI tools)
+CI server, which handles these differences so you don't have to, and you can make your scripts (and especially CLI tools)
 portable for multiple build environments.
 
 ## Supported continuous integration servers
@@ -44,7 +44,7 @@ Install using [Composer](https://getcomposer.org/):
 $ composer require ondram/ci-detector
 ```
 
-Ci-detector requires PHP 7.1+, but you need compatibility with PHP <7.1, you can still use old ci-detector version 2.x.
+Ci-detector requires PHP 7.1+, but if you need compatibility with PHP <7.1, you can still use old ci-detector version 2.x.
 
 ## Example usage
 
@@ -71,13 +71,14 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
 
 ## Testing
 
-Run unit-tests:
+Check codestyle, static analysis and run unit-tests:
 
 ```sh
-vendor/bin/phpunit
+composer all
 ```
 
-Check codestyle:
+To automatically fix codestyle violations run:
+
 ```sh
-vendor/bin/php-cs-fixer fix --diff --dry-run # remove the --dry-run option to fix the codestyle
+vendor/bin/ecs check --fix ./src/ ./tests/
 ```
