@@ -39,6 +39,11 @@ class Continuousphp extends AbstractCi
         return preg_replace('~^refs/heads/~', '', $gitReference) ?? '';
     }
 
+    public function getRepositoryName(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryUrl(): string
     {
         return $this->env->getString('');

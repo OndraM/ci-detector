@@ -18,6 +18,7 @@ $methodsToDump = [
     'getBuildUrl',
     'getGitCommit',
     'getGitBranch',
+    'getRepositoryName',
     'getRepositoryUrl',
 ];
 

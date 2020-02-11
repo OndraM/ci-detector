@@ -43,6 +43,11 @@ class GitLab extends AbstractCi
             : $this->env->getString('CI_BUILD_REF_NAME');
     }
 
+    public function getRepositoryName(): string
+    {
+        return $this->env->getString('CI_PROJECT_PATH');
+    }
+
     public function getRepositoryUrl(): string
     {
         return !empty($this->env->getString('CI_REPOSITORY_URL'))

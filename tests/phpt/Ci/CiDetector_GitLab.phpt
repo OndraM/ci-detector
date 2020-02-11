@@ -53,6 +53,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Repository name:\n";
+var_dump($ci->getRepositoryName());
 echo "Repository url:\n";
 var_dump($ci->getRepositoryUrl());
 
@@ -71,5 +73,7 @@ Git commit:
 string(40) "1e50d546a67287e3111707283eb28bfff50584a9"
 Git branch:
 string(11) "test-gitlab"
+Repository name:
+string(7) "foo/bar"
 Repository url:
 string(53) "https://gitlab-ci-token:xxxxxx@gitlab.com/foo/bar.git"

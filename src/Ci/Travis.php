@@ -50,6 +50,11 @@ class Travis extends AbstractCi
         return $this->env->getString('TRAVIS_PULL_REQUEST_BRANCH');
     }
 
+    public function getRepositoryName(): string
+    {
+        return $this->env->getString('TRAVIS_REPO_SLUG');
+    }
+
     public function getRepositoryUrl(): string
     {
         return ''; // unsupported

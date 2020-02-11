@@ -37,6 +37,15 @@ class Circle extends AbstractCi
         return $this->env->getString('CIRCLE_BRANCH');
     }
 
+    public function getRepositoryName(): string
+    {
+        return sprintf(
+            '%s/%s',
+            $this->env->getString('CIRCLE_PROJECT_USERNAME'),
+            $this->env->getString('CIRCLE_PROJECT_REPONAME')
+        );
+    }
+
     public function getRepositoryUrl(): string
     {
         return $this->env->getString('CIRCLE_REPOSITORY_URL');
