@@ -74,7 +74,7 @@ string(8) "AppVeyor"
 Build number:
 string(2) "37"
 Build url:
-string(63) "https://ci.appveyor.com/project/OndraM/ci-detector/build/1.3.37"
+string(65) "https://ci.appveyor.com/project/OndraM/ci-detector/builds/8791806"
 Git commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74cce"
 Git branch:
