@@ -25,11 +25,11 @@ class AppVeyor extends AbstractCi
     public function getBuildUrl(): string
     {
         return sprintf(
-            '%s/project/%s/%s/build/%s',
+            '%s/project/%s/%s/builds/%s',
             $this->env->get('APPVEYOR_URL'),
             $this->env->get('APPVEYOR_ACCOUNT_NAME'),
             $this->env->get('APPVEYOR_PROJECT_SLUG'),
-            $this->env->get('APPVEYOR_BUILD_VERSION')
+            $this->env->get('APPVEYOR_BUILD_ID')
         );
     }
 
