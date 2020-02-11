@@ -4,6 +4,8 @@
 
 ## Unreleased
 - Add GitHub Actions support.
+- Add `getRepositoryName()` method to detect repository name (slug) like `OndraM/ci-detector` (not supported on TeamCity, Jenkins and continuousphp).
+- Change build URL on AppVeyor to use new permalink URL.
 
 ## 3.1.1 - 2019-11-11
 - Fix Gitlab 9.0+ support (environment variables were renamed in GitLab 9.0+).
