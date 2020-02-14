@@ -7,18 +7,16 @@
 
 A simple PHP library to detect in what continuous integration server is the current script being run and to provide
 unified interface to read the build properties.
- 
-The detection is based on environment variables injected to the build environment by each of continuous integration 
+
+The detection is based on environment variables injected to the build environment by each of continuous integration
 server. However, these variables are named differently in each CI. This library contains adapter for each supported
 CI server, which handles these differences so you don't have to, and you can make your scripts (and especially CLI tools)
 portable for multiple build environments.
 
 ## Supported continuous integration servers
 
-These CI servers are currently recognized: 
+These CI servers are currently recognized:
 
- - [Jenkins](https://jenkins.io/)
- - [Travis CI](https://travis-ci.org/)
  - [AppVeyor](https://www.appveyor.com/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [CircleCI](https://circleci.com/)
@@ -27,7 +25,9 @@ These CI servers are currently recognized:
  - [drone](https://github.com/drone/drone/)
  - [GitHub Actions](https://github.com/features/actions)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
+ - [Jenkins](https://jenkins.io/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
+ - [Travis CI](https://travis-ci.org/)
 
 If your favorite CI server is missing, feel free to send a pull-request!
 
