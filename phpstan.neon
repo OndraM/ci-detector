@@ -1,6 +1,3 @@
-includes:
-    - vendor/phpstan/phpstan-phpunit/extension.neon
-
 parameters:
     ignoreErrors:
         - '/Parameter \#1 \$function of function call_user_func expects callable/'
