@@ -50,7 +50,7 @@
         ],
         "analyze": [
             "./vendor/bin/ecs check ./src/ ./tests/ --ansi",
-            "./vendor/bin/phpstan.phar analyze ./src ./tests -c phpstan.neon --level 7 --ansi"
+            "./vendor/bin/phpstan.phar analyze -c phpstan.neon --ansi"
         ]
     }
 }
