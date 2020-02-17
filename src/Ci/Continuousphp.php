@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class Continuousphp extends AbstractCi
 {
@@ -15,6 +16,11 @@ class Continuousphp extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_CONTINUOUSPHP;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createFromBoolean($this->env->getString('CPHP_PR_ID') !== '');
     }
 
     public function getBuildNumber(): string

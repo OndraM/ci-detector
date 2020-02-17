@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class TeamCity extends AbstractCi
 {
@@ -15,6 +16,11 @@ class TeamCity extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_TEAMCITY;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createMaybe();
     }
 
     public function getBuildNumber(): string

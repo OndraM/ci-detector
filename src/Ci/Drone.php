@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class Drone extends AbstractCi
 {
@@ -15,6 +16,11 @@ class Drone extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_DRONE;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createFromBoolean($this->env->getString('DRONE_PULL_REQUEST') !== '');
     }
 
     public function getBuildNumber(): string

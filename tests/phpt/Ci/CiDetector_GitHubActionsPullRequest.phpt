@@ -47,7 +47,7 @@ JAVA_HOME_7_X64=/usr/lib/jvm/zulu-7-azure-amd64
 RUNNER_USER=runner
 SHLVL=1
 GITHUB_REPOSITORY=OndraM/ci-detector
-GITHUB_EVENT_NAME=push
+GITHUB_EVENT_NAME=pull_request
 LEIN_JAR=/usr/local/lib/lein/self-installs/leiningen-2.9.1-standalone.jar
 RUNNER_PERFLOG=/home/runner/perflog
 GITHUB_WORKFLOW=PHP
@@ -62,47 +62,10 @@ _=/usr/bin/env
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getGitCommit());
-echo "Git branch:\n";
-var_dump($ci->getGitBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
-Is CI detected:
-bool(true)
-Class:
-string(34) "OndraM\CiDetector\Ci\GitHubActions"
-CI name:
-string(14) "GitHub Actions"
 Is pull request:
-string(2) "No"
-Build number:
-string(6) "run333"
-Build url:
-string(92) "https://github.com/OndraM/ci-detector/commit/e24a68b0ac3f9d1afe29901943e94df2bf41c932/checks"
-Git commit:
-string(40) "e24a68b0ac3f9d1afe29901943e94df2bf41c932"
-Git branch:
-string(11) "test-github"
-Repository name:
-string(18) "OndraM/ci-detector"
-Repository url:
-string(37) "https://github.com/OndraM/ci-detector"
+string(3) "Yes"

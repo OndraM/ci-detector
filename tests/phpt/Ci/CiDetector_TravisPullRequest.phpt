@@ -30,7 +30,13 @@ TRAVIS_PULL_REQUEST_BRANCH=test-travis-branch
 require __DIR__ . '/../../../vendor/autoload.php';
 
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
+echo "Is pull request:\n";
+var_dump($ci->isPullRequest()->describe());
+echo "Git branch:\n";
 var_dump($ci->getGitBranch());
 
 --EXPECT--
+Is pull request:
+string(3) "Yes"
+Git branch:
 string(18) "test-travis-branch"

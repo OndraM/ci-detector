@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class Travis extends AbstractCi
 {
@@ -17,6 +18,11 @@ class Travis extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_TRAVIS;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createFromBoolean($this->env->getString('TRAVIS_PULL_REQUEST') !== 'false');
     }
 
     public function getBuildNumber(): string
@@ -41,7 +47,7 @@ class Travis extends AbstractCi
 
     public function getGitBranch(): string
     {
-        if ($this->env->getString('TRAVIS_PULL_REQUEST') === 'false') {
+        if ($this->isPullRequest()->no()) {
             return $this->env->getString('TRAVIS_BRANCH');
         }
 

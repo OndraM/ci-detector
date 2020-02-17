@@ -33,6 +33,7 @@ before_test:
   - cd %APPVEYOR_BUILD_FOLDER%\
   - php dump-current.php
   - SET APPVEYOR=0 # Reset the variable to not interfere with tests
+  - ps: $env:APPVEYOR_PULL_REQUEST_NUMBER = '' # Reset the variable to not interfere with tests
 
 test_script:
   - cd %APPVEYOR_BUILD_FOLDER%\

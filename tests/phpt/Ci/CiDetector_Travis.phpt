@@ -36,6 +36,8 @@ echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
 var_dump($ci->getCiName());
+echo "Is pull request:\n";
+var_dump($ci->isPullRequest()->describe());
 echo "Build number:\n";
 var_dump($ci->getBuildNumber());
 echo "Build url:\n";
@@ -56,6 +58,8 @@ Class:
 string(27) "OndraM\CiDetector\Ci\Travis"
 CI name:
 string(9) "Travis CI"
+Is pull request:
+string(2) "No"
 Build number:
 string(3) "1.2"
 Build url:
