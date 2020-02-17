@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class GitLab extends AbstractCi
 {
@@ -15,6 +16,14 @@ class GitLab extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_GITLAB;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createFromBoolean(
+            $this->env->get('CI_MERGE_REQUEST_ID') !== false
+            || $this->env->get('CI_EXTERNAL_PULL_REQUEST_IID') !== false
+        );
     }
 
     public function getBuildNumber(): string

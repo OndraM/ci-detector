@@ -3,6 +3,7 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 interface CiInterface
 {
@@ -15,6 +16,12 @@ interface CiInterface
      * Get name of the CI server type
      */
     public function getCiName(): string;
+
+    /**
+     * Returned TrinaryLogic object's value will be true if the current build is from a pull/merge request,
+     * false if it not, and maybe if we can't determine it.
+     */
+    public function isPullRequest(): TrinaryLogic;
 
     /**
      * Get number of this concrete build

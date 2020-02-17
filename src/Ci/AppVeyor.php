@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class AppVeyor extends AbstractCi
 {
@@ -15,6 +16,11 @@ class AppVeyor extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_APPVEYOR;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createFromBoolean($this->env->getString('APPVEYOR_PULL_REQUEST_NUMBER') !== '');
     }
 
     public function getBuildNumber(): string

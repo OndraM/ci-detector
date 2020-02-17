@@ -9,7 +9,7 @@ PHPBREW_BIN=/home/cphp/.phpbrew/bin
 SHELL=/bin/bash
 SSH_CLIENT=172.18.0.1 39008 22
 PHPBREW_ROOT=/home/cphp/.phpbrew
-CPHP_PR_ID=
+CPHP_PR_ID=43
 LC_ALL=en_US.UTF-8
 NVM_DIR=/usr/local/src/nvm
 USER=cphp
@@ -47,47 +47,10 @@ OLDPWD=/home/cphp
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getGitCommit());
-echo "Git branch:\n";
-var_dump($ci->getGitBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
-Is CI detected:
-bool(true)
-Class:
-string(34) "OndraM\CiDetector\Ci\Continuousphp"
-CI name:
-string(13) "continuousphp"
 Is pull request:
-string(2) "No"
-Build number:
-string(36) "31b581f1-95bf-4d09-b458-8d0da757bc8d"
-Build url:
-string(0) ""
-Git commit:
-string(40) "87bf5720b148a6fee6c8e70888800a4360a13e08"
-Git branch:
-string(25) "test-continuousphp-branch"
-Repository name:
-string(0) ""
-Repository url:
-string(0) ""
+string(3) "Yes"

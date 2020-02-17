@@ -5,6 +5,9 @@
     colors="true"
 >
     <testsuites>
+        <testsuite name="Unit Tests">
+            <directory>./tests/</directory>
+        </testsuite>
         <testsuite name="PHPT tests">
             <directory suffix=".phpt">./tests/phpt/</directory>
         </testsuite>

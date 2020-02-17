@@ -4,6 +4,7 @@ namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
+use OndraM\CiDetector\TrinaryLogic;
 
 class GitHubActions extends AbstractCi
 {
@@ -17,6 +18,11 @@ class GitHubActions extends AbstractCi
     public function getCiName(): string
     {
         return CiDetector::CI_GITHUB_ACTIONS;
+    }
+
+    public function isPullRequest(): TrinaryLogic
+    {
+        return TrinaryLogic::createFromBoolean($this->env->getString('GITHUB_EVENT_NAME') === 'pull_request');
     }
 
     public function getBuildNumber(): string

@@ -5,6 +5,9 @@
 ## Unreleased
 - Add GitHub Actions support.
 - Add `getRepositoryName()` method to detect repository name (slug) like `OndraM/ci-detector` (not supported on TeamCity, Jenkins and continuousphp).
+- Add `isPullRequest()` to detect if current build has been triggered by a pull request (merge request).
+  Be aware that this method returns a `TrinaryLogic` object, `maybe()` method is for when we cannot detect if
+  current build has been triggered by a pull request (which cannot be detected on TeamCity and Jenkins CI).
 - Change build URL on AppVeyor to use new permalink URL.
 
 ## 3.1.1 - 2019-11-11

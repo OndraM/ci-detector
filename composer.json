@@ -45,6 +45,11 @@
             "OndraM\\CiDetector\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "OndraM\\CiDetector\\Ci\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "all": [
             "@lint",

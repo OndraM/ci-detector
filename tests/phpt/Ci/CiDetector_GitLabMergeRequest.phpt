@@ -31,53 +31,17 @@ CI_PROJECT_NAMESPACE=foo
 CI_BUILD_REPO=https://gitlab-ci-token:xxxxxx@gitlab.com/foo/bar.git
 CI_RUNNER_DESCRIPTION=shared-runners-manager-1.gitlab.com
 PHP_VERSION=7.0.10
+CI_MERGE_REQUEST_ID=43
 
 --FILE--
 <?php
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getGitCommit());
-echo "Git branch:\n";
-var_dump($ci->getGitBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
-Is CI detected:
-bool(true)
-Class:
-string(27) "OndraM\CiDetector\Ci\GitLab"
-CI name:
-string(6) "GitLab"
 Is pull request:
-string(2) "No"
-Build number:
-string(7) "3265050"
-Build url:
-string(41) "https://gitlab.com/foo/bar/builds/3265050"
-Git commit:
-string(40) "1e50d546a67287e3111707283eb28bfff50584a9"
-Git branch:
-string(11) "test-gitlab"
-Repository name:
-string(7) "foo/bar"
-Repository url:
-string(53) "https://gitlab-ci-token:xxxxxx@gitlab.com/foo/bar.git"
+string(3) "Yes"

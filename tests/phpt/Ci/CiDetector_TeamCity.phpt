@@ -29,6 +29,8 @@ echo "Class:\n";
 var_dump(get_class($ci));
 echo "CI name:\n";
 var_dump($ci->getCiName());
+echo "Is pull request:\n";
+var_dump($ci->isPullRequest()->describe());
 echo "Build number:\n";
 var_dump($ci->getBuildNumber());
 echo "Build url:\n";
@@ -49,6 +51,8 @@ Class:
 string(29) "OndraM\CiDetector\Ci\TeamCity"
 CI name:
 string(8) "TeamCity"
+Is pull request:
+string(5) "Maybe"
 Build number:
 string(1) "5"
 Build url:

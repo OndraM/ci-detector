@@ -80,53 +80,17 @@ CI_COMMIT_MESSAGE=Test Drone CI build
 CI_SYSTEM=drone
 CI_REMOTE_URL=https://github.com/OndraM/ci-detector.git
 CI_JOB_STATUS=success
+DRONE_PULL_REQUEST=43
 
 --FILE--
 <?php
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getGitCommit());
-echo "Git branch:\n";
-var_dump($ci->getGitBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
-Is CI detected:
-bool(true)
-Class:
-string(26) "OndraM\CiDetector\Ci\Drone"
-CI name:
-string(5) "drone"
 Is pull request:
-string(2) "No"
-Build number:
-string(1) "2"
-Build url:
-string(39) "http://drone.local/OndraM/ci-detector/2"
-Git commit:
-string(40) "3986f34176d2a641fc11bc41a3875c67bdc46aa5"
-Git branch:
-string(10) "test-drone"
-Repository name:
-string(18) "OndraM/ci-detector"
-Repository url:
-string(37) "https://github.com/OndraM/ci-detector"
+string(3) "Yes"

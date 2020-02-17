@@ -27,3 +27,7 @@ foreach ($methodsToDump as $method) {
     var_dump($ci->$method());
     echo "\n";
 }
+
+echo '$ci->isPullRequest()->describe()'."\n";
+var_dump($ci->isPullRequest()->describe());
+echo "\n";
