@@ -8,6 +8,7 @@
         "interface",
         "appveyor",
         "bamboo",
+        "buddy",
         "circleci",
         "codeship",
         "continuousphp",

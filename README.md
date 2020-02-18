@@ -20,6 +20,7 @@ These CI servers are currently recognized:
 
  - [AppVeyor](https://www.appveyor.com/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
+ - [Buddy](https://buddy.works/)
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)
  - [continuousphp](https://continuousphp.com/)
