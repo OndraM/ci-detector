@@ -12,6 +12,7 @@ class CiDetector
 {
     const CI_APPVEYOR = 'AppVeyor';
     const CI_BAMBOO = 'Bamboo';
+    const CI_BUDDY = 'Buddy';
     const CI_CIRCLE = 'CircleCI';
     const CI_CODESHIP = 'Codeship';
     const CI_CONTINUOUSPHP = 'continuousphp';
@@ -56,6 +57,7 @@ class CiDetector
         return [
             Ci\AppVeyor::class,
             Ci\Bamboo::class,
+            Ci\Buddy::class,
             Ci\Circle::class,
             Ci\Codeship::class,
             Ci\Continuousphp::class,
