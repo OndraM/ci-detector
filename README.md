@@ -1,9 +1,10 @@
 # CI Detector
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/ondram/ci-detector.svg?style=flat-square)](https://packagist.org/packages/ondram/ci-detector)
-[![GitHub Actions Build Status](https://img.shields.io/github/workflow/status/OndraM/ci-detector/PHP?style=flat-square)](https://github.com/OndraM/ci-detector/actions)
-[![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square)](https://travis-ci.org/OndraM/ci-detector)
-[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square)](https://ci.appveyor.com/project/OndraM/ci-detector)
+[![Coverage Status](https://img.shields.io/coveralls/OndraM/ci-detector/master.svg?style=flat-square)](https://coveralls.io/r/OndraM/ci-detector)
+[![GitHub Actions Build Status](https://img.shields.io/github/workflow/status/OndraM/ci-detector/PHP?style=flat-square&label=GitHub%20Actions%20build)](https://github.com/OndraM/ci-detector/actions)
+[![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square&label=Travis%20build)](https://travis-ci.org/OndraM/ci-detector)
+[![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square&label=AppVeyor%20build)](https://ci.appveyor.com/project/OndraM/ci-detector)
 
 A simple PHP library to detect in what continuous integration server is the current script being run and to provide
 unified interface to read the build properties.
