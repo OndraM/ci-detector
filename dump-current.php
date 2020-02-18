@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 // Dump values from current environment
 
@@ -7,7 +7,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $ciDetector = new \OndraM\CiDetector\CiDetector();
 
 if (!$ciDetector->isCiDetected()) {
-    exit("No CI detected");
+    exit('No CI detected');
 }
 
 $ci = $ciDetector->detect();
@@ -28,6 +28,6 @@ foreach ($methodsToDump as $method) {
     echo "\n";
 }
 
-echo '$ci->isPullRequest()->describe()'."\n";
+echo '$ci->isPullRequest()->describe()' . "\n";
 var_dump($ci->isPullRequest()->describe());
 echo "\n";
