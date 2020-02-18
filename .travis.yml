@@ -15,7 +15,11 @@ before_script:
   - unset TRAVIS # Unset the variable to not interfere with tests
 
 script:
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_success:
+  - export TRAVIS=true # Set it back so that php-coveralls properly detects Travis
+  - travis_retry php vendor/bin/php-coveralls -v
 
 after_script:
   - env # list current environment variables

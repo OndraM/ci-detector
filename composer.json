@@ -32,6 +32,7 @@
         "ergebnis/composer-normalize": "^2.2",
         "jakub-onderka/php-parallel-lint": "^1.0",
         "lmc/coding-standard": "^1.0",
+        "php-coveralls/php-coveralls": "^2.2",
         "phpstan/extension-installer": "^1.0.3",
         "phpstan/phpstan": "^0.12.0",
         "phpstan/phpstan-phpunit": "^0.12.1",
