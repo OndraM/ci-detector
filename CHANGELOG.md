@@ -3,11 +3,14 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
-- Add GitHub Actions support.
+
+## 3.2.0 - 2020-02-18
+- Add GitHub Actions detection support.
+- Add Buddy detection support.
 - Add `getRepositoryName()` method to detect repository name (slug) like `OndraM/ci-detector` (not supported on TeamCity, Jenkins and continuousphp).
 - Add `isPullRequest()` to detect if current build has been triggered by a pull request (merge request).
-  Be aware that this method returns a `TrinaryLogic` object, `maybe()` method is for when we cannot detect if
-  current build has been triggered by a pull request (which cannot be detected on TeamCity and Jenkins CI).
+  Be aware that this method returns a `TrinaryLogic` object to handle cases when it cannot be detected
+  whether build was triggered by a pull request (like on TeamCity and Jenkins CI).
 - Change build URL on AppVeyor to use new permalink URL.
 
 ## 3.1.1 - 2019-11-11
