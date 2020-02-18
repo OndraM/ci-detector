@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of AppVeyor
+AppVeyor: Detect properties
 
 --ENV--
 APPVEYOR=True

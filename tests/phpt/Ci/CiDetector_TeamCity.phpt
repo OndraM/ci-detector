@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of TeamCity
+TeamCity: Detect properties
 
 --ENV--
 TEAMCITY_PROJECT_NAME=Ci Detector

@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Jenkins CI
+Bamboo: Detect properties
 
 --ENV--
 bamboo_buildResultsUrl=https://bamboo.foo.bar/browse/KEY-FOO-JOB1-3

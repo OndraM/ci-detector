@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Jenkins CI
+Jenkins CI: Detect properties
 
 --ENV--
 BUILD_URL=http://jenkins.foo/job/foo_job_name/1337/

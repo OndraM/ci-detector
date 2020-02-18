@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of GitHub Actions
+GitHub Actions: Detect properties of PR build
 
 --ENV--
 LEIN_HOME=/usr/local/lib/lein

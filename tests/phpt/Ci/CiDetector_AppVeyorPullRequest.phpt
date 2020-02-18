@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of AppVeyor
+AppVeyor: Detect properties of PR build
 
 --ENV--
 APPVEYOR=True

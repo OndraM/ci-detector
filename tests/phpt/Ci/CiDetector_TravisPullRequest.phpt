@@ -1,5 +1,5 @@
 --TEST--
-Detect branch name for pull request builds on Travis CI
+Travis CI: Detect properties of PR build
 
 --ENV--
 CI=true

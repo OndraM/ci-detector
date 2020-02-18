@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of GitLab CI
+GitLab CI: Detect properties
 
 --ENV--
 CI_PROJECT_NAME=ci-detector

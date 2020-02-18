@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Drone CI
+Drone CI: Detect properties of PR build
 
 --ENV--
 DRONE_COMMIT_AUTHOR_AVATAR=https://avatars0.githubusercontent.com/u/793041?v=4

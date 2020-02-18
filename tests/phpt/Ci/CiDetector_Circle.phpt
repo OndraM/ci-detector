@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Circle CI
+Circle CI: Detect properties
 
 --ENV--
 CIRCLE_BUILD_NUM=1337

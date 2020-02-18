@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of GitLab CI
+GitLab CI 9+: Detect properties
 
 --ENV--
 CI_RUNNER_EXECUTABLE_ARCH=linux/amd64

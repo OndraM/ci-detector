@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Codeship
+Codeship: Detect properties of PR build
 
 --ENV--
 CI_COMMIT_ID=26e646685c1e625939f6b2de0e5f30b59cc34d60

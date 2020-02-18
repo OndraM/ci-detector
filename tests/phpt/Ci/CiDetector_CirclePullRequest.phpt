@@ -1,6 +1,5 @@
 --TEST--
-Detect properties of Circle CI
-
+Circle CI: Detect properties of PR build
 --ENV--
 CIRCLE_BUILD_NUM=1337
 CIRCLE_NODE_TOTAL=1

@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Travis CI
+Travis CI: Detect properties
 
 --ENV--
 CI=true

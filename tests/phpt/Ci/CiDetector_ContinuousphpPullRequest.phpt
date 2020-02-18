@@ -1,5 +1,5 @@
 --TEST--
-Detect properties of Continuousphp CI
+Continuousphp CI: Detect properties of PR build
 
 --ENV--
 CPHP_GIT_REF=refs/heads/test-continuousphp-branch
