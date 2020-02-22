@@ -10,18 +10,18 @@ use OndraM\CiDetector\Exception\CiNotDetectedException;
  */
 class CiDetector
 {
-    const CI_APPVEYOR = 'AppVeyor';
-    const CI_BAMBOO = 'Bamboo';
-    const CI_BUDDY = 'Buddy';
-    const CI_CIRCLE = 'CircleCI';
-    const CI_CODESHIP = 'Codeship';
-    const CI_CONTINUOUSPHP = 'continuousphp';
-    const CI_DRONE = 'drone';
-    const CI_GITHUB_ACTIONS = 'GitHub Actions';
-    const CI_GITLAB = 'GitLab';
-    const CI_JENKINS = 'Jenkins';
-    const CI_TEAMCITY = 'TeamCity';
-    const CI_TRAVIS = 'Travis CI';
+    public const CI_APPVEYOR = 'AppVeyor';
+    public const CI_BAMBOO = 'Bamboo';
+    public const CI_BUDDY = 'Buddy';
+    public const CI_CIRCLE = 'CircleCI';
+    public const CI_CODESHIP = 'Codeship';
+    public const CI_CONTINUOUSPHP = 'continuousphp';
+    public const CI_DRONE = 'drone';
+    public const CI_GITHUB_ACTIONS = 'GitHub Actions';
+    public const CI_GITLAB = 'GitLab';
+    public const CI_JENKINS = 'Jenkins';
+    public const CI_TEAMCITY = 'TeamCity';
+    public const CI_TRAVIS = 'Travis CI';
 
     /**
      * Is current environment an recognized CI server?
