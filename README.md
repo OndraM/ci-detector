@@ -83,5 +83,5 @@ composer all
 To automatically fix codestyle violations run:
 
 ```sh
-vendor/bin/ecs check --fix ./src/ ./tests/
+composer fix
 ```

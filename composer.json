@@ -62,6 +62,10 @@
             "./vendor/bin/ecs check ./src/ ./tests/ --ansi",
             "./vendor/bin/phpstan.phar analyze -c phpstan.neon --ansi"
         ],
+        "fix": [
+            "@composer normalize",
+            "./vendor/bin/ecs check ./src/ ./tests/ --ansi --fix"
+        ],
         "lint": [
             "vendor/bin/parallel-lint -j 10 -e php ./src ./tests dump-current.php",
             "@composer validate",
