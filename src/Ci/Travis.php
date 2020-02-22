@@ -8,7 +8,7 @@ use OndraM\CiDetector\TrinaryLogic;
 
 class Travis extends AbstractCi
 {
-    const TRAVIS_BASE_URL = 'https://travis-ci.org';
+    public const TRAVIS_BASE_URL = 'https://travis-ci.org';
 
     public static function isDetected(Env $env): bool
     {
