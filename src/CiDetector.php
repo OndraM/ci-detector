@@ -23,6 +23,23 @@ class CiDetector
     public const CI_TEAMCITY = 'TeamCity';
     public const CI_TRAVIS = 'Travis CI';
 
+    /** @var Env */
+    private $environment;
+
+    public function __construct()
+    {
+        $this->environment = new Env();
+    }
+
+    public static function fromEnvironment(Env $environment): self
+    {
+        $detector = new self();
+
+        $detector->environment = $environment;
+
+        return $detector;
+    }
+
     /**
      * Is current environment an recognized CI server?
      */
@@ -72,12 +89,11 @@ class CiDetector
 
     protected function detectCurrentCiServer(): ?CiInterface
     {
-        $env = new Env();
         $ciServers = $this->getCiServers();
 
         foreach ($ciServers as $ciClass) {
-            if (call_user_func([$ciClass, 'isDetected'], $env)) {
-                return new $ciClass($env);
+            if (call_user_func([$ciClass, 'isDetected'], $this->environment)) {
+                return new $ciClass($this->environment);
             }
         }
 
