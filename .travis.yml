@@ -8,7 +8,7 @@ php:
 
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer update --no-interaction $DEPENDENCIES
+  - travis_retry composer update --no-interaction
 
 before_script:
   - php dump-current.php
