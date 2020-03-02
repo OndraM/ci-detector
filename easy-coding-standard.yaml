@@ -1,5 +1,6 @@
 imports:
-    - { resource: '%vendor_dir%/lmc/coding-standard/easy-coding-standard.yaml' }
+    - { resource: 'vendor/lmc/coding-standard/easy-coding-standard.yaml' }
+
 services:
     PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer:
         style: annotation
