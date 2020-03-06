@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Allow injecting instance of `Env` into `CiDetector` (useful for environment mocking in unit tests).
 
 ## 3.2.0 - 2020-02-18
 - Add GitHub Actions detection support.
