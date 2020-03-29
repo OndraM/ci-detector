@@ -3,14 +3,13 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class Circle extends AbstractCi
 {
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('CIRCLECI') !== false;
+        return $this->env->get('CIRCLECI') !== false;
     }
 
     public function getCiName(): string

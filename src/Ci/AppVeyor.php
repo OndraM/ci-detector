@@ -3,14 +3,13 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class AppVeyor extends AbstractCi
 {
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('APPVEYOR') === 'True';
+        return $this->env->get('APPVEYOR') === 'True';
     }
 
     public function getCiName(): string

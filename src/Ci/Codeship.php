@@ -3,14 +3,13 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class Codeship extends AbstractCi
 {
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('CI_NAME') === 'codeship';
+        return $this->env->get('CI_NAME') === 'codeship';
     }
 
     public function getCiName(): string

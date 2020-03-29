@@ -2,7 +2,6 @@
 
 namespace OndraM\CiDetector\Ci;
 
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 interface CiInterface
@@ -10,7 +9,7 @@ interface CiInterface
     /**
      * Return true if this CI was detected
      */
-    public static function isDetected(Env $env): bool;
+    public function isDetected(): bool;
 
     /**
      * Get name of the CI server type

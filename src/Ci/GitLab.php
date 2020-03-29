@@ -3,14 +3,13 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class GitLab extends AbstractCi
 {
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('GITLAB_CI') !== false;
+        return $this->env->get('GITLAB_CI') !== false;
     }
 
     public function getCiName(): string

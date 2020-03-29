@@ -3,14 +3,13 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class Drone extends AbstractCi
 {
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('CI') === 'drone';
+        return $this->env->get('CI') === 'drone';
     }
 
     public function getCiName(): string

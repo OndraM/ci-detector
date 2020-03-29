@@ -3,14 +3,13 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class Continuousphp extends AbstractCi
 {
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('CONTINUOUSPHP') === 'continuousphp';
+        return $this->env->get('CONTINUOUSPHP') === 'continuousphp';
     }
 
     public function getCiName(): string

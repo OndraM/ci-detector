@@ -3,16 +3,15 @@
 namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
-use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
 class GitHubActions extends AbstractCi
 {
     public const GITHUB_BASE_URL = 'https://github.com';
 
-    public static function isDetected(Env $env): bool
+    public function isDetected(): bool
     {
-        return $env->get('GITHUB_ACTIONS') !== false;
+        return $this->env->get('GITHUB_ACTIONS') !== false;
     }
 
     public function getCiName(): string
@@ -49,7 +48,7 @@ class GitHubActions extends AbstractCi
     {
         $gitReference = $this->env->getString('GITHUB_REF');
 
-        return preg_replace('~^refs/heads/~', '', $gitReference);
+        return preg_replace('~^refs/heads/~', '', $gitReference) ?? '';
     }
 
     public function getRepositoryName(): string

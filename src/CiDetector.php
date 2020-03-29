@@ -67,23 +67,23 @@ class CiDetector
     }
 
     /**
-     * @return string[]
+     * @return array<CiInterface>
      */
     protected function getCiServers(): array
     {
         return [
-            Ci\AppVeyor::class,
-            Ci\Bamboo::class,
-            Ci\Buddy::class,
-            Ci\Circle::class,
-            Ci\Codeship::class,
-            Ci\Continuousphp::class,
-            Ci\Drone::class,
-            Ci\GitHubActions::class,
-            Ci\GitLab::class,
-            Ci\Jenkins::class,
-            Ci\TeamCity::class,
-            Ci\Travis::class,
+            new Ci\AppVeyor($this->environment),
+            new Ci\Bamboo($this->environment),
+            new Ci\Buddy($this->environment),
+            new Ci\Circle($this->environment),
+            new Ci\Codeship($this->environment),
+            new Ci\Continuousphp($this->environment),
+            new Ci\Drone($this->environment),
+            new Ci\GitHubActions($this->environment),
+            new Ci\GitLab($this->environment),
+            new Ci\Jenkins($this->environment),
+            new Ci\TeamCity($this->environment),
+            new Ci\Travis($this->environment),
         ];
     }
 
@@ -92,8 +92,8 @@ class CiDetector
         $ciServers = $this->getCiServers();
 
         foreach ($ciServers as $ciClass) {
-            if (call_user_func([$ciClass, 'isDetected'], $this->environment)) {
-                return new $ciClass($this->environment);
+            if (call_user_func([$ciClass, 'isDetected'])) {
+                return $ciClass;
             }
         }
 
