@@ -34,11 +34,7 @@ class CiDetector
 
     public static function fromEnvironment(Env $environment): self
     {
-        $detector = new self();
-
-        $detector->environment = $environment;
-
-        return $detector;
+        return new static($environment);
     }
 
     /**
