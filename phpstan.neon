@@ -1,6 +1,10 @@
 parameters:
     ignoreErrors:
         - '/Parameter \#1 \$function of function call_user_func expects callable/'
+
+        # TODO: should be solved in next major version by declaring CiDetector final
+        - message: '#Unsafe usage of new static\(\)#'
+          path: 'src/CiDetector.php'
     level: 7
     paths:
         - src/
