@@ -7,3 +7,8 @@ services:
 
     PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer:
         style: annotation
+
+    Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer:
+        line_length: 120
+        break_long_lines: true
+        inline_short_lines: false
