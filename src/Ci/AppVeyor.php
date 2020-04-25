@@ -46,7 +46,8 @@ class AppVeyor extends AbstractCi
 
     public function getGitBranch(): string
     {
-        return $this->env->getString('APPVEYOR_REPO_BRANCH'); // For PR builds this is the base branch (not the PR branch)
+        // For PR builds this is the base branch (not the PR branch)
+        return $this->env->getString('APPVEYOR_REPO_BRANCH');
     }
 
     public function getRepositoryName(): string
