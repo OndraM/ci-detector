@@ -26,8 +26,8 @@ install:
   - IF %PHP%==1 echo extension=php_openssl.dll >> php.ini
   - IF %PHP%==1 echo extension=php_mbstring.dll >> php.ini
   - cd %APPVEYOR_BUILD_FOLDER%
-  - appveyor DownloadFile https://getcomposer.org/composer.phar
-  - php composer.phar update --no-interaction --no-progress
+  - appveyor DownloadFile https://getcomposer.org/composer-stable.phar
+  - php composer-stable.phar update --no-interaction --no-progress
 
 before_test:
   - cd %APPVEYOR_BUILD_FOLDER%\
