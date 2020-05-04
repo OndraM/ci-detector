@@ -19,6 +19,7 @@ portable for multiple build environments.
 These CI servers are currently recognized:
 
  - [AppVeyor](https://www.appveyor.com/)
+ - [AWS CodeBuild](https://aws.amazon.com/codebuild/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [Buddy](https://buddy.works/)
  - [CircleCI](https://circleci.com/)
