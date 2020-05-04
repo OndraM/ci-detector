@@ -47,9 +47,15 @@ class GitHubActions extends AbstractCi
 
     public function getGitBranch(): string
     {
-        $gitReference = $this->env->getString('GITHUB_REF');
+        $prBranch = $this->env->getString('GITHUB_HEAD_REF');
 
-        return preg_replace('~^refs/heads/~', '', $gitReference);
+        if ($this->isPullRequest()->no() || empty($prBranch)) {
+            $gitReference = $this->env->getString('GITHUB_REF');
+
+            return preg_replace('~^refs/heads/~', '', $gitReference);
+        }
+
+        return $prBranch;
     }
 
     public function getRepositoryName(): string

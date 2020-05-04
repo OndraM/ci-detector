@@ -16,11 +16,11 @@ DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
 GITHUB_ACTION=run333
 GITHUB_ACTIONS=true
 GITHUB_ACTOR=OndraM
-GITHUB_BASE_REF=
+GITHUB_BASE_REF=master
 GITHUB_EVENT_NAME=pull_request
 GITHUB_EVENT_PATH=/home/runner/work/_temp/_github_workflow/event.json
-GITHUB_HEAD_REF=
-GITHUB_REF=refs/heads/test-github
+GITHUB_HEAD_REF=feature/pr-branch
+GITHUB_REF=refs/pull/62/merge
 GITHUB_REPOSITORY=OndraM/ci-detector
 GITHUB_SHA=e24a68b0ac3f9d1afe29901943e94df2bf41c932
 GITHUB_WORKFLOW=PHP
@@ -65,7 +65,11 @@ require __DIR__ . '/../../../vendor/autoload.php';
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Is pull request:
 string(3) "Yes"
+Git branch:
+string(17) "feature/pr-branch"
