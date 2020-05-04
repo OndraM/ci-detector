@@ -8,6 +8,8 @@ BUDDY_EXECUTION_CLEAR_CACHE=false
 BUDDY_EXECUTION_COMMENT=My first execution
 BUDDY_EXECUTION_ID=1
 BUDDY_EXECUTION_MODE=MANUAL
+BUDDY_EXECUTION_PULL_REQUEST_BASE_BRANCH=master
+BUDDY_EXECUTION_PULL_REQUEST_HEAD_BRANCH=feature/pr-branch
 BUDDY_EXECUTION_PULL_REQUEST_ID=pull/1
 BUDDY_EXECUTION_PULL_REQUEST_NO=1
 BUDDY_EXECUTION_REFRESH=false
@@ -54,7 +56,11 @@ require __DIR__ . '/../../../vendor/autoload.php';
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Is pull request:
 string(3) "Yes"
+Git branch:
+string(17) "feature/pr-branch"
