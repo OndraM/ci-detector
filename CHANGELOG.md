@@ -5,6 +5,7 @@
 ## Unreleased
 - Add AWS CodeBuild detection support.
 - Allow late static binding in `CiDetector::fromEnvironment()` when inheriting the class.
+- Fix branch detection in PR builds on AppVeyor.
 
 ## 3.3.0 - 2020-03-06
 - Allow injecting instance of `Env` using `CiDetector::fromEnvironment()` (useful for environment mocking in unit tests).

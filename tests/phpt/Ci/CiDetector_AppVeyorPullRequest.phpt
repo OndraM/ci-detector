@@ -15,11 +15,11 @@ APPVEYOR_PROJECT_ID=321955
 APPVEYOR_PROJECT_NAME=ci-detector
 APPVEYOR_PROJECT_SLUG=ci-detector
 APPVEYOR_PULL_REQUEST_HEAD_COMMIT=4adb3ce7ab78a1aeec59271f81d15fdec9c3d899
-APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH=repo_name
+APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH=feature/pr-branch
 APPVEYOR_PULL_REQUEST_HEAD_REPO_NAME=foo/ci-detector
 APPVEYOR_PULL_REQUEST_NUMBER=42
 APPVEYOR_PULL_REQUEST_TITLE=Foo bar PR title
-APPVEYOR_REPO_BRANCH=branchname
+APPVEYOR_REPO_BRANCH=master
 APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL=foo@example.com
 APPVEYOR_REPO_COMMIT_AUTHOR=foo
 APPVEYOR_REPO_COMMIT_MESSAGE=Foo bar PR commit message
@@ -51,7 +51,11 @@ require __DIR__ . '/../../../vendor/autoload.php';
 $ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
+echo "Git branch:\n";
+var_dump($ci->getGitBranch());
 
 --EXPECT--
 Is pull request:
 string(3) "Yes"
+Git branch:
+string(17) "feature/pr-branch"
