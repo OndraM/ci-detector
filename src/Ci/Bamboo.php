@@ -40,6 +40,10 @@ class Bamboo extends AbstractCi
 
     public function getGitBranch(): string
     {
+        // TODO: While the PR source branch is in `bamboo.repository_pr_sourceBranch`, it cannot be reliably
+        // used, probably because it is environment variables with dot in name.
+        // As a result, returned branch in case of PR build is the target branch (eg. master) not the PR branch.
+
         return $this->env->getString('bamboo_planRepository_branch');
     }
 
