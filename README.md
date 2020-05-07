@@ -6,10 +6,9 @@
 [![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square&label=Travis%20build)](https://travis-ci.org/OndraM/ci-detector)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square&label=AppVeyor%20build)](https://ci.appveyor.com/project/OndraM/ci-detector)
 
-A simple PHP library to detect in what continuous integration server is the current script being run and to provide
-unified interface to read the build properties.
+PHP library to detect continuous integration environment and to provide unified interface to read the build information.
 
-The detection is based on environment variables injected to the build environment by each of continuous integration
+The detection is based on environment variables injected to the build environment by each of CI
 server. However, these variables are named differently in each CI. This library contains adapter for each supported
 CI server, which handles these differences so you don't have to, and you can make your scripts (and especially CLI tools)
 portable for multiple build environments.
@@ -31,6 +30,8 @@ These CI servers are currently recognized:
  - [Jenkins](https://jenkins.io/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
  - [Travis CI](https://travis-ci.org/)
+
+However not all information are provided by some CI servers. See table below.
 
 If your favorite CI server is missing, feel free to send a pull-request!
 
@@ -84,6 +85,29 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
 }
 ```
 
+## Supported properties by each CI server
+
+Most CI servers support (✔) detection of all information. However some don't expose
+necessary environment variables, thus reading some information may be unsupported (❌).
+
+
+| CI server                                              | Constant of `CiDetector` | `is​PullRequest` | `get​Git​Branch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
+|--------------------------------------------------------|----------------------|---|---|---|---|---|
+| [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ✔ | ✔ |
+| [Bamboo](https://www.atlassian.com/software/bamboo)    | `CI_BAMBOO`          | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Buddy](https://buddy.works/)                          | `CI_BUDDY`           | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [CircleCI](https://circleci.com/)                      | `CI_CIRCLE`          | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Codeship](https://codeship.com/)                      | `CI_CODESHIP`        | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [continuousphp](https://continuousphp.com/)            | `CI_CONTINUOUSPHP`   | ✔ | ✔ | ❌ | ✔ | ✔ |
+| [drone](https://github.com/drone/drone/)               | `CI_DRONE`           | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [GitHub Actions](https://github.com/features/actions)  | `CI_GITHUB_ACTIONS`  | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [GitLab](https://about.gitlab.com/gitlab-ci/)          | `CI_GITLAB`          | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Jenkins](https://jenkins.io/)                         | `CI_JENKINS`         | ❌ | ✔ | ❌ | ✔ | ✔ |
+| [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ❌ | ✔ |
+
+****
 ## Testing
 
 Check codestyle, static analysis and run unit-tests:
