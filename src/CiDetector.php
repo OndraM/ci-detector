@@ -13,6 +13,7 @@ class CiDetector
     public const CI_APPVEYOR = 'AppVeyor';
     public const CI_AWS_CODEBUILD = 'AWS CodeBuild';
     public const CI_BAMBOO = 'Bamboo';
+    public const CI_BITBUCKET_PIPELINES = 'Bitbucket Pipelines';
     public const CI_BUDDY = 'Buddy';
     public const CI_CIRCLE = 'CircleCI';
     public const CI_CODESHIP = 'Codeship';
@@ -76,6 +77,7 @@ class CiDetector
             Ci\AppVeyor::class,
             Ci\AwsCodeBuild::class,
             Ci\Bamboo::class,
+            Ci\BitbucketPipelines::class,
             Ci\Buddy::class,
             Ci\Circle::class,
             Ci\Codeship::class,
