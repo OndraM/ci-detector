@@ -52,7 +52,7 @@ class GitHubActions extends AbstractCi
         if ($this->isPullRequest()->no() || empty($prBranch)) {
             $gitReference = $this->env->getString('GITHUB_REF');
 
-            return preg_replace('~^refs/heads/~', '', $gitReference);
+            return preg_replace('~^refs/heads/~', '', $gitReference) ?? '';
         }
 
         return $prBranch;

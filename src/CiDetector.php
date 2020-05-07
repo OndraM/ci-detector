@@ -94,8 +94,11 @@ class CiDetector
         $ciServers = $this->getCiServers();
 
         foreach ($ciServers as $ciClass) {
-            if (call_user_func([$ciClass, 'isDetected'], $this->environment)) {
-                return new $ciClass($this->environment);
+            $callback = [$ciClass, 'isDetected'];
+            if (is_callable($callback)) {
+                if ($callback($this->environment)) {
+                    return new $ciClass($this->environment);
+                }
             }
         }
 
