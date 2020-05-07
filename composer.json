@@ -1,7 +1,7 @@
 {
     "name": "ondram/ci-detector",
     "type": "library",
-    "description": "Detect current continuous integration server and provide unified access to properties of current build",
+    "description": "Detect continuous integration environment and provide unified access to properties of current build",
     "keywords": [
         "continuous integration",
         "adapter",
