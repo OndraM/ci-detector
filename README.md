@@ -57,10 +57,11 @@ Ci-detector requires PHP 7.1+, but if you need compatibility with PHP <7.1, you 
 $ciDetector = new \OndraM\CiDetector\CiDetector();
 
 if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
+    echo 'You are running this script on CI server!';
     $ci = $ciDetector->detect();    // Returns class implementing CiInterface or throws CiNotDetectedException
 
     // Example output when run in Travis:
-    echo $ci->getCiName();                 // "Travis CI"
+    echo $ci->getCiName();                 // "Travis CI" - returns value of one of CiDetector::CI_* constants.
     echo $ci->isPullRequest()->describe(); // "No" - also note yes(), no() and maybe() methods which returns boolean
     echo $ci->getBuildNumber();            // "35.1"
     echo $ci->getBuildUrl();               // "https://travis-ci.org/OndraM/ci-detector/jobs/148395137"
@@ -68,8 +69,18 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     echo $ci->getGitBranch();              // "feature/foo-bar"
     echo $ci->getRepositoryName();         // "OndraM/ci-detector"
     echo $ci->getRepositoryUrl();          // "" (empty string) - unsupported on Travis, will return eg. "ssh://git@gitserver:7999/project/repo.git" on Jenkins etc.)
+
+    // Conditional code for pull request:
+    if ($ci->isPullRequest()->yes()) {
+        echo 'This is pull request';
+    }
+
+    // Conditional code for specific CI server:
+    if ($ci->getCiName() === OndraM\CiDetector\CiDetector::CI_JENKINS) {
+        echo 'Current CI server is Jenkins';
+    }
 } else {
-    echo "CI not detected";
+    echo 'This script is not run on CI server';
 }
 ```
 
