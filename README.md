@@ -20,6 +20,7 @@ These CI servers are currently recognized:
  - [AppVeyor](https://www.appveyor.com/)
  - [AWS CodeBuild](https://aws.amazon.com/codebuild/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
+ - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
  - [Buddy](https://buddy.works/)
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)
@@ -85,7 +86,7 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
 }
 ```
 
-## Supported properties by each CI server
+## Supported properties of each CI server
 
 Most CI servers support (✔) detection of all information. However some don't expose
 necessary environment variables, thus reading some information may be unsupported (❌).
@@ -96,6 +97,7 @@ necessary environment variables, thus reading some information may be unsupporte
 | [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ✔ | ✔ |
 | [Bamboo](https://www.atlassian.com/software/bamboo)    | `CI_BAMBOO`          | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)| `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Buddy](https://buddy.works/)                          | `CI_BUDDY`           | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [CircleCI](https://circleci.com/)                      | `CI_CIRCLE`          | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Codeship](https://codeship.com/)                      | `CI_CODESHIP`        | ✔ | ✔ | ✔ | ❌ | ✔ |
@@ -107,7 +109,6 @@ necessary environment variables, thus reading some information may be unsupporte
 | [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ❌ | ✔ |
 
-****
 ## Testing
 
 Check codestyle, static analysis and run unit-tests:

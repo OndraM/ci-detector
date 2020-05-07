@@ -4,6 +4,7 @@
 
 ## Unreleased
 - Add AWS CodeBuild detection support.
+- Add Bitbucket Pipelines support.
 - Allow late static binding in `CiDetector::fromEnvironment()` when inheriting the class.
 - Fix branch detection in PR builds on AppVeyor, Buddy and GitHub Actions (target branch of the PR was returned instead).
 
