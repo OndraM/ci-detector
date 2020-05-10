@@ -1,0 +1,12 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4
+
+    steps:
+      - checkout
+      - run: env
+      - run: composer update --no-interaction
+      - run: php dump-current.php
