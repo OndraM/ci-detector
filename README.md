@@ -25,10 +25,10 @@ These CI servers are currently recognized:
  - [CircleCI](https://circleci.com/)
  - [Codeship](https://codeship.com/)
  - [continuousphp](https://continuousphp.com/)
- - [drone](https://github.com/drone/drone/)
+ - [drone](https://drone.io/)
  - [GitHub Actions](https://github.com/features/actions)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
- - [Jenkins](https://jenkins.io/)
+ - [Jenkins](https://www.jenkins.io/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
  - [Travis CI](https://travis-ci.org/)
 
@@ -102,10 +102,10 @@ necessary environment variables, thus reading some information may be unsupporte
 | [CircleCI](https://circleci.com/)                      | `CI_CIRCLE`          | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Codeship](https://codeship.com/)                      | `CI_CODESHIP`        | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [continuousphp](https://continuousphp.com/)            | `CI_CONTINUOUSPHP`   | ✔ | ✔ | ❌ | ✔ | ✔ |
-| [drone](https://github.com/drone/drone/)               | `CI_DRONE`           | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [drone](https://drone.io/)                             | `CI_DRONE`           | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [GitHub Actions](https://github.com/features/actions)  | `CI_GITHUB_ACTIONS`  | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [GitLab](https://about.gitlab.com/gitlab-ci/)          | `CI_GITLAB`          | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Jenkins](https://jenkins.io/)                         | `CI_JENKINS`         | ❌ | ✔ | ❌ | ✔ | ✔ |
+| [Jenkins](https://www.jenkins.io/)                     | `CI_JENKINS`         | ❌ | ✔ | ❌ | ✔ | ✔ |
 | [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ❌ | ✔ |
 
