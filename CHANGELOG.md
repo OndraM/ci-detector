@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 3.4.0 - 2020-05-11
 - Add AWS CodeBuild detection support.
 - Add Bitbucket Pipelines support.
 - Allow late static binding in `CiDetector::fromEnvironment()` when inheriting the class.
