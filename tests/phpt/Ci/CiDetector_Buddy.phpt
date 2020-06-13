@@ -2,7 +2,7 @@
 Buddy: Detect properties
 
 --ENV--
-BUDDY_EXECUTION_BRANCH=master
+BUDDY_EXECUTION_BRANCH=main
 BUDDY_EXECUTION_CHANGELOG=[e5e13f8] Create buddy.yml | mikebenson | 2019-01-01T07:14:58
 BUDDY_EXECUTION_CLEAR_CACHE=false
 BUDDY_EXECUTION_COMMENT=My first execution
@@ -27,7 +27,7 @@ BUDDY_INVOKER_NAME=Mike Benson
 BUDDY_INVOKER_URL=https://app.buddy.works/myworkspace/profile/1
 BUDDY_PIPELINE_ID=1
 BUDDY_PIPELINE_NAME=Deploy to Production
-BUDDY_PIPELINE_REF_NAME=master
+BUDDY_PIPELINE_REF_NAME=main
 BUDDY_PIPELINE_TARGET_SITE_URL=https://buddy.works/
 BUDDY_PIPELINE_TRIGGER_MODE=MANUAL
 BUDDY_PIPELINE_URL=https://app.buddy.works/myworkspace/my-project/pipelines/pipeline/1
@@ -88,7 +88,7 @@ string(102) "https://app.buddy.works/myworkspace/my-project/pipelines/pipeline/1
 Git commit:
 string(40) "e5e13f8b7f8d5c6096a0501dc09b48eef05fea96"
 Git branch:
-string(6) "master"
+string(4) "main"
 Repository name:
 string(21) "buddyworks/my-project"
 Repository url:

@@ -25,26 +25,26 @@ BAMBOO_JMS_CONNECTION_PORT=54663
 bamboo_plan_storageTag=plan-589829
 bamboo_planKey=CD-CDOB
 bamboo_planName=Plan Name - Foo Lorem ipsum
-bamboo_planRepository_1_branch=master
-bamboo_planRepository_1_branchDisplayName=master
-bamboo_planRepository_1_branchName=master
+bamboo_planRepository_1_branch=main
+bamboo_planRepository_1_branchDisplayName=main
+bamboo_planRepository_1_branchName=main
 bamboo_planRepository_1_name=My repo name
 bamboo_planRepository_1_repositoryUrl=ssh://git@bitbucket.org/foo/ci-detector
 bamboo_planRepository_1_revision=4e7f5fcf7802369224dba2095551c35e1e389551
 bamboo_planRepository_1_type=bbCloud
 bamboo_planRepository_1_username=
-bamboo_planRepository_branch=master
-bamboo_planRepository_branchDisplayName=master
-bamboo_planRepository_branchName=master
+bamboo_planRepository_branch=main
+bamboo_planRepository_branchDisplayName=main
+bamboo_planRepository_branchName=main
 bamboo_planRepository_name=My repo name
 bamboo_planRepository_repositoryUrl=ssh://git@bitbucket.org/foo/ci-detector
 bamboo_planRepository_revision=4e7f5fcf7802369224dba2095551c35e1e389551
 bamboo_planRepository_type=bbCloud
 bamboo_planRepository_username=
-bamboo_repository_524293_branch_name=master
+bamboo_repository_524293_branch_name=main
 bamboo_repository_524293_name=My repo name
 bamboo_repository_524293_revision_number=4e7f5fcf7802369224dba2095551c35e1e389551
-bamboo_repository_branch_name=master
+bamboo_repository_branch_name=main
 bamboo_repository_name=My repo name
 bamboo_repository_revision_number=4e7f5fcf7802369224dba2095551c35e1e389551
 bamboo_resultsUrl=https://bamboo.foo.bar/browse/CD-CDOB-JOB1-1
@@ -102,7 +102,7 @@ string(44) "https://bamboo.foo.bar/browse/CD-CDOB-JOB1-1"
 Git commit:
 string(40) "4e7f5fcf7802369224dba2095551c35e1e389551"
 Git branch:
-string(6) "master"
+string(4) "main"
 Repository name:
 string(12) "My repo name"
 Repository url:
