@@ -2,7 +2,7 @@
 Bitbucket Pipelines: Detect properties
 
 --ENV--
-BITBUCKET_BRANCH=master
+BITBUCKET_BRANCH=main
 BITBUCKET_BUILD_NUMBER=5
 BITBUCKET_CLONE_DIR=/opt/atlassian/pipelines/agent/build
 BITBUCKET_COMMIT=c4f71a535de986600303936780f815721ebbe0c5
@@ -66,7 +66,7 @@ string(80) "http://bitbucket.org/ondrejmachulda/ci-detector/addon/pipelines/home
 Git commit:
 string(40) "c4f71a535de986600303936780f815721ebbe0c5"
 Git branch:
-string(6) "master"
+string(4) "main"
 Repository name:
 string(26) "ondrejmachulda/ci-detector"
 Repository url:
