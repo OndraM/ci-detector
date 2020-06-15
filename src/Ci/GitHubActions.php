@@ -27,7 +27,7 @@ class GitHubActions extends AbstractCi
 
     public function getBuildNumber(): string
     {
-        return $this->env->getString('GITHUB_ACTION');
+        return $this->env->getString('GITHUB_RUN_NUMBER');
     }
 
     public function getBuildUrl(): string

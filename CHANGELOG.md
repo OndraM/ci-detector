@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Use new and more suitable value for "build number" on GitHub Actions.
 
 ## 3.4.0 - 2020-05-11
 - Add AWS CodeBuild detection support.

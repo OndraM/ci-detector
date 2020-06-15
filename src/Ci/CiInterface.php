@@ -24,7 +24,10 @@ interface CiInterface
     public function isPullRequest(): TrinaryLogic;
 
     /**
-     * Get number of this concrete build
+     * Get number of this concrete build.
+     *
+     * Build number is usually increasing number sequence. It should increase each time this this particular job
+     * was run on the CI server. Most CIs use simple numbering sequence like: 1, 2, 3...
      */
     public function getBuildNumber(): string;
 
