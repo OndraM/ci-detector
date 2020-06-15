@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: composer update --no-interaction ${{ matrix.dependencies }}
 
+      - name: Dump current environment variables
+        run: env
+
       - name: Dump current build properties
         run: php dump-current.php
 
@@ -42,9 +45,6 @@ jobs:
         run: |
           unset GITHUB_ACTIONS
           vendor/bin/phpunit --colors=always --coverage-clover build/logs/clover.xml
-
-      - name: Dump current environment variables
-        run: env
 
 #     Enable once https://github.com/php-coveralls/php-coveralls/issues/273 is resolved & remove from Travis CI
 #      - name: Submit coverage to Coveralls
