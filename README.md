@@ -122,3 +122,12 @@ To automatically fix codestyle violations run:
 ```sh
 composer fix
 ```
+
+## Similar libraries for other languages
+
+Similar "CI Info" libraries exists for some other languages, for example:
+
+ - Go - [KlotzAndrew/ci-info](https://github.com/KlotzAndrew/ci-info)
+ - JavaScript/Node.js - [watson/ci-info](https://github.com/watson/ci-info)
+ - Python - [mgxd/ci-info](https://github.com/mgxd/ci-info)
+ - Rust - [sagiegurari/ci_info](https://github.com/sagiegurari/ci_info)

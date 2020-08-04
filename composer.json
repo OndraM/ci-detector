@@ -4,6 +4,7 @@
     "description": "Detect continuous integration environment and provide unified access to properties of current build",
     "keywords": [
         "continuous integration",
+        "ci-info",
         "adapter",
         "interface",
         "appveyor",
