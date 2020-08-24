@@ -11,6 +11,7 @@ install:
   - travis_retry composer update --no-interaction
 
 before_script:
+  - phpenv config-add .travis.php.ini
   - env # list current environment variables
   - php dump-current.php
   - unset TRAVIS # Unset the variable to not interfere with tests

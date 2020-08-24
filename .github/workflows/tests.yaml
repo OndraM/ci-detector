@@ -31,6 +31,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, intl
           coverage: xdebug
+          ini-values: xdebug.overload_var_dump=0
 
       - name: Install dependencies
         run: composer update --no-interaction ${{ matrix.dependencies }}
