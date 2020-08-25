@@ -22,7 +22,8 @@
         "gitlab",
         "jenkins",
         "teamcity",
-        "travis"
+        "travis",
+        "wercker"
     ],
     "license": "MIT",
     "authors": [
