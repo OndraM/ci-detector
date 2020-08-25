@@ -24,6 +24,7 @@ class CiDetector
     public const CI_JENKINS = 'Jenkins';
     public const CI_TEAMCITY = 'TeamCity';
     public const CI_TRAVIS = 'Travis CI';
+    public const CI_WERCKER = 'Wercker';
 
     /** @var Env */
     private $environment;
@@ -88,6 +89,7 @@ class CiDetector
             Ci\Jenkins::class,
             Ci\TeamCity::class,
             Ci\Travis::class,
+            Ci\Wercker::class,
         ];
     }
 

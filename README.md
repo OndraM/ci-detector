@@ -6,11 +6,11 @@
 [![Travis Build Status](https://img.shields.io/travis/OndraM/ci-detector.svg?style=flat-square&label=Travis%20build)](https://travis-ci.org/OndraM/ci-detector)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square&label=AppVeyor%20build)](https://ci.appveyor.com/project/OndraM/ci-detector)
 
-PHP library to detect continuous integration environment and to provide unified interface to read the build information.
+PHP library to detect continuous integration environment and to provide a unified interface to read the build information.
 
 The detection is based on environment variables injected to the build environment by each of CI
 server. However, these variables are named differently in each CI. This library contains adapter for each supported
-CI server, which handles these differences so you don't have to, and you can make your scripts (and especially CLI tools)
+CI server, which handles these differences, so you don't have to, and you can make your scripts (and especially CLI tools)
 portable for multiple build environments.
 
 ## Supported continuous integration servers
@@ -31,6 +31,7 @@ These CI servers are currently recognized:
  - [Jenkins](https://www.jenkins.io/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
  - [Travis CI](https://travis-ci.org/)
+ - [Wercker](https://devcenter.wercker.com/)
 
 However not all information are provided by some CI servers. See table below.
 
@@ -108,6 +109,7 @@ necessary environment variables, thus reading some information may be unsupporte
 | [Jenkins](https://www.jenkins.io/)                     | `CI_JENKINS`         | ❌ | ✔ | ❌ | ✔ | ✔ |
 | [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [Wercker](https://devcenter.wercker.com/)              | `CI_WERCKER`         | ❌ | ✔ | ✔ | ❌ | ✔ |
 
 ## Testing
 
