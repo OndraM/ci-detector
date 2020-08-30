@@ -12,9 +12,11 @@ final class TrinaryLogicTest extends TestCase
      */
     public function shouldCreateInstanceFromTrue(): void
     {
-        $this->assertTrue(TrinaryLogic::createFromBoolean(true)->yes());
-        $this->assertFalse(TrinaryLogic::createFromBoolean(true)->maybe());
-        $this->assertFalse(TrinaryLogic::createFromBoolean(true)->no());
+        if (version_compare(PHP_VERSION, '7.4.0', '<')) {
+            $this->assertTrue(TrinaryLogic::createFromBoolean(true)->yes());
+            $this->assertFalse(TrinaryLogic::createFromBoolean(true)->maybe());
+            $this->assertFalse(TrinaryLogic::createFromBoolean(true)->no());
+        }
     }
 
     /**

@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+.
 
 ## 3.5.0 - 2020-08-25
 - Use more suitable value for "build number" on GitHub Actions.
