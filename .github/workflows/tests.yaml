@@ -34,6 +34,7 @@ jobs:
           extensions: mbstring, intl
           coverage: xdebug
           ini-values: xdebug.overload_var_dump=0
+          tools: composer:v2
 
       - name: Install dependencies
         run: composer update --no-interaction ${{ matrix.dependencies }}
