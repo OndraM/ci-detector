@@ -12,14 +12,15 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['7.1', '7.2', '7.3', '7.4', '8.0']
+        php-versions: ['7.1', '7.2', '7.3', '7.4']
         dependencies: ['', '--prefer-lowest']
         exclude:
           # Run lowest dependencies only on PHP 7.1
           - { php-versions: '7.2', dependencies: '--prefer-lowest' }
           - { php-versions: '7.3', dependencies: '--prefer-lowest' }
           - { php-versions: '7.4', dependencies: '--prefer-lowest' }
-          - { php-versions: '8.0', dependencies: '--prefer-lowest' }
+        include:
+          - { php-versions: '8.0', dependencies: '--ignore-platform-req=php' }
 
     name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
 
