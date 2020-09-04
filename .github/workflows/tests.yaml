@@ -13,12 +13,11 @@ jobs:
     strategy:
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4']
-        dependencies: ['', '--prefer-lowest']
-        exclude:
+        dependencies: ['']
+        include:
           # Run lowest dependencies only on PHP 7.1
-          - { php-versions: '7.2', dependencies: '--prefer-lowest' }
-          - { php-versions: '7.3', dependencies: '--prefer-lowest' }
-          - { php-versions: '7.4', dependencies: '--prefer-lowest' }
+          - { php-versions: '7.1', dependencies: '--prefer-lowest' }
+          - { php-versions: '8.0', dependencies: '--ignore-platform-req=php' }
 
     name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
 
@@ -32,6 +31,7 @@ jobs:
           extensions: mbstring, intl
           coverage: xdebug
           ini-values: xdebug.overload_var_dump=0
+          tools: composer:v2
 
       - name: Install dependencies
         run: composer update --no-interaction ${{ matrix.dependencies }}
