@@ -4,6 +4,9 @@
 
 ## Unreleased
 
+## 3.5.1 - 2020-09-04
+- Allow PHP 8.
+
 ## 3.5.0 - 2020-08-25
 - Use more suitable value for "build number" on GitHub Actions.
 - Add Wercker detection support.
