@@ -14,10 +14,11 @@ jobs:
       matrix:
         php-versions: ['7.1', '7.2', '7.3', '7.4']
         dependencies: ['']
+        xdebug-ini-values: ['xdebug.overload_var_dump=0']
         include:
           # Run lowest dependencies only on PHP 7.1
           - { php-versions: '7.1', dependencies: '--prefer-lowest' }
-          - { php-versions: '8.0', dependencies: '--ignore-platform-req=php' }
+          - { php-versions: '8.0', dependencies: '--ignore-platform-req=php', xdebug-ini-values: '' }
 
     name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
 
@@ -30,7 +31,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, intl
           coverage: xdebug
-          ini-values: xdebug.overload_var_dump=0
+          ini-values: ${{ matrix.xdebug-ini-values }}
           tools: composer:v2
 
       - name: Install dependencies
