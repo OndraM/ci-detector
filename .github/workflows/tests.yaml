@@ -53,7 +53,7 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export GITHUB_ACTIONS=true # Set it back so that php-coveralls properly detects Github Actions
-          composer global require twinh/php-coveralls --ignore-platform-req=php
+          composer global require php-coveralls/php-coveralls --ignore-platform-req=php
           ~/.composer/vendor/bin/php-coveralls --coverage_clover=./build/logs/clover.xml -v
 
   codestyle:
