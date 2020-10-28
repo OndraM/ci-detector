@@ -49,6 +49,7 @@ jobs:
       - name: Submit coverage to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NO_COLOR: 'true'
         run: |
           composer global require php-coveralls/php-coveralls:^2.4.2 --ignore-platform-req=php
           ~/.composer/vendor/bin/php-coveralls --coverage_clover=./build/logs/clover.xml -v
