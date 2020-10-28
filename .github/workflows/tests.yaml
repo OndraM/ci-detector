@@ -47,7 +47,6 @@ jobs:
           vendor/bin/phpunit --colors=always --coverage-clover build/logs/clover.xml)
 
       - name: Submit coverage to Coveralls
-        continue-on-error: true
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
