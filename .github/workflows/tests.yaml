@@ -16,8 +16,6 @@ jobs:
         dependencies: ['']
         xdebug-ini-values: ['xdebug.overload_var_dump=0']
         include:
-          # Run lowest dependencies only on PHP 7.1
-          - { php-versions: '7.1', dependencies: '--prefer-lowest' }
           - { php-versions: '8.0', dependencies: '--ignore-platform-req=php', xdebug-ini-values: '' }
 
     name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
@@ -45,15 +43,15 @@ jobs:
 
       - name: Run tests
         run: |
-          unset GITHUB_ACTIONS
-          vendor/bin/phpunit --colors=always --coverage-clover build/logs/clover.xml
+          (unset GITHUB_ACTIONS
+          vendor/bin/phpunit --colors=always --coverage-clover build/logs/clover.xml)
 
       - name: Submit coverage to Coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NO_COLOR: 'true'
         run: |
-          export GITHUB_ACTIONS=true # Set it back so that php-coveralls properly detects Github Actions
-          composer global require twinh/php-coveralls --ignore-platform-req=php
+          composer global require php-coveralls/php-coveralls:^2.4.2
           ~/.composer/vendor/bin/php-coveralls --coverage_clover=./build/logs/clover.xml -v
 
   codestyle:
@@ -63,7 +61,7 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: Setup PHP
-          uses: shivammathur/setup-php@v1
+          uses: shivammathur/setup-php@v2
           with:
             php-version: '7.4'
             extensions: mbstring, intl
