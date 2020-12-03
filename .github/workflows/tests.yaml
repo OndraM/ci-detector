@@ -65,6 +65,7 @@ jobs:
           with:
             php-version: '7.4'
             extensions: mbstring, intl
+            tools: composer:v2
 
         - name: Install dependencies
           run: composer update --no-interaction
