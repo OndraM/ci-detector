@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Add Azure DevOpes Pipelines detection support.
 
 ## 3.5.1 - 2020-09-04
 - Allow PHP 8.
