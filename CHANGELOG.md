@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Fix build URL detection on Travis (it always reported travis-ci.org URL, even if the build was on travis-ci.com).
 
 ## 3.5.1 - 2020-09-04
 - Allow PHP 8.

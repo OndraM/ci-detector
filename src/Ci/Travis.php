@@ -8,6 +8,9 @@ use OndraM\CiDetector\TrinaryLogic;
 
 class Travis extends AbstractCi
 {
+    /**
+     * @deprecated Not used, will be removed in next major version
+     */
     public const TRAVIS_BASE_URL = 'https://travis-ci.org';
 
     public static function isDetected(Env $env): bool
@@ -32,12 +35,7 @@ class Travis extends AbstractCi
 
     public function getBuildUrl(): string
     {
-        return sprintf(
-            '%s/%s/jobs/%s',
-            self::TRAVIS_BASE_URL,
-            $this->env->get('TRAVIS_REPO_SLUG'),
-            $this->env->get('TRAVIS_JOB_ID')
-        );
+        return $this->env->getString('TRAVIS_JOB_WEB_URL');
     }
 
     public function getGitCommit(): string
