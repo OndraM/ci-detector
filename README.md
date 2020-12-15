@@ -20,6 +20,7 @@ These CI servers are currently recognized:
 
  - [AppVeyor](https://www.appveyor.com/)
  - [AWS CodeBuild](https://aws.amazon.com/codebuild/)
+ - [Azure DevOps Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
  - [Bamboo](https://www.atlassian.com/software/bamboo)
  - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
  - [Buddy](https://buddy.works/)
@@ -98,6 +99,7 @@ necessary environment variables, thus reading some information may be unsupporte
 |--------------------------------------------------------|----------------------|---|---|---|---|---|
 | [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ✔ | ✔ |
+| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `CI_AZURE_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Bamboo](https://www.atlassian.com/software/bamboo)    | `CI_BAMBOO`          | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)| `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Buddy](https://buddy.works/)                          | `CI_BUDDY`           | ✔ | ✔ | ✔ | ✔ | ✔ |
