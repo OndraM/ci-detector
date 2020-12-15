@@ -12,6 +12,7 @@ class CiDetector
 {
     public const CI_APPVEYOR = 'AppVeyor';
     public const CI_AWS_CODEBUILD = 'AWS CodeBuild';
+    public const CI_AZURE_PIPELINES = 'Azure Pipelines';
     public const CI_BAMBOO = 'Bamboo';
     public const CI_BITBUCKET_PIPELINES = 'Bitbucket Pipelines';
     public const CI_BUDDY = 'Buddy';
@@ -77,6 +78,7 @@ class CiDetector
         return [
             Ci\AppVeyor::class,
             Ci\AwsCodeBuild::class,
+            Ci\AzurePipelines::class,
             Ci\Bamboo::class,
             Ci\BitbucketPipelines::class,
             Ci\Buddy::class,
