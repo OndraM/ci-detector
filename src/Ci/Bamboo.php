@@ -49,6 +49,11 @@ class Bamboo extends AbstractCi
         return $prBranch;
     }
 
+    public function getTargetBranch(): string
+    {
+        return $this->env->getString('bamboo_repository_pr_targetBranch');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('bamboo_planRepository_name');

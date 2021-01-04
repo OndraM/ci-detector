@@ -47,6 +47,11 @@ class BitbucketPipelines extends AbstractCi
         return $this->env->getString('BITBUCKET_BRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return $this->env->getString('BITBUCKET_PR_DESTINATION_BRANCH');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('BITBUCKET_REPO_FULL_NAME');

@@ -77,6 +77,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Target branch:\n";
+var_dump($ci->getTargetBranch());
 echo "Repository name:\n";
 var_dump($ci->getRepositoryName());
 echo "Repository url:\n";
@@ -99,6 +101,8 @@ Git commit:
 string(40) "929d637c83efed51a6a0f210aed89f1adb874401"
 Git branch:
 string(12) "test-wercker"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

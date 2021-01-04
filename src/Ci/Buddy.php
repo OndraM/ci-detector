@@ -49,6 +49,11 @@ class Buddy extends AbstractCi
         return $prBranch;
     }
 
+    public function getTargetBranch(): string
+    {
+        return $this->env->getString('BUDDY_EXECUTION_PULL_REQUEST_BASE_BRANCH');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('BUDDY_REPO_SLUG');

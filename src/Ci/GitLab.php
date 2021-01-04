@@ -52,6 +52,13 @@ class GitLab extends AbstractCi
             : $this->env->getString('CI_BUILD_REF_NAME');
     }
 
+    public function getTargetBranch(): string
+    {
+        return !empty($this->env->getString('CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_NAME'))
+            ? $this->env->getString('CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_NAME')
+            : $this->env->getString('CI_MERGE_REQUEST_TARGET_BRANCH_NAME');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('CI_PROJECT_PATH');

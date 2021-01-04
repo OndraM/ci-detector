@@ -43,6 +43,11 @@ class Codeship extends AbstractCi
         return $this->env->getString('CI_BRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('CI_REPO_NAME');
