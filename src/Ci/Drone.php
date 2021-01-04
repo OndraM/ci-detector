@@ -43,6 +43,11 @@ class Drone extends AbstractCi
         return $this->env->getString('DRONE_COMMIT_BRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return $this->env->getString('DRONE_TARGET_BRANCH');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('DRONE_REPO');

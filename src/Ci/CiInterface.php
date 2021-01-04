@@ -48,6 +48,11 @@ interface CiInterface
     public function getGitBranch(): string;
 
     /**
+     * Get name of the target branch of a pull request.
+     */
+    public function getTargetBranch(): string;
+
+    /**
      * Get name of the git repository which is being built.
      *
      * This is usually in form "user/repository", for example "OndraM/ci-detector".

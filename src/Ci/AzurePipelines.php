@@ -54,6 +54,11 @@ class AzurePipelines extends AbstractCi
         return $this->env->getString('SYSTEM_PULLREQUEST_SOURCEBRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return $this->env->getString('SYSTEM_PULLREQUEST_TARGETBRANCH');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('BUILD_REPOSITORY_NAME');

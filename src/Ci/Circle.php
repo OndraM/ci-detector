@@ -43,6 +43,11 @@ class Circle extends AbstractCi
         return $this->env->getString('CIRCLE_BRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryName(): string
     {
         return sprintf(

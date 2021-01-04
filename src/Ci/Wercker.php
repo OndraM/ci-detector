@@ -43,6 +43,11 @@ class Wercker extends AbstractCi
         return $this->env->getString('WERCKER_GIT_BRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('WERCKER_GIT_OWNER') . '/' . $this->env->getString('WERCKER_GIT_REPOSITORY');

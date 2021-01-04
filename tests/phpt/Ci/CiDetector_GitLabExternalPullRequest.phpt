@@ -10,6 +10,7 @@ CI_BUILD_REF=1e50d546a67287e3111707283eb28bfff50584a9
 CI_BUILD_REPO=https://gitlab-ci-token:xxxxxx@gitlab.com/foo/bar.git
 CI_BUILD_STAGE=test
 CI_EXTERNAL_PULL_REQUEST_IID=43
+CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_NAME=main
 CI_PIPELINE_ID=3993609
 CI_PROJECT_DIR=/builds/OndraM/ci-detector
 CI_PROJECT_ID=1545369
@@ -43,9 +44,13 @@ echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Target branch:\n";
+var_dump($ci->getTargetBranch());
 
 --EXPECT--
 Is pull request:
 string(3) "Yes"
 Git branch:
 string(11) "test-gitlab"
+Target branch:
+string(4) "main"

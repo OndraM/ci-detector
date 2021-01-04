@@ -45,6 +45,11 @@ class Continuousphp extends AbstractCi
         return preg_replace('~^refs/heads/~', '', $gitReference) ?? '';
     }
 
+    public function getTargetBranch(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryName(): string
     {
         return ''; // unsupported

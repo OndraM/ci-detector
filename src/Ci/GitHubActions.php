@@ -58,6 +58,11 @@ class GitHubActions extends AbstractCi
         return $prBranch;
     }
 
+    public function getTargetBranch(): string
+    {
+        return $this->env->getString('GITHUB_BASE_REF');
+    }
+
     public function getRepositoryName(): string
     {
         return $this->env->getString('GITHUB_REPOSITORY');

@@ -43,6 +43,11 @@ class Jenkins extends AbstractCi
         return $this->env->getString('GIT_BRANCH');
     }
 
+    public function getTargetBranch(): string
+    {
+        return ''; // unsupported
+    }
+
     public function getRepositoryName(): string
     {
         return ''; // unsupported

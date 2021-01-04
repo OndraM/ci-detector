@@ -35,9 +35,13 @@ echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Target branch:\n";
+var_dump($ci->getTargetBranch());
 
 --EXPECT--
 Is pull request:
 string(3) "Yes"
 Git branch:
 string(17) "feature/bitbucket"
+Target branch:
+string(4) "main"

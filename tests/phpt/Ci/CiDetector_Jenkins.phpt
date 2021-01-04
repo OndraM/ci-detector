@@ -42,6 +42,8 @@ echo "Git commit:\n";
 var_dump($ci->getGitCommit());
 echo "Git branch:\n";
 var_dump($ci->getGitBranch());
+echo "Target branch:\n";
+var_dump($ci->getTargetBranch());
 echo "Repository name:\n";
 var_dump($ci->getRepositoryName());
 echo "Repository url:\n";
@@ -64,6 +66,8 @@ Git commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74ccd"
 Git branch:
 string(17) "origin/branchname"
+Target branch:
+string(0) ""
 Repository name:
 string(0) ""
 Repository url:
