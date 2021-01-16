@@ -12,12 +12,10 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['7.3', '7.4']
+        php-versions: ['7.1', '7.2', '7.3', '7.4']
         dependencies: ['']
-        xdebug-ini-values: ['']
+        xdebug-ini-values: ['xdebug.mode=coverage']
         include:
-          - { php-versions: '7.1', xdebug-ini-values: 'xdebug.overload_var_dump=0' }
-          - { php-versions: '7.2', xdebug-ini-values: 'xdebug.overload_var_dump=0' }
           - { php-versions: '8.0', dependencies: '--ignore-platform-req=php' }
 
     name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
