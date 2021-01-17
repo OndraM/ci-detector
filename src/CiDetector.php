@@ -8,7 +8,7 @@ use OndraM\CiDetector\Exception\CiNotDetectedException;
 /**
  * Unified way to get environment variables from current continuous integration server
  */
-class CiDetector
+class CiDetector implements CiDetectorInterface
 {
     public const CI_APPVEYOR = 'AppVeyor';
     public const CI_AWS_CODEBUILD = 'AWS CodeBuild';
@@ -30,7 +30,7 @@ class CiDetector
     /** @var Env */
     private $environment;
 
-    public function __construct()
+    final public function __construct()
     {
         $this->environment = new Env();
     }
@@ -44,9 +44,6 @@ class CiDetector
         return $detector;
     }
 
-    /**
-     * Is current environment an recognized CI server?
-     */
     public function isCiDetected(): bool
     {
         $ciServer = $this->detectCurrentCiServer();
@@ -54,11 +51,6 @@ class CiDetector
         return ($ciServer !== null);
     }
 
-    /**
-     * Detect current CI server and return instance of its settings
-     *
-     * @throws CiNotDetectedException
-     */
     public function detect(): CiInterface
     {
         $ciServer = $this->detectCurrentCiServer();

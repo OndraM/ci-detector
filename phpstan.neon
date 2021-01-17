@@ -1,8 +1,4 @@
 parameters:
-    ignoreErrors:
-        # TODO: should be solved in next major version by declaring CiDetector final
-        - message: '#Unsafe usage of new static\(\)#'
-          path: 'src/CiDetector.php'
     level: max
     paths:
         - src/
