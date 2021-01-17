@@ -4,6 +4,8 @@
 
 ## Unreleased
 - Add Azure DevOps Pipelines detection support.
+- Add `CiDetectorInterface` (extended by `CiDetector`) to allow simpler extension.
+- BC: Declare `CiDetector` constructor final.
 - Fix build URL detection on Travis (it always reported travis-ci.org URL, even if the build was on travis-ci.com).
 
 ## 3.5.1 - 2020-09-04
