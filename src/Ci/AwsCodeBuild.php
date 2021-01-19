@@ -35,12 +35,12 @@ class AwsCodeBuild extends AbstractCi
         return $this->env->getString('CODEBUILD_BUILD_URL');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('CODEBUILD_RESOLVED_SOURCE_VERSION');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         $gitReference = $this->env->getString('CODEBUILD_WEBHOOK_HEAD_REF');
 

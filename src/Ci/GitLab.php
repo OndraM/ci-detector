@@ -38,14 +38,14 @@ class GitLab extends AbstractCi
         return $this->env->getString('CI_PROJECT_URL') . '/builds/' . $this->getBuildNumber();
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return !empty($this->env->getString('CI_COMMIT_SHA'))
             ? $this->env->getString('CI_COMMIT_SHA')
             : $this->env->getString('CI_BUILD_REF');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         return !empty($this->env->getString('CI_COMMIT_REF_NAME'))
             ? $this->env->getString('CI_COMMIT_REF_NAME')

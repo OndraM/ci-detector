@@ -40,12 +40,12 @@ class AzurePipelines extends AbstractCi
         );
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('BUILD_SOURCEVERSION');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         if ($this->isPullRequest()->no()) {
             return $this->env->getString('BUILD_SOURCEBRANCHNAME');

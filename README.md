@@ -70,8 +70,8 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     echo $ci->isPullRequest()->describe(); // "No" - also note yes(), no() and maybe() methods which returns boolean
     echo $ci->getBuildNumber();            // "35.1"
     echo $ci->getBuildUrl();               // "https://travis-ci.org/OndraM/ci-detector/jobs/148395137"
-    echo $ci->getGitCommit();              // "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
-    echo $ci->getGitBranch();              // "feature/foo-bar"
+    echo $ci->getCommit();                 // "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
+    echo $ci->getBranch();                 // "feature/foo-bar"
     echo $ci->getRepositoryName();         // "OndraM/ci-detector"
     echo $ci->getRepositoryUrl();          // "" (empty string) - unsupported on Travis, will return eg. "ssh://git@gitserver:7999/project/repo.git" on Jenkins etc.)
 
@@ -95,9 +95,7 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
 Most CI servers support (✔) detection of all information. However some don't expose
 necessary environment variables, thus reading some information may be unsupported (❌).
 
-
-
-| CI server                                              | Constant of `CiDetector` | `is​PullRequest` | `get​Git​Branch` | `getTargetBranch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
+| CI server                                              | Constant of `CiDetector` | `is​PullRequest` | `get​Branch` | `getTargetBranch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
 |--------------------------------------------------------|----------------------|---|---|---|---|---|---|
 | [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
@@ -115,6 +113,7 @@ necessary environment variables, thus reading some information may be unsupporte
 | [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [Wercker](https://devcenter.wercker.com/)              | `CI_WERCKER`         | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
+
 ## Testing
 
 Check codestyle, static analysis and run unit-tests:

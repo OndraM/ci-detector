@@ -39,12 +39,12 @@ class AppVeyor extends AbstractCi
         );
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('APPVEYOR_REPO_COMMIT');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         $prBranch = $this->env->getString('APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH');
 
