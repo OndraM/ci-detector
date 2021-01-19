@@ -4,6 +4,7 @@
 
 ## Unreleased
 - Add `getTargetBranch()` method to return the name of the branch where current branch is targeted (aka "base branch").
+- BC: Rename methods to make them VCS-agnostic. Use `getCommit()` instead of `getGitCommit()` and `getBranch()` instead of `getGitBranch()`.
 - Add Azure DevOps Pipelines detection support.
 - Fix build URL detection on Travis (it always reported travis-ci.org URL, even if the build was on travis-ci.com).
 

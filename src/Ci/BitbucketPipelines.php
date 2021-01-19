@@ -37,12 +37,12 @@ class BitbucketPipelines extends AbstractCi
         );
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('BITBUCKET_COMMIT');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         return $this->env->getString('BITBUCKET_BRANCH');
     }

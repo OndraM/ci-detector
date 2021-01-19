@@ -87,7 +87,7 @@ $ci = (new OndraM\CiDetector\CiDetector())->detect();
 echo "Is pull request:\n";
 var_dump($ci->isPullRequest()->describe());
 echo "Git branch:\n";
-var_dump($ci->getGitBranch());
+var_dump($ci->getBranch());
 echo "Target branch:\n";
 var_dump($ci->getTargetBranch());
 

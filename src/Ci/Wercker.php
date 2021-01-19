@@ -33,12 +33,12 @@ class Wercker extends AbstractCi
         return $this->env->getString('WERCKER_RUN_URL');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('WERCKER_GIT_COMMIT');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         return $this->env->getString('WERCKER_GIT_BRANCH');
     }

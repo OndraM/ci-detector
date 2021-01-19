@@ -33,12 +33,12 @@ class Drone extends AbstractCi
         return $this->env->getString('DRONE_BUILD_LINK');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('DRONE_COMMIT_SHA');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         return $this->env->getString('DRONE_COMMIT_BRANCH');
     }

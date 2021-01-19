@@ -38,12 +38,12 @@ class Travis extends AbstractCi
         return $this->env->getString('TRAVIS_JOB_WEB_URL');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('TRAVIS_COMMIT');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         if ($this->isPullRequest()->no()) {
             return $this->env->getString('TRAVIS_BRANCH');

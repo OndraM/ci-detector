@@ -33,12 +33,12 @@ class Circle extends AbstractCi
         return $this->env->getString('CIRCLE_BUILD_URL');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('CIRCLE_SHA1');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         return $this->env->getString('CIRCLE_BRANCH');
     }

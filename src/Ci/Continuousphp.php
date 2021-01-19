@@ -33,12 +33,12 @@ class Continuousphp extends AbstractCi
         return $this->env->getString('');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('CPHP_GIT_COMMIT');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         $gitReference = $this->env->getString('CPHP_GIT_REF');
 

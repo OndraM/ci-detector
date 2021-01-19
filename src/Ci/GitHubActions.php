@@ -40,12 +40,12 @@ class GitHubActions extends AbstractCi
         );
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('GITHUB_SHA');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         $prBranch = $this->env->getString('GITHUB_HEAD_REF');
 

@@ -8,12 +8,12 @@ use OndraM\CiDetector\TrinaryLogic;
 interface CiInterface
 {
     /**
-     * Return true if this CI was detected
+     * Return true if this CI was detected.
      */
     public static function isDetected(Env $env): bool;
 
     /**
-     * Get name of the CI server type
+     * Get name of the CI server type.
      */
     public function getCiName(): string;
 
@@ -33,19 +33,21 @@ interface CiInterface
     public function getBuildNumber(): string;
 
     /**
-     * Get URL where this build can be found and viewed
+     * Get URL where this build can be found and viewed.
      */
     public function getBuildUrl(): string;
 
     /**
-     * Get git commit being built
+     * Get git (or other VCS) commit being built.
      */
-    public function getGitCommit(): string;
+    public function getCommit(): string;
 
     /**
-     * Get name of the git branch which is being built
+     * Get name of the git (or other VCS) branch which is being built.
+     *
+     * Use `getTargetBranch()` to get name of the branch where this branch is targeted.
      */
-    public function getGitBranch(): string;
+    public function getBranch(): string;
 
     /**
      * Get name of the target branch of a pull request.
@@ -53,7 +55,7 @@ interface CiInterface
     public function getTargetBranch(): string;
 
     /**
-     * Get name of the git repository which is being built.
+     * Get name of the git (or other VCS) repository which is being built.
      *
      * This is usually in form "user/repository", for example "OndraM/ci-detector".
      */

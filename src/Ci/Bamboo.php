@@ -33,12 +33,12 @@ class Bamboo extends AbstractCi
         return $this->env->getString('bamboo_resultsUrl');
     }
 
-    public function getGitCommit(): string
+    public function getCommit(): string
     {
         return $this->env->getString('bamboo_planRepository_revision');
     }
 
-    public function getGitBranch(): string
+    public function getBranch(): string
     {
         $prBranch = $this->env->getString('bamboo_repository_pr_sourceBranch');
 
