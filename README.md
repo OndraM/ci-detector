@@ -9,10 +9,10 @@
 
 PHP library to detect continuous integration environment and to provide a unified interface to read the build information.
 
-The detection is based on environment variables injected to the build environment by each of CI
-server. However, these variables are named differently in each CI. This library contains adapter for each supported
-CI server, which handles these differences, so you don't have to, and you can make your scripts (and especially CLI tools)
-portable for multiple build environments.
+The detection is based on environment variables injected to the build environment by each CI
+server. However, these variables are named differently in each CI. This library contains adapters for many supported
+CI servers to handles these differences, so you don't have to, and you can make your scripts (and especially CLI tools)
+portable to multiple build environments.
 
 ## Supported continuous integration servers
 
@@ -85,6 +85,22 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     if ($ci->getCiName() === OndraM\CiDetector\CiDetector::CI_JENKINS) {
         echo 'Current CI server is Jenkins';
     }
+
+    // Describe all detected values in human-readable form:
+    print_r($ci->describe());
+    // Array
+    // (
+    //     [ci-name] => Travis CI
+    //     [build-number] => 35.1
+    //     [build-url] => https://travis-ci.org/OndraM/ci-detector/jobs/148395137
+    //     [commit] => fad3f7bdbf3515d1e9285b8aa80feeff74507bdd
+    //     [branch] => feature/foo-bar
+    //     [target-branch] => main
+    //     [repository-name] => OndraM/ci-detector
+    //     [repository-url] => 
+    //     [is-pull-request] => No
+    // )
+
 } else {
     echo 'This script is not run on CI server';
 }
