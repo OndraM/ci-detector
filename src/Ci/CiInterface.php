@@ -18,10 +18,11 @@ interface CiInterface
     public function getCiName(): string;
 
     /**
-     * Returned TrinaryLogic object's value will be true if the current build is from a pull/merge request,
-     * false if it not, and maybe if we can't determine it.
+     * Return key-value map of all detected properties in human-readable form.
+     *
+     * @return array<string, string>
      */
-    public function isPullRequest(): TrinaryLogic;
+    public function describe(): array;
 
     /**
      * Get number of this concrete build.
@@ -68,4 +69,10 @@ interface CiInterface
      * but may be a git ssh url like "ssh://git@bitbucket.org/OndraM/ci-detector".
      */
     public function getRepositoryUrl(): string;
+
+    /**
+     * Returned TrinaryLogic object's value will be true if the current build is from a pull/merge request,
+     * false if it not, and maybe if we can't determine it.
+     */
+    public function isPullRequest(): TrinaryLogic;
 }
