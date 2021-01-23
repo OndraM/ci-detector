@@ -77,7 +77,8 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
 
     // Conditional code for pull request:
     if ($ci->isPullRequest()->yes()) {
-        echo 'This is pull request';
+        echo 'This is pull request. The target branch is: ';
+        echo $ci->getTargetBranch(); // eg. "main" if the build is targeted to this branch (like in pull request); empty when target branch is not detected
     }
 
     // Conditional code for specific CI server:
@@ -95,25 +96,25 @@ Most CI servers support (✔) detection of all information. However some don't e
 necessary environment variables, thus reading some information may be unsupported (❌).
 
 
-| CI server                                              | Constant of `CiDetector` | `is​PullRequest` | `get​Git​Branch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
-|--------------------------------------------------------|----------------------|---|---|---|---|---|
-| [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ✔ | ✔ |
-| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `CI_AZURE_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Bamboo](https://www.atlassian.com/software/bamboo)    | `CI_BAMBOO`          | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)| `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Buddy](https://buddy.works/)                          | `CI_BUDDY`           | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [CircleCI](https://circleci.com/)                      | `CI_CIRCLE`          | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Codeship](https://codeship.com/)                      | `CI_CODESHIP`        | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [continuousphp](https://continuousphp.com/)            | `CI_CONTINUOUSPHP`   | ✔ | ✔ | ❌ | ✔ | ✔ |
-| [drone](https://drone.io/)                             | `CI_DRONE`           | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [GitHub Actions](https://github.com/features/actions)  | `CI_GITHUB_ACTIONS`  | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [GitLab](https://about.gitlab.com/gitlab-ci/)          | `CI_GITLAB`          | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Jenkins](https://www.jenkins.io/)                     | `CI_JENKINS`         | ❌ | ✔ | ❌ | ✔ | ✔ |
-| [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [Wercker](https://devcenter.wercker.com/)              | `CI_WERCKER`         | ❌ | ✔ | ✔ | ❌ | ✔ |
 
+| CI server                                              | Constant of `CiDetector` | `is​PullRequest` | `get​Git​Branch` | `getTargetBranch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
+|--------------------------------------------------------|----------------------|---|---|---|---|---|---|
+| [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `CI_AZURE_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Bamboo](https://www.atlassian.com/software/bamboo)    | `CI_BAMBOO`          | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)| `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Buddy](https://buddy.works/)                          | `CI_BUDDY`           | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [CircleCI](https://circleci.com/)                      | `CI_CIRCLE`          | ✔ | ✔ | ❌ | ✔ | ✔ | ✔ |
+| [Codeship](https://codeship.com/)                      | `CI_CODESHIP`        | ✔ | ✔ | ❌ | ✔ | ❌ | ✔ |
+| [continuousphp](https://continuousphp.com/)            | `CI_CONTINUOUSPHP`   | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [drone](https://drone.io/)                             | `CI_DRONE`           | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [GitHub Actions](https://github.com/features/actions)  | `CI_GITHUB_ACTIONS`  | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [GitLab](https://about.gitlab.com/gitlab-ci/)          | `CI_GITLAB`          | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Jenkins](https://www.jenkins.io/)                     | `CI_JENKINS`         | ❌ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [Wercker](https://devcenter.wercker.com/)              | `CI_WERCKER`         | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
 ## Testing
 
 Check codestyle, static analysis and run unit-tests:
