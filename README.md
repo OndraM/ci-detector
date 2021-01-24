@@ -39,11 +39,6 @@ However not all information are provided by some CI servers. See table below.
 
 If your favorite CI server is missing, feel free to send a pull-request!
 
-## Standalone CLI version
-If you want to use CI Detector as a standalone CLI command (ie. without using inside code of PHP project),
-see [ci-detector-standalone](https://github.com/OndraM/ci-detector-standalone) repository, where you can
-download CI Detector as a standalone PHAR file with simple command line interface.
-
 ## Installation
 
 Install using [Composer](https://getcomposer.org/):
@@ -66,19 +61,14 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     $ci = $ciDetector->detect();    // Returns class implementing CiInterface or throws CiNotDetectedException
 
     // Example output when run in Travis:
-    echo $ci->getCiName();                 // "Travis CI" - returns value of one of CiDetector::CI_* constants.
-    echo $ci->isPullRequest()->describe(); // "No" - also note yes(), no() and maybe() methods which returns boolean
-    echo $ci->getBuildNumber();            // "35.1"
-    echo $ci->getBuildUrl();               // "https://travis-ci.org/OndraM/ci-detector/jobs/148395137"
-    echo $ci->getCommit();                 // "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
-    echo $ci->getBranch();                 // "feature/foo-bar"
-    echo $ci->getRepositoryName();         // "OndraM/ci-detector"
-    echo $ci->getRepositoryUrl();          // "" (empty string) - unsupported on Travis, will return eg. "ssh://git@gitserver:7999/project/repo.git" on Jenkins etc.)
+    echo $ci->getCiName(); // "GitHub Actions"
+    echo $ci->getBuildNumber(); // "35"
+    echo $ci->getBranch(); // "feature/foo-bar" or empty string if not detected
 
     // Conditional code for pull request:
     if ($ci->isPullRequest()->yes()) {
         echo 'This is pull request. The target branch is: ';
-        echo $ci->getTargetBranch(); // eg. "main" if the build is targeted to this branch (like in pull request); empty when target branch is not detected
+        echo $ci->getTargetBranch(); // "main"
     }
 
     // Conditional code for specific CI server:
@@ -90,21 +80,38 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     print_r($ci->describe());
     // Array
     // (
-    //     [ci-name] => Travis CI
-    //     [build-number] => 35.1
-    //     [build-url] => https://travis-ci.org/OndraM/ci-detector/jobs/148395137
-    //     [commit] => fad3f7bdbf3515d1e9285b8aa80feeff74507bdd
-    //     [branch] => feature/foo-bar
+    //     [ci-name] => GitHub Actions
+    //     [build-number] => 33
+    //     [build-url] => https://github.com/OndraM/ci-detector/commit/abcd/checks
+    //     [commit] => fad3f7bdbf3515d1e9285b8aa80feeff74507bde
+    //     [branch] => 'my-feature
     //     [target-branch] => main
     //     [repository-name] => OndraM/ci-detector
-    //     [repository-url] => 
-    //     [is-pull-request] => No
+    //     [repository-url] => https://github.com/OndraM/ci-detector
+    //     [is-pull-request] => Yes
     // )
 
 } else {
     echo 'This script is not run on CI server';
 }
 ```
+
+## API methods reference
+
+Available methods of `CiInterface` instance (returned from `$ciDetector->detect()`):
+
+| Method                | Example value                                              | Description                                                                                                                                                                                                                                                                                                                                               |
+|-----------------------|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `getCiName()`         | `GitHub Actions`                                           | Name of the CI server.<br>The value is one of `CiDetector::CI_*` constants.                                                                                                                                                                                                                                                                                 |
+| `getBuildNumber()`    | `33`                                                       | Get number of this concrete build.<br>Build number is usually human-readable increasing number sequence. It should increase each time this particular job was run on the CI server. Most CIs use simple numbering sequence like: 1, 2, 3... However, some CIs do not provide this simple human-readable value and rather use for example alphanumeric hash. |
+| `getBuildUrl()`       | `https://github.com/OndraM/ci-detector/commit/abcd/checks`<br>or empty string | Get URL where this build can be found and viewed or empty string if it cannot be determined.                                                                                                                                                                                                                                                              |
+| `getCommit()`         | `b9173d94(...)`                                            | Get hash of the git (or other VCS) commit being built.                                                                                                                                                                                                                                                                                                    |
+| `getBranch()`         | `my-feature`<br>or empty string                            | Get name of the git (or other VCS) branch which is being built or empty string if it cannot be determined.<br>Use `getTargetBranch()` to get name of the branch where this branch is targeted.                                                                                                                                                              |
+| `getTargetBranch()`   | `main`<br>or empty string                                  | Get name of the target branch of a pull request or empty string if it cannot be determined.<br>This is the base branch to which the pull request is targeted.                                                                                                                                                                                               |
+| `getRepositoryName()` | `OndraM/ci-detector`<br>or empty string                    | Get name of the git (or other VCS) repository which is being built or empty string if it cannot be determined.<br>This is usually in form "user/repository", for example `OndraM/ci-detector`.                                                                                                                                                              |
+| `getRepositoryUrl()`  | `https://github.com/OndraM/ci-detector`<br>or empty string | Get URL where the repository which is being built can be found or empty string if it cannot be determined.<br>This is either HTTP URL like `https://github.com/OndraM/ci-detector` but may be a git ssh url like `ssh://git@bitbucket.org/OndraM/ci-detector`                                                                                               |
+| `isPullRequest()`     | `TrinaryLogic` instance                                    | Detect whether current build is from a pull/merge request.<br>Returned `TrinaryLogic` object's value will be true if the current build is from a pull/merge request, false if it not, and maybe if we can't determine it (see below for what CI supports PR detection).<br>Use condition like `if ($ci->isPullRequest()->yes()) { /*...*/ }` to use the value. |
+| `describe()`          | `[...]`<br>(array of values)                               | Return key-value map of all detected properties in human-readable form.                                                                                                                                                                                                                                                                                   |
 
 ## Supported properties of each CI server
 
@@ -143,6 +150,11 @@ To automatically fix codestyle violations run:
 ```sh
 composer fix
 ```
+
+## Standalone CLI version
+If you want to use CI Detector as a standalone CLI command (ie. without using inside code of PHP project),
+see [ci-detector-standalone](https://github.com/OndraM/ci-detector-standalone) repository, where you can
+download CI Detector as a standalone PHAR file with simple command line interface.
 
 ## Similar libraries for other languages
 

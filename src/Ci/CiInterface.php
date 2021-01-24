@@ -39,7 +39,7 @@ interface CiInterface
     public function getBuildUrl(): string;
 
     /**
-     * Get git (or other VCS) commit being built.
+     * Get hash of the git (or other VCS) commit being built.
      */
     public function getCommit(): string;
 
