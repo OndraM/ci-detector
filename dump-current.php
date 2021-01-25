@@ -31,3 +31,6 @@ var_dump($ci->getRepositoryUrl());
 
 echo "\n" . '$ci->isPullRequest()->describe()' . "\n";
 var_dump($ci->isPullRequest()->describe());
+
+echo "\n" . '$ci->describe()' . "\n";
+print_r($ci->describe());
