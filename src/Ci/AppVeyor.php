@@ -57,6 +57,10 @@ class AppVeyor extends AbstractCi
 
     public function getTargetBranch(): string
     {
+        if ($this->isPullRequest()->no()) {
+            return '';
+        }
+
         return $this->env->getString('APPVEYOR_REPO_BRANCH');
     }
 
