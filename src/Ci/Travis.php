@@ -56,6 +56,10 @@ class Travis extends AbstractCi
 
     public function getTargetBranch(): string
     {
+        if ($this->isPullRequest()->no()) {
+            return '';
+        }
+
         return $this->env->getString('TRAVIS_BRANCH');
     }
 
