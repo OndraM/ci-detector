@@ -3,13 +3,20 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
-- Add `getTargetBranch()` method to return the name of the branch where current branch is targeted (aka "base branch").
-- BC: Rename methods to make them VCS-agnostic. Use `getCommit()` instead of `getGitCommit()` and `getBranch()` instead of `getGitBranch()`.
-- Add Azure DevOps Pipelines detection support.
-- Add `CiDetectorInterface` (extended by `CiDetector`) to allow simpler extension.
-- BC: Declare `CiDetector` constructor final.
+### Added
+- `getTargetBranch()` method to return the name of the branch where current branch is targeted (aka "base branch").
+- Azure DevOps Pipelines detection support.
+- `CiDetectorInterface` (extended by `CiDetector`) to allow simpler extension.
+
+### Fixed
 - Fix build URL detection on Travis (it always reported travis-ci.org URL, even if the build was on travis-ci.com).
-- BC: Remove `Travis::TRAVIS_BASE_URL` constant.
+
+### Changed
+- [**BC break**] Rename methods to make them VCS-agnostic. Use `getCommit()` instead of `getGitCommit()` and `getBranch()` instead of `getGitBranch()`.
+- [**BC break**] Declare `CiDetector` constructor final.
+
+### Removed
+- [**BC break**] Remove `Travis::TRAVIS_BASE_URL` constant.
 
 ## 3.5.1 - 2020-09-04
 - Allow PHP 8.
@@ -50,10 +57,10 @@
 - Add AppVeyor (Windows cloud CI) support.
 
 ## 2.0.0 - 2017-01-07
-- BC: The `detect()` method of `CiDetector` class is no longer static.
-- BC: Rearrange namespaces, all classes are now in `CiDetector` sub-namespace.
+- [**BC break**] The `detect()` method of `CiDetector` class is no longer static.
+- [**BC break**] Rearrange namespaces, all classes are now in `CiDetector` sub-namespace.
 - Added `isCiDetected()` method to detect if current environment is CI.
-- BC: `detect()` method always returns instance of `CiInterface` and throws `CiNotDetectedException` if CI environment is not detected.
+- [**BC break**] `detect()` method always returns instance of `CiInterface` and throws `CiNotDetectedException` if CI environment is not detected.
 
 ## 1.1.0 - 2017-01-06
 - Add `getGitBranch()` method to detect Git branch of the build (supported by all CIs except TeamCity).
