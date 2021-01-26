@@ -71,6 +71,8 @@ Commit:
 string(40) "c150e3a3d2d89acd1b1222bf6f7a50b45a4218c0"
 Branch:
 string(0) ""
+Target branch:
+string(0) ""
 Repository name:
 string(0) ""
 Repository url:

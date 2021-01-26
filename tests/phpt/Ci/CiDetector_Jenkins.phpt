@@ -43,6 +43,8 @@ Commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74ccd"
 Branch:
 string(17) "origin/branchname"
+Target branch:
+string(0) ""
 Repository name:
 string(0) ""
 Repository url:

@@ -66,6 +66,8 @@ Commit:
 string(40) "87bf5720b148a6fee6c8e70888800a4360a13e08"
 Branch:
 string(25) "test-continuousphp-branch"
+Target branch:
+string(0) ""
 Repository name:
 string(0) ""
 Repository url:

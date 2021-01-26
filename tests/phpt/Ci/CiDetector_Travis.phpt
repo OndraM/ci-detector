@@ -156,6 +156,8 @@ Commit:
 string(40) "dc78d69a83b22190ba68b13bde0c1a2eaedd5f0a"
 Branch:
 string(18) "test-travis-branch"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

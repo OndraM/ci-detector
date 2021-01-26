@@ -82,6 +82,8 @@ Commit:
 string(40) "4e7f5fcf7802369224dba2095551c35e1e389551"
 Branch:
 string(4) "main"
+Target branch:
+string(0) ""
 Repository name:
 string(12) "My repo name"
 Repository url:

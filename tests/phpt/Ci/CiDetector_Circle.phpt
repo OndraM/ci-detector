@@ -47,6 +47,8 @@ Commit:
 string(40) "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
 Branch:
 string(13) "test-circleci"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

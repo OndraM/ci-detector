@@ -27,6 +27,8 @@ class PropertiesPrinterHelper
         var_dump($ci->getCommit());
         echo "Branch:\n";
         var_dump($ci->getBranch());
+        echo "Target branch:\n";
+        var_dump($ci->getTargetBranch());
         echo "Repository name:\n";
         var_dump($ci->getRepositoryName());
         echo "Repository url:\n";

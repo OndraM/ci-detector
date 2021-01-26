@@ -69,6 +69,8 @@ Commit:
 string(40) "e5e13f8b7f8d5c6096a0501dc09b48eef05fea96"
 Branch:
 string(4) "main"
+Target branch:
+string(0) ""
 Repository name:
 string(21) "buddyworks/my-project"
 Repository url:
