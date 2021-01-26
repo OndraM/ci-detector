@@ -176,9 +176,9 @@ Build number:
 string(11) "20201215.33"
 Build url:
 string(74) "https://dev.azure.com/ondrejmachulda/ci-detector/_build/results?buildId=33"
-Git commit:
+Commit:
 string(40) "6411f07f6cd88db7fc4f26edae51cf091eb707e1"
-Git branch:
+Branch:
 string(20) "test-azure-pipelines"
 Repository name:
 string(18) "OndraM/ci-detector"

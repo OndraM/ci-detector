@@ -74,9 +74,9 @@ Build number:
 string(24) "5f44d73f7e99680008040147"
 Build url:
 string(78) "https://app.wercker.com/OndraM/ci-detector/runs/build/5f44d73f7e99680008040147"
-Git commit:
+Commit:
 string(40) "929d637c83efed51a6a0f210aed89f1adb874401"
-Git branch:
+Branch:
 string(12) "test-wercker"
 Repository name:
 string(18) "OndraM/ci-detector"

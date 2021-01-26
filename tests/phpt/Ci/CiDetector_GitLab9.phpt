@@ -94,9 +94,9 @@ Build number:
 string(9) "111560648"
 Build url:
 string(54) "https://gitlab.com/OndraM/ci-detector/builds/111560648"
-Git commit:
+Commit:
 string(40) "5d25f4849bbd812e4e64e78d4aaa94a72e6cab5c"
-Git branch:
+Branch:
 string(11) "test-gitlab"
 Repository name:
 string(18) "OndraM/ci-detector"

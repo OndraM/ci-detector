@@ -43,9 +43,9 @@ Build number:
 string(4) "1337"
 Build url:
 string(47) "https://circleci.com/gh/OndraM/ci-detector/1337"
-Git commit:
+Commit:
 string(40) "fad3f7bdbf3515d1e9285b8aa80feeff74507bdd"
-Git branch:
+Branch:
 string(13) "test-circleci"
 Repository name:
 string(18) "OndraM/ci-detector"

@@ -101,9 +101,9 @@ Build number:
 string(1) "2"
 Build url:
 string(39) "http://drone.local/OndraM/ci-detector/2"
-Git commit:
+Commit:
 string(40) "3986f34176d2a641fc11bc41a3875c67bdc46aa5"
-Git branch:
+Branch:
 string(10) "test-drone"
 Repository name:
 string(18) "OndraM/ci-detector"

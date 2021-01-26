@@ -67,9 +67,9 @@ Build number:
 string(3) "559"
 Build url:
 string(141) "https://eu-west-1.console.aws.amazon.com/codebuild/home?region=eu-west-1#/builds/project-api-pr:449b6959-c0f7-41ac-aac8-7fec365d3004/view/new"
-Git commit:
+Commit:
 string(40) "c150e3a3d2d89acd1b1222bf6f7a50b45a4218c0"
-Git branch:
+Branch:
 string(0) ""
 Repository name:
 string(0) ""

@@ -42,9 +42,9 @@ Build number:
 string(1) "5"
 Build url:
 string(80) "http://bitbucket.org/ondrejmachulda/ci-detector/addon/pipelines/home#!/results/5"
-Git commit:
+Commit:
 string(40) "c4f71a535de986600303936780f815721ebbe0c5"
-Git branch:
+Branch:
 string(4) "main"
 Repository name:
 string(26) "ondrejmachulda/ci-detector"

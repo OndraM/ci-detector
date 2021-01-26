@@ -39,9 +39,9 @@ Build number:
 string(4) "1337"
 Build url:
 string(41) "http://jenkins.foo/job/foo_job_name/1337/"
-Git commit:
+Commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74ccd"
-Git branch:
+Branch:
 string(17) "origin/branchname"
 Repository name:
 string(0) ""

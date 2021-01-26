@@ -98,9 +98,9 @@ Build number:
 string(2) "50"
 Build url:
 string(92) "https://github.com/OndraM/ci-detector/commit/b9173d9402ae3abca09f0b45b524a7567df05811/checks"
-Git commit:
+Commit:
 string(40) "b9173d9402ae3abca09f0b45b524a7567df05811"
-Git branch:
+Branch:
 string(11) "test-github"
 Repository name:
 string(18) "OndraM/ci-detector"
