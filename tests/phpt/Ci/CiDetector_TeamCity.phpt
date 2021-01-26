@@ -21,30 +21,7 @@ TEAMCITY_VERSION=10.0 (build 42002)
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
-$ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
-echo "Is pull request:\n";
-var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getCommit());
-echo "Git branch:\n";
-var_dump($ci->getBranch());
-echo "Target branch:\n";
-var_dump($ci->getTargetBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
+\OndraM\CiDetector\Ci\PropertiesPrinterHelper::printAllProperties();
 
 --EXPECT--
 Is CI detected:
@@ -62,8 +39,6 @@ string(0) ""
 Git commit:
 string(40) "1ee546f280c093f1e24ecc149db4a0a100c8d609"
 Git branch:
-string(0) ""
-Target branch:
 string(0) ""
 Repository name:
 string(0) ""

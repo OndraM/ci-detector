@@ -59,7 +59,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OndraM\\CiDetector\\Ci\\Tests\\": "tests/"
+            "OndraM\\CiDetector\\Ci\\": "tests/"
         }
     },
     "scripts": {

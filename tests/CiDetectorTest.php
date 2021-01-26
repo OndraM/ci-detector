@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace OndraM\CiDetector\Ci\Tests;
+namespace OndraM\CiDetector\Ci;
 
 use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;

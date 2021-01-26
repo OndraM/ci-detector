@@ -12,3 +12,7 @@ services:
         line_length: 120
         break_long_lines: true
         inline_short_lines: false
+
+parameters:
+    exclude_files:
+        - 'tests/PropertiesPrinterHelper.php'

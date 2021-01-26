@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace OndraM\CiDetector\Ci\Tests;
+namespace OndraM\CiDetector\Ci;
 
-use OndraM\CiDetector\Ci\AbstractCi;
 use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 use PHPUnit\Framework\TestCase;
