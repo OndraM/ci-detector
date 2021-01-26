@@ -24,30 +24,7 @@ WORKSPACE=/srv/jenkins/workspace/foo_job_name
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
-$ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
-echo "Is pull request:\n";
-var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getCommit());
-echo "Git branch:\n";
-var_dump($ci->getBranch());
-echo "Target branch:\n";
-var_dump($ci->getTargetBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
+\OndraM\CiDetector\Ci\PropertiesPrinterHelper::printAllProperties();
 
 --EXPECT--
 Is CI detected:
@@ -66,8 +43,6 @@ Git commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74ccd"
 Git branch:
 string(17) "origin/branchname"
-Target branch:
-string(0) ""
 Repository name:
 string(0) ""
 Repository url:

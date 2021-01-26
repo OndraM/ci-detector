@@ -59,30 +59,7 @@ WERCKER=true
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
-
-$ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
-echo "Is pull request:\n";
-var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getCommit());
-echo "Git branch:\n";
-var_dump($ci->getBranch());
-echo "Target branch:\n";
-var_dump($ci->getTargetBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
+\OndraM\CiDetector\Ci\PropertiesPrinterHelper::printAllProperties();
 
 --EXPECT--
 Is CI detected:
@@ -101,8 +78,6 @@ Git commit:
 string(40) "929d637c83efed51a6a0f210aed89f1adb874401"
 Git branch:
 string(12) "test-wercker"
-Target branch:
-string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

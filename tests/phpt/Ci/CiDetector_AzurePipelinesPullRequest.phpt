@@ -166,13 +166,7 @@ VSTS_PROCESS_LOOKUP_ID=vsts_5c5c4526-1f29-4bfd-a6a1-c505d7522652
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-$ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Is pull request:\n";
-var_dump($ci->isPullRequest()->describe());
-echo "Git branch:\n";
-var_dump($ci->getBranch());
-echo "Target branch:\n";
-var_dump($ci->getTargetBranch());
+\OndraM\CiDetector\Ci\PropertiesPrinterHelper::printPullRequestProperties();
 
 --EXPECT--
 Is pull request:

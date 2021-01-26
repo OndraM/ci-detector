@@ -49,28 +49,8 @@ BUDDY=true
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-echo "Is CI detected:\n";
-var_dump((new OndraM\CiDetector\CiDetector())->isCiDetected());
+\OndraM\CiDetector\Ci\PropertiesPrinterHelper::printAllProperties();
 
-$ci = (new OndraM\CiDetector\CiDetector())->detect();
-echo "Class:\n";
-var_dump(get_class($ci));
-echo "CI name:\n";
-var_dump($ci->getCiName());
-echo "Is pull request:\n";
-var_dump($ci->isPullRequest()->describe());
-echo "Build number:\n";
-var_dump($ci->getBuildNumber());
-echo "Build url:\n";
-var_dump($ci->getBuildUrl());
-echo "Git commit:\n";
-var_dump($ci->getCommit());
-echo "Git branch:\n";
-var_dump($ci->getBranch());
-echo "Repository name:\n";
-var_dump($ci->getRepositoryName());
-echo "Repository url:\n";
-var_dump($ci->getRepositoryUrl());
 
 --EXPECT--
 Is CI detected:
