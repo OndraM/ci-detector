@@ -32,7 +32,7 @@ require __DIR__ . '/../../../vendor/autoload.php';
 --EXPECT--
 Is pull request:
 string(3) "Yes"
-Git branch:
+Branch:
 string(13) "test-circleci"
 Target branch:
 string(0) ""

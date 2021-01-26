@@ -52,7 +52,7 @@ require __DIR__ . '/../../../vendor/autoload.php';
 --EXPECT--
 Is pull request:
 string(3) "Yes"
-Git branch:
+Branch:
 string(25) "test-continuousphp-branch"
 Target branch:
 string(0) ""

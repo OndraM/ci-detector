@@ -152,9 +152,9 @@ Build number:
 string(5) "519.1"
 Build url:
 string(55) "https://travis-ci.com/OndraM/ci-detector/jobs/459962541"
-Git commit:
+Commit:
 string(40) "dc78d69a83b22190ba68b13bde0c1a2eaedd5f0a"
-Git branch:
+Branch:
 string(18) "test-travis-branch"
 Repository name:
 string(18) "OndraM/ci-detector"

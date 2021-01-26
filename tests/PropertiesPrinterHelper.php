@@ -23,9 +23,9 @@ class PropertiesPrinterHelper
         var_dump($ci->getBuildNumber());
         echo "Build url:\n";
         var_dump($ci->getBuildUrl());
-        echo "Git commit:\n";
+        echo "Commit:\n";
         var_dump($ci->getCommit());
-        echo "Git branch:\n";
+        echo "Branch:\n";
         var_dump($ci->getBranch());
         echo "Repository name:\n";
         var_dump($ci->getRepositoryName());
@@ -38,7 +38,7 @@ class PropertiesPrinterHelper
         $ci = (new CiDetector())->detect();
         echo "Is pull request:\n";
         var_dump($ci->isPullRequest()->describe());
-        echo "Git branch:\n";
+        echo "Branch:\n";
         var_dump($ci->getBranch());
         echo "Target branch:\n";
         var_dump($ci->getTargetBranch());

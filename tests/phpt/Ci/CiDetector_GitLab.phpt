@@ -52,9 +52,9 @@ Build number:
 string(7) "3265050"
 Build url:
 string(41) "https://gitlab.com/foo/bar/builds/3265050"
-Git commit:
+Commit:
 string(40) "1e50d546a67287e3111707283eb28bfff50584a9"
-Git branch:
+Branch:
 string(11) "test-gitlab"
 Repository name:
 string(7) "foo/bar"

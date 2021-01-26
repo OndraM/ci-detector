@@ -58,9 +58,9 @@ Build number:
 string(2) "37"
 Build url:
 string(65) "https://ci.appveyor.com/project/OndraM/ci-detector/builds/8791806"
-Git commit:
+Commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74cce"
-Git branch:
+Branch:
 string(10) "branchname"
 Repository name:
 string(18) "OndraM/ci-detector"

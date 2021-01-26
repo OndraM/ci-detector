@@ -39,9 +39,9 @@ Build number:
 string(8) "17594878"
 Build url:
 string(52) "https://codeship.com/projects/169447/builds/17594878"
-Git commit:
+Commit:
 string(40) "26e646685c1e625939f6b2de0e5f30b59cc34d60"
-Git branch:
+Branch:
 string(13) "test-codeship"
 Repository name:
 string(18) "OndraM/ci-detector"

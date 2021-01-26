@@ -78,9 +78,9 @@ Build number:
 string(1) "1"
 Build url:
 string(44) "https://bamboo.foo.bar/browse/CD-CDOB-JOB1-1"
-Git commit:
+Commit:
 string(40) "4e7f5fcf7802369224dba2095551c35e1e389551"
-Git branch:
+Branch:
 string(4) "main"
 Repository name:
 string(12) "My repo name"

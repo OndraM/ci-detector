@@ -65,9 +65,9 @@ Build number:
 string(1) "1"
 Build url:
 string(102) "https://app.buddy.works/myworkspace/my-project/pipelines/pipeline/1/execution/5d9dc42c422f5a268b389d08"
-Git commit:
+Commit:
 string(40) "e5e13f8b7f8d5c6096a0501dc09b48eef05fea96"
-Git branch:
+Branch:
 string(4) "main"
 Repository name:
 string(21) "buddyworks/my-project"

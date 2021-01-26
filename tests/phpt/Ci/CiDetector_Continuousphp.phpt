@@ -62,9 +62,9 @@ Build number:
 string(36) "31b581f1-95bf-4d09-b458-8d0da757bc8d"
 Build url:
 string(0) ""
-Git commit:
+Commit:
 string(40) "87bf5720b148a6fee6c8e70888800a4360a13e08"
-Git branch:
+Branch:
 string(25) "test-continuousphp-branch"
 Repository name:
 string(0) ""

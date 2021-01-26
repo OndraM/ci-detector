@@ -36,9 +36,9 @@ Build number:
 string(1) "5"
 Build url:
 string(0) ""
-Git commit:
+Commit:
 string(40) "1ee546f280c093f1e24ecc149db4a0a100c8d609"
-Git branch:
+Branch:
 string(0) ""
 Repository name:
 string(0) ""
