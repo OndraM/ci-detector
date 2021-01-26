@@ -105,6 +105,8 @@ Commit:
 string(40) "3986f34176d2a641fc11bc41a3875c67bdc46aa5"
 Branch:
 string(10) "test-drone"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

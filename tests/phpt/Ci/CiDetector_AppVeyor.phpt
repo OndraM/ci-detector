@@ -62,6 +62,8 @@ Commit:
 string(40) "11cc783de14cf438a41a60af7cd148a43da74cce"
 Branch:
 string(10) "branchname"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

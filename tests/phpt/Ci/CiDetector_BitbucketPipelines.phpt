@@ -46,6 +46,8 @@ Commit:
 string(40) "c4f71a535de986600303936780f815721ebbe0c5"
 Branch:
 string(4) "main"
+Target branch:
+string(0) ""
 Repository name:
 string(26) "ondrejmachulda/ci-detector"
 Repository url:

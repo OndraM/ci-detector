@@ -78,6 +78,8 @@ Commit:
 string(40) "929d637c83efed51a6a0f210aed89f1adb874401"
 Branch:
 string(12) "test-wercker"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

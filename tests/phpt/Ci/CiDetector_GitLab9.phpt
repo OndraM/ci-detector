@@ -98,6 +98,8 @@ Commit:
 string(40) "5d25f4849bbd812e4e64e78d4aaa94a72e6cab5c"
 Branch:
 string(11) "test-gitlab"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:

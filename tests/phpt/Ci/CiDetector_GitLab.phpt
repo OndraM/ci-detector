@@ -56,6 +56,8 @@ Commit:
 string(40) "1e50d546a67287e3111707283eb28bfff50584a9"
 Branch:
 string(11) "test-gitlab"
+Target branch:
+string(0) ""
 Repository name:
 string(7) "foo/bar"
 Repository url:

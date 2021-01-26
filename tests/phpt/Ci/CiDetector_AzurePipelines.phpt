@@ -180,6 +180,8 @@ Commit:
 string(40) "6411f07f6cd88db7fc4f26edae51cf091eb707e1"
 Branch:
 string(20) "test-azure-pipelines"
+Target branch:
+string(0) ""
 Repository name:
 string(18) "OndraM/ci-detector"
 Repository url:
