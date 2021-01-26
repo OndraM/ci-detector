@@ -8,11 +8,6 @@ use OndraM\CiDetector\TrinaryLogic;
 
 class Travis extends AbstractCi
 {
-    /**
-     * @deprecated Not used, will be removed in next major version
-     */
-    public const TRAVIS_BASE_URL = 'https://travis-ci.org';
-
     public static function isDetected(Env $env): bool
     {
         return $env->get('TRAVIS') !== false;

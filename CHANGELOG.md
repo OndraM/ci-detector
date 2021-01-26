@@ -9,6 +9,7 @@
 - Add `CiDetectorInterface` (extended by `CiDetector`) to allow simpler extension.
 - BC: Declare `CiDetector` constructor final.
 - Fix build URL detection on Travis (it always reported travis-ci.org URL, even if the build was on travis-ci.com).
+- BC: Remove `Travis::TRAVIS_BASE_URL` constant.
 
 ## 3.5.1 - 2020-09-04
 - Allow PHP 8.
