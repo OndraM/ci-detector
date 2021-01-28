@@ -8,8 +8,6 @@ use OndraM\CiDetector\TrinaryLogic;
 
 class AzurePipelines extends AbstractCi
 {
-    private const AZURE_PIPELINES_BASE_URL = 'https://github.com';
-
     public static function isDetected(Env $env): bool
     {
         return $env->get('BUILD_DEFINITIONVERSION') !== false;
