@@ -9,10 +9,10 @@
 
 PHP library to detect continuous integration environment and to provide a unified interface to read the build information.
 
-The detection is based on environment variables injected to the build environment by each CI
-server. However, these variables are named differently in each CI. This library contains adapters for many supported
-CI servers to handles these differences, so you don't have to, and you can make your scripts (and especially CLI tools)
-portable to multiple build environments.
+The detection is based on environment variables injected to the build environment by each CI server.
+However, these variables are named differently in each CI. This library contains adapters for many supported
+CI servers to handles these differences, so you can make your scripts (and especially CLI tools) portable to multiple
+build environments.
 
 ## Supported continuous integration servers
 
@@ -34,8 +34,6 @@ These CI servers are currently recognized:
  - [TeamCity](https://www.jetbrains.com/teamcity/)
  - [Travis CI](https://travis-ci.org/)
  - [Wercker](https://devcenter.wercker.com/)
-
-However not all information are provided by some CI servers. See table below.
 
 If your favorite CI server is missing, feel free to send a pull-request!
 
@@ -60,9 +58,9 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     echo 'You are running this script on CI server!';
     $ci = $ciDetector->detect();    // Returns class implementing CiInterface or throws CiNotDetectedException
 
-    // Example output when run in Travis:
+    // Example output when run inside GitHub Actions build:
     echo $ci->getCiName(); // "GitHub Actions"
-    echo $ci->getBuildNumber(); // "35"
+    echo $ci->getBuildNumber(); // "33"
     echo $ci->getBranch(); // "feature/foo-bar" or empty string if not detected
 
     // Conditional code for pull request:
@@ -72,8 +70,8 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     }
 
     // Conditional code for specific CI server:
-    if ($ci->getCiName() === OndraM\CiDetector\CiDetector::CI_JENKINS) {
-        echo 'Current CI server is Jenkins';
+    if ($ci->getCiName() === OndraM\CiDetector\CiDetector::CI_GITHUB_ACTIONS) {
+        echo 'This is being built on GitHub Actions';
     }
 
     // Describe all detected values in human-readable form:
@@ -84,7 +82,7 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
     //     [build-number] => 33
     //     [build-url] => https://github.com/OndraM/ci-detector/commit/abcd/checks
     //     [commit] => fad3f7bdbf3515d1e9285b8aa80feeff74507bde
-    //     [branch] => 'my-feature
+    //     [branch] => feature/foo-bar
     //     [target-branch] => main
     //     [repository-name] => OndraM/ci-detector
     //     [repository-url] => https://github.com/OndraM/ci-detector
