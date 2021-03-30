@@ -23,6 +23,7 @@ class CiDetector implements CiDetectorInterface
     public const CI_GITHUB_ACTIONS = 'GitHub Actions';
     public const CI_GITLAB = 'GitLab';
     public const CI_JENKINS = 'Jenkins';
+    public const CI_SOURCEHUT = 'SourceHut';
     public const CI_TEAMCITY = 'TeamCity';
     public const CI_TRAVIS = 'Travis CI';
     public const CI_WERCKER = 'Wercker';
@@ -81,6 +82,7 @@ class CiDetector implements CiDetectorInterface
             Ci\GitHubActions::class,
             Ci\GitLab::class,
             Ci\Jenkins::class,
+            Ci\SourceHut::class,
             Ci\TeamCity::class,
             Ci\Travis::class,
             Ci\Wercker::class,
