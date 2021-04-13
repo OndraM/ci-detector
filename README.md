@@ -41,6 +41,7 @@ These CI servers are currently recognized:
  - [GitHub Actions](https://github.com/features/actions)
  - [GitLab](https://about.gitlab.com/gitlab-ci/)
  - [Jenkins](https://www.jenkins.io/)
+ - [SourceHut](https://sourcehut.org/)
  - [TeamCity](https://www.jetbrains.com/teamcity/)
  - [Travis CI](https://travis-ci.org/)
  - [Wercker](https://devcenter.wercker.com/)
@@ -141,6 +142,7 @@ necessary environment variables, thus reading some information may be unsupporte
 | [GitHub Actions](https://github.com/features/actions)  | `CI_GITHUB_ACTIONS`  | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [GitLab](https://about.gitlab.com/gitlab-ci/)          | `CI_GITLAB`          | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [Jenkins](https://www.jenkins.io/)                     | `CI_JENKINS`         | ❌ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [SourceHut](https://sourcehut.org/)                    | `CI_SOURCEHUT`       | ✔ | ❌ | ❌ | ❌ | ❌ | ✔ |
 | [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [Wercker](https://devcenter.wercker.com/)              | `CI_WERCKER`         | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
