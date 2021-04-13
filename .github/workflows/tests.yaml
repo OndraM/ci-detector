@@ -30,7 +30,6 @@ jobs:
           extensions: mbstring, intl, zip
           coverage: xdebug
           ini-values: ${{ matrix.xdebug-ini-values }}
-          tools: composer:v2
 
       - name: Install dependencies
         run: composer update --no-interaction ${{ matrix.dependencies }}
@@ -65,7 +64,6 @@ jobs:
           with:
             php-version: '7.4'
             extensions: mbstring, intl
-            tools: composer:v2
 
         - name: Install dependencies
           run: composer update --no-interaction

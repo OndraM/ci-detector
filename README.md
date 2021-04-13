@@ -9,9 +9,19 @@
 
 PHP library to detect continuous integration environment and to provide a unified interface to read the build information.
 
+## Why
+
+This library is useful if you need to detect whether some CLI script/tool is running in an automated environment (on a CI server).
+Based on that, your script may behave differently (for example hide some information which relevant only for a real person - like status bar, etc.).
+
+Plus, you may want to detect some information about the current build: build ID, git commit, branch etc.
+For example, if you'd like to record these values to log, publish them to Slack, etc.
+
+## How
+
 The detection is based on environment variables injected to the build environment by each CI server.
 However, these variables are named differently in each CI. This library contains adapters for many supported
-CI servers to handles these differences, so you can make your scripts (and especially CLI tools) portable to multiple
+CI servers to handle these differences, so you can make your scripts (and especially CLI tools) portable to multiple
 build environments.
 
 ## Supported continuous integration servers
@@ -153,6 +163,9 @@ composer fix
 If you want to use CI Detector as a standalone CLI command (ie. without using inside code of PHP project),
 see [ci-detector-standalone](https://github.com/OndraM/ci-detector-standalone) repository, where you can
 download CI Detector as a standalone PHAR file with simple command line interface.
+
+## Changelog
+For latest changes see [CHANGELOG.md](CHANGELOG.md) file. This project follows [Semantic Versioning](http://semver.org/).
 
 ## Similar libraries for other languages
 
