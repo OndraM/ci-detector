@@ -3,6 +3,7 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+- Add SourceHut detection support.
 
 ## 4.0.0 - 2021-02-02
 ### Added

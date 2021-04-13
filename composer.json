@@ -26,6 +26,7 @@
         "gitlab",
         "jenkins",
         "pipelines",
+        "sourcehut",
         "teamcity",
         "travis",
         "wercker"
