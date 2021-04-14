@@ -35,11 +35,6 @@ final class TrinaryLogic
         return self::create($value ? self::YES : self::NO);
     }
 
-    private static function create(int $value): self
-    {
-        return self::$registry[$value] = self::$registry[$value] ?? new self($value);
-    }
-
     /**
      * Return true if its known for sure that the value is true
      */
@@ -77,5 +72,10 @@ final class TrinaryLogic
         ];
 
         return $labels[$this->value];
+    }
+
+    private static function create(int $value): self
+    {
+        return self::$registry[$value] = self::$registry[$value] ?? new self($value);
     }
 }
