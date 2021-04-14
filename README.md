@@ -7,7 +7,7 @@
 [![Travis Build Status](https://img.shields.io/travis/com/OndraM/ci-detector.svg?style=flat-square&label=Travis%20build)](https://travis-ci.com/OndraM/ci-detector)
 [![AppVeyor Build Status](https://img.shields.io/appveyor/ci/OndraM/ci-detector.svg?style=flat-square&label=AppVeyor%20build)](https://ci.appveyor.com/project/OndraM/ci-detector)
 
-PHP library to detect continuous integration environment and to provide a unified interface to read the build information.
+PHP library to detect continuous integration environment and to read information of the current build.
 
 ## Why
 
@@ -28,23 +28,23 @@ build environments.
 
 These CI servers are currently recognized:
 
- - [AppVeyor](https://www.appveyor.com/)
- - [AWS CodeBuild](https://aws.amazon.com/codebuild/)
- - [Azure DevOps Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
- - [Bamboo](https://www.atlassian.com/software/bamboo)
- - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
- - [Buddy](https://buddy.works/)
- - [CircleCI](https://circleci.com/)
- - [Codeship](https://codeship.com/)
- - [continuousphp](https://continuousphp.com/)
- - [drone](https://drone.io/)
- - [GitHub Actions](https://github.com/features/actions)
- - [GitLab](https://about.gitlab.com/gitlab-ci/)
- - [Jenkins](https://www.jenkins.io/)
- - [SourceHut](https://sourcehut.org/)
- - [TeamCity](https://www.jetbrains.com/teamcity/)
- - [Travis CI](https://travis-ci.org/)
- - [Wercker](https://devcenter.wercker.com/)
+ - [AppVeyor][appveyor]
+ - [AWS CodeBuild][aws-codebuild]
+ - [Azure DevOps Pipelines][azure-pipelines]
+ - [Bamboo][bamboo]
+ - [Bitbucket Pipelines][bitbucket]
+ - [Buddy][buddy]
+ - [CircleCI][circleci]
+ - [Codeship][codeship]
+ - [continuousphp][continuousphp]
+ - [drone][drone]
+ - [GitHub Actions][github-actions]
+ - [GitLab][gitlab]
+ - [Jenkins][jenkins]
+ - [SourceHut][sourcehut]
+ - [TeamCity][teamcity]
+ - [Travis CI][travis-ci]
+ - [Wercker][wercker]
 
 If your favorite CI server is missing, feel free to send a pull-request!
 
@@ -127,25 +127,25 @@ Available methods of `CiInterface` instance (returned from `$ciDetector->detect(
 Most CI servers support (✔) detection of all information. However some don't expose
 necessary environment variables, thus reading some information may be unsupported (❌).
 
-| CI server                                              | Constant of `CiDetector` | `is​PullRequest` | `get​Branch` | `getTargetBranch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
-|--------------------------------------------------------|----------------------|---|---|---|---|---|---|
-| [AppVeyor](https://www.appveyor.com/)                  | `CI_APPVEYOR`        | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [AWS CodeBuild](https://aws.amazon.com/codebuild/)     | `CI_AWS_CODEBUILD`   | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
-| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `CI_AZURE_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Bamboo](https://www.atlassian.com/software/bamboo)    | `CI_BAMBOO`          | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)| `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Buddy](https://buddy.works/)                          | `CI_BUDDY`           | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [CircleCI](https://circleci.com/)                      | `CI_CIRCLE`          | ✔ | ✔ | ❌ | ✔ | ✔ | ✔ |
-| [Codeship](https://codeship.com/)                      | `CI_CODESHIP`        | ✔ | ✔ | ❌ | ✔ | ❌ | ✔ |
-| [continuousphp](https://continuousphp.com/)            | `CI_CONTINUOUSPHP`   | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
-| [drone](https://drone.io/)                             | `CI_DRONE`           | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [GitHub Actions](https://github.com/features/actions)  | `CI_GITHUB_ACTIONS`  | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [GitLab](https://about.gitlab.com/gitlab-ci/)          | `CI_GITLAB`          | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Jenkins](https://www.jenkins.io/)                     | `CI_JENKINS`         | ❌ | ✔ | ❌ | ❌ | ✔ | ✔ |
-| [SourceHut](https://sourcehut.org/)                    | `CI_SOURCEHUT`       | ✔ | ❌ | ❌ | ❌ | ❌ | ✔ |
-| [TeamCity](https://www.jetbrains.com/teamcity/)        | `CI_TEAMCITY`        | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Travis CI](https://travis-ci.org/)                    | `CI_TRAVIS`          | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [Wercker](https://devcenter.wercker.com/)              | `CI_WERCKER`         | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
+| CI server                          | Constant of `CiDetector` | `is​PullRequest` | `get​Branch` | `get​Target​Branch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
+|------------------------------------|--------------------------|---|---|---|---|---|---|
+| [AppVeyor][appveyor]               | `CI_APPVEYOR`            | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [AWS CodeBuild][aws-codebuild]     | `CI_AWS_CODEBUILD`       | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [Azure Pipelines][azure-pipelines] | `CI_AZURE_PIPELINES`     | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Bamboo][bamboo]                   | `CI_BAMBOO`              | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Bitbucket Pipelines][bitbucket]   | `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Buddy][buddy]                     | `CI_BUDDY`               | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [CircleCI][circleci]               | `CI_CIRCLE`              | ✔ | ✔ | ❌ | ✔ | ✔ | ✔ |
+| [Codeship][codeship]               | `CI_CODESHIP`            | ✔ | ✔ | ❌ | ✔ | ❌ | ✔ |
+| [continuousphp][continuousphp]     | `CI_CONTINUOUSPHP`       | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [drone][drone]                     | `CI_DRONE`               | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [GitHub Actions][github-actions]   | `CI_GITHUB_ACTIONS`      | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [GitLab][gitlab]                   | `CI_GITLAB`              | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [Jenkins][jenkins]                 | `CI_JENKINS`             | ❌ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| [SourceHut][sourcehut]             | `CI_SOURCEHUT`           | ✔ | ❌ | ❌ | ❌ | ❌ | ✔ |
+| [TeamCity][teamcity]               | `CI_TEAMCITY`            | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [Travis CI][travis-ci]             | `CI_TRAVIS`              | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
+| [Wercker][wercker]                 | `CI_WERCKER`             | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
 
 ## Testing
 
@@ -177,3 +177,21 @@ Similar "CI Info" libraries exists for some other languages, for example:
  - JavaScript/Node.js - [watson/ci-info](https://github.com/watson/ci-info)
  - Python - [mgxd/ci-info](https://github.com/mgxd/ci-info)
  - Rust - [sagiegurari/ci_info](https://github.com/sagiegurari/ci_info)
+
+[appveyor]: https://www.appveyor.com/
+[aws-codebuild]: https://aws.amazon.com/codebuild/
+[azure-pipelines]: https://azure.microsoft.com/en-us/services/devops/pipelines/
+[bamboo]: https://www.atlassian.com/software/bamboo
+[bitbucket]: https://bitbucket.org/product/features/pipelines
+[buddy]: https://buddy.works/
+[circleci]: https://circleci.com/
+[codeship]: https://codeship.com/
+[continuousphp]: https://continuousphp.com/
+[drone]: https://drone.io/
+[github-actions]: https://github.com/features/actions
+[gitlab]: https://about.gitlab.com/gitlab-ci/
+[jenkins]: https://www.jenkins.io/
+[sourcehut]: https://sourcehut.org/
+[teamcity]: https://www.jetbrains.com/teamcity/
+[travis-ci]: https://travis-ci.org/
+[wercker]: https://devcenter.wercker.com/
