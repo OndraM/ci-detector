@@ -2,3 +2,4 @@ composer.lock
 vendor
 phpstan.phar
 .phpunit.result.cache
+.php_cs.cache
