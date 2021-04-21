@@ -3,6 +3,7 @@ name: Tests and linting
 on:
   push:
   pull_request:
+  workflow_dispatch:
   schedule:
     - cron:  '0 3 * * *'
 
@@ -12,21 +13,23 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['7.1', '7.2', '7.3', '7.4']
+        php-version: ['7.1', '7.2', '7.3', '7.4']
         dependencies: ['']
-        xdebug-ini-values: ['xdebug.mode=coverage']
         include:
-          - { php-versions: '8.0', dependencies: '--ignore-platform-req=php' }
+          - { php-version: '8.0', dependencies: '--ignore-platform-req=php' }
+          - { php-version: '8.1', dependencies: '--ignore-platform-req=php' }
 
-    name: PHP ${{ matrix.php-versions }} ${{ matrix.dependencies }}
+    name: PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
+        env:
+          XDEBUG_MODE: coverage
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: ${{ matrix.php-version }}
           extensions: mbstring, intl, zip
           coverage: xdebug
           ini-values: ${{ matrix.xdebug-ini-values }}
@@ -50,7 +53,7 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NO_COLOR: 'true'
         run: |
-          composer global require php-coveralls/php-coveralls:^2.4.2
+          composer global require php-coveralls/php-coveralls
           ~/.composer/vendor/bin/php-coveralls --coverage_clover=./build/logs/clover.xml -v
 
   codestyle:
