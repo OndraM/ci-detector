@@ -19,8 +19,7 @@ init:
 install:
   - IF EXIST c:\tools\php (SET PHP=0)
   - IF %PHP%==1 cinst -y OpenSSL.Light
-  # TODO: remove -version and use the latest PHP (after https://github.com/lmc-eu/php-coding-standard/issues/41 is fixed)
-  - IF %PHP%==1 cinst -y php -version 7.4.23 --params "/InstallDir:C:\tools\php"
+  - IF %PHP%==1 cinst -y php --params "/InstallDir:C:\tools\php" # we do not use -version to specify exact version, but we rather try the latest available
   - cd C:\tools\php
   - IF %PHP%==1 copy php.ini-production php.ini /Y
   - IF %PHP%==1 echo extension_dir=ext >> php.ini
