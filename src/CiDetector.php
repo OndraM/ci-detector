@@ -95,10 +95,8 @@ class CiDetector implements CiDetectorInterface
 
         foreach ($ciServers as $ciClass) {
             $callback = [$ciClass, 'isDetected'];
-            if (is_callable($callback)) {
-                if ($callback($this->environment)) {
-                    return new $ciClass($this->environment);
-                }
+            if (is_callable($callback) && $callback($this->environment)) {
+                return new $ciClass($this->environment);
             }
         }
 

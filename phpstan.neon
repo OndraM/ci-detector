@@ -3,3 +3,6 @@ parameters:
     paths:
         - src/
         - tests/
+    ignoreErrors:
+        - message: '#Method OndraM\\CiDetector\\CiDetector::detectCurrentCiServer\(\) should return OndraM\\CiDetector\\Ci\\CiInterface\|null but returns object#'
+          path: 'src/CiDetector.php'
