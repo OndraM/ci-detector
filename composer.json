@@ -46,8 +46,8 @@
         "lmc/coding-standard": "^3.0.0",
         "php-parallel-lint/php-parallel-lint": "^1.2",
         "phpstan/extension-installer": "^1.1.0",
-        "phpstan/phpstan": "^0.12.78",
-        "phpstan/phpstan-phpunit": "^0.12.17",
+        "phpstan/phpstan": "^1.2.0",
+        "phpstan/phpstan-phpunit": "^1.0.0",
         "phpunit/phpunit": "^9.5.2"
     },
     "config": {
