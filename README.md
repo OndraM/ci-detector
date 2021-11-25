@@ -167,7 +167,7 @@ see [ci-detector-standalone](https://github.com/OndraM/ci-detector-standalone) r
 download CI Detector as a standalone PHAR file with simple command line interface.
 
 ## Changelog
-For latest changes see [CHANGELOG.md](CHANGELOG.md) file. This project follows [Semantic Versioning](http://semver.org/).
+For latest changes see [CHANGELOG.md](CHANGELOG.md) file. This project follows [Semantic Versioning](https://semver.org/).
 
 ## Similar libraries for other languages
 
