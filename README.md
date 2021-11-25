@@ -56,8 +56,6 @@ Install using [Composer](https://getcomposer.org/):
 $ composer require ondram/ci-detector
 ```
 
-Ci-detector requires PHP 7.1+, but if you need compatibility with PHP <7.1, you can still use old ci-detector version 2.x.
-
 ## Example usage
 
 ```php
