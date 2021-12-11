@@ -1,7 +1,8 @@
 {
     "name": "ondram/ci-detector",
-    "type": "library",
     "description": "Detect continuous integration environment and provide unified access to properties of current build",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "continuous integration",
         "ci-info",
@@ -31,7 +32,6 @@
         "travis",
         "wercker"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Ondřej Machulda",
@@ -50,9 +50,6 @@
         "phpstan/phpstan-phpunit": "^1.0.0",
         "phpunit/phpunit": "^9.5.2"
     },
-    "config": {
-        "sort-packages": true
-    },
     "autoload": {
         "psr-4": {
             "OndraM\\CiDetector\\": "src/"
@@ -62,6 +59,9 @@
         "psr-4": {
             "OndraM\\CiDetector\\Ci\\": "tests/"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "scripts": {
         "all": [
