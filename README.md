@@ -36,7 +36,7 @@ These CI servers are currently recognized:
  - [Buddy][buddy]
  - [CircleCI][circleci]
  - [Codeship][codeship]
- - [continuousphp][continuousphp]
+ - continuousphp
  - [drone][drone]
  - [GitHub Actions][github-actions]
  - [GitLab][gitlab]
@@ -135,7 +135,7 @@ necessary environment variables, thus reading some information may be unsupporte
 | [Buddy][buddy]                     | `CI_BUDDY`               | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [CircleCI][circleci]               | `CI_CIRCLE`              | ✔ | ✔ | ❌ | ✔ | ✔ | ✔ |
 | [Codeship][codeship]               | `CI_CODESHIP`            | ✔ | ✔ | ❌ | ✔ | ❌ | ✔ |
-| [continuousphp][continuousphp]     | `CI_CONTINUOUSPHP`       | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
+| continuousphp                      | `CI_CONTINUOUSPHP`       | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
 | [drone][drone]                     | `CI_DRONE`               | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [GitHub Actions][github-actions]   | `CI_GITHUB_ACTIONS`      | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [GitLab][gitlab]                   | `CI_GITLAB`              | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
@@ -184,7 +184,6 @@ Similar "CI Info" libraries exists for some other languages, for example:
 [buddy]: https://buddy.works/
 [circleci]: https://circleci.com/
 [codeship]: https://codeship.com/
-[continuousphp]: https://continuousphp.com/
 [drone]: https://drone.io/
 [github-actions]: https://github.com/features/actions
 [gitlab]: https://about.gitlab.com/gitlab-ci/
