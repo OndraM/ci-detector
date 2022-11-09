@@ -44,7 +44,7 @@ These CI servers are currently recognized:
  - [SourceHut][sourcehut]
  - [TeamCity][teamcity]
  - [Travis CI][travis-ci]
- - [Wercker][wercker]
+ - Wercker
 
 If your favorite CI server is missing, feel free to send a pull-request!
 
@@ -143,7 +143,7 @@ necessary environment variables, thus reading some information may be unsupporte
 | [SourceHut][sourcehut]             | `CI_SOURCEHUT`           | ✔ | ❌ | ❌ | ❌ | ❌ | ✔ |
 | [TeamCity][teamcity]               | `CI_TEAMCITY`            | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Travis CI][travis-ci]             | `CI_TRAVIS`              | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [Wercker][wercker]                 | `CI_WERCKER`             | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
+| Wercker                            | `CI_WERCKER`             | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
 
 ## Testing
 
@@ -191,4 +191,3 @@ Similar "CI Info" libraries exists for some other languages, for example:
 [sourcehut]: https://sourcehut.org/
 [teamcity]: https://www.jetbrains.com/teamcity/
 [travis-ci]: https://travis-ci.org/
-[wercker]: https://devcenter.wercker.com/

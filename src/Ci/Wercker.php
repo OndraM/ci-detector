@@ -6,6 +6,9 @@ use OndraM\CiDetector\CiDetector;
 use OndraM\CiDetector\Env;
 use OndraM\CiDetector\TrinaryLogic;
 
+/**
+ * @deprecated Will be removed in next major version
+ */
 class Wercker extends AbstractCi
 {
     public static function isDetected(Env $env): bool
