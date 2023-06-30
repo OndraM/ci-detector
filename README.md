@@ -178,7 +178,7 @@ Similar "CI Info" libraries exists for some other languages, for example:
 
 [appveyor]: https://www.appveyor.com/
 [aws-codebuild]: https://aws.amazon.com/codebuild/
-[azure-pipelines]: https://azure.microsoft.com/en-us/services/devops/pipelines/
+[azure-pipelines]: https://azure.microsoft.com/en-us/products/devops/pipelines
 [bamboo]: https://www.atlassian.com/software/bamboo
 [bitbucket]: https://bitbucket.org/product/features/pipelines
 [buddy]: https://buddy.works/
