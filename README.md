@@ -186,7 +186,7 @@ Similar "CI Info" libraries exists for some other languages, for example:
 [codeship]: https://codeship.com/
 [drone]: https://drone.io/
 [github-actions]: https://github.com/features/actions
-[gitlab]: https://about.gitlab.com/gitlab-ci/
+[gitlab]: https://about.gitlab.com/solutions/continuous-integration/
 [jenkins]: https://www.jenkins.io/
 [sourcehut]: https://sourcehut.org/
 [teamcity]: https://www.jetbrains.com/teamcity/
