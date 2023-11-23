@@ -12,9 +12,10 @@ PHP library to detect continuous integration environment and to read information
 ## Why
 
 This library is useful if you need to detect whether some CLI script/tool is running in an automated environment (on a CI server).
-Based on that, your script may behave differently (for example hide some information which relevant only for a real person - like status bar, etc.).
+Based on that, your script may behave differently. For example, it could hide some information which relevant only for
+a real person - like a progress bar.
 
-Plus, you may want to detect some information about the current build: build ID, git commit, branch etc.
+Additionally, you may want to detect some information about the current build: build ID, git commit, branch etc.
 For example, if you'd like to record these values to log, publish them to Slack, etc.
 
 ## How
@@ -63,9 +64,9 @@ $ composer require ondram/ci-detector
 
 $ciDetector = new \OndraM\CiDetector\CiDetector();
 
-if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
+if ($ciDetector->isCiDetected()) { // Make sure we are on CI environment
     echo 'You are running this script on CI server!';
-    $ci = $ciDetector->detect();    // Returns class implementing CiInterface or throws CiNotDetectedException
+    $ci = $ciDetector->detect(); // Returns class implementing CiInterface or throws CiNotDetectedException
 
     // Example output when run inside GitHub Actions build:
     echo $ci->getCiName(); // "GitHub Actions"
@@ -107,18 +108,18 @@ if ($ciDetector->isCiDetected()) {  // Make sure we are on CI environment
 
 Available methods of `CiInterface` instance (returned from `$ciDetector->detect()`):
 
-| Method                | Example value                                              | Description                                                                                                                                                                                                                                                                                                                                               |
-|-----------------------|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `getCiName()`         | `GitHub Actions`                                           | Name of the CI server.<br>The value is one of `CiDetector::CI_*` constants.                                                                                                                                                                                                                                                                                 |
-| `getBuildNumber()`    | `33`                                                       | Get number of this concrete build.<br>Build number is usually human-readable increasing number sequence. It should increase each time this particular job was run on the CI server. Most CIs use simple numbering sequence like: 1, 2, 3... However, some CIs do not provide this simple human-readable value and rather use for example alphanumeric hash. |
-| `getBuildUrl()`       | `https://github.com/OndraM/ci-detector/commit/abcd/checks`<br>or empty string | Get URL where this build can be found and viewed or empty string if it cannot be determined.                                                                                                                                                                                                                                                              |
-| `getCommit()`         | `b9173d94(...)`                                            | Get hash of the git (or other VCS) commit being built.                                                                                                                                                                                                                                                                                                    |
-| `getBranch()`         | `my-feature`<br>or empty string                            | Get name of the git (or other VCS) branch which is being built or empty string if it cannot be determined.<br>Use `getTargetBranch()` to get name of the branch where this branch is targeted.                                                                                                                                                              |
-| `getTargetBranch()`   | `main`<br>or empty string                                  | Get name of the target branch of a pull request or empty string if it cannot be determined.<br>This is the base branch to which the pull request is targeted.                                                                                                                                                                                               |
-| `getRepositoryName()` | `OndraM/ci-detector`<br>or empty string                    | Get name of the git (or other VCS) repository which is being built or empty string if it cannot be determined.<br>This is usually in form "user/repository", for example `OndraM/ci-detector`.                                                                                                                                                              |
-| `getRepositoryUrl()`  | `https://github.com/OndraM/ci-detector`<br>or empty string | Get URL where the repository which is being built can be found or empty string if it cannot be determined.<br>This is either HTTP URL like `https://github.com/OndraM/ci-detector` but may be a git ssh url like `ssh://git@bitbucket.org/OndraM/ci-detector`                                                                                               |
-| `isPullRequest()`     | `TrinaryLogic` instance                                    | Detect whether current build is from a pull/merge request.<br>Returned `TrinaryLogic` object's value will be true if the current build is from a pull/merge request, false if it not, and maybe if we can't determine it (see below for what CI supports PR detection).<br>Use condition like `if ($ci->isPullRequest()->yes()) { /*...*/ }` to use the value. |
-| `describe()`          | `[...]`<br>(array of values)                               | Return key-value map of all detected properties in human-readable form.                                                                                                                                                                                                                                                                                   |
+| Method                | Example value                                                                 | Description                                                                                                                                                                                                                                                                                                                                                    |
+|-----------------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `getCiName()`         | `GitHub Actions`                                                              | Name of the CI server.<br>The value is one of `CiDetector::CI_*` constants.                                                                                                                                                                                                                                                                                    |
+| `getBuildNumber()`    | `33`                                                                          | Get number of this concrete build.<br>Build number is usually human-readable increasing number sequence. It should increase each time this particular job was run on the CI server. Most CIs use simple numbering sequence like: 1, 2, 3... However, some CIs do not provide this simple human-readable value and rather use for example alphanumeric hash.    |
+| `getBuildUrl()`       | `https://github.com/OndraM/ci-detector/commit/abcd/checks`<br>or empty string | Get URL where this build can be found and viewed or empty string if it cannot be determined.                                                                                                                                                                                                                                                                   |
+| `getCommit()`         | `b9173d94(...)`                                                               | Get hash of the git (or other VCS) commit being built.                                                                                                                                                                                                                                                                                                         |
+| `getBranch()`         | `my-feature`<br>or empty string                                               | Get name of the git (or other VCS) branch which is being built or empty string if it cannot be determined.<br>Use `getTargetBranch()` to get name of the branch where this branch is targeted.                                                                                                                                                                 |
+| `getTargetBranch()`   | `main`<br>or empty string                                                     | Get name of the target branch of a pull request or empty string if it cannot be determined.<br>This is the base branch to which the pull request is targeted.                                                                                                                                                                                                  |
+| `getRepositoryName()` | `OndraM/ci-detector`<br>or empty string                                       | Get name of the git (or other VCS) repository which is being built or empty string if it cannot be determined.<br>This is usually in form "user/repository", for example `OndraM/ci-detector`.                                                                                                                                                                 |
+| `getRepositoryUrl()`  | `https://github.com/OndraM/ci-detector`<br>or empty string                    | Get URL where the repository which is being built can be found or empty string if it cannot be determined.<br>This is either HTTP URL like `https://github.com/OndraM/ci-detector` but may be a git ssh url like `ssh://git@bitbucket.org/OndraM/ci-detector`                                                                                                  |
+| `isPullRequest()`     | `TrinaryLogic` instance                                                       | Detect whether current build is from a pull/merge request.<br>Returned `TrinaryLogic` object's value will be true if the current build is from a pull/merge request, false if it not, and maybe if we can't determine it (see below for what CI supports PR detection).<br>Use condition like `if ($ci->isPullRequest()->yes()) { /*...*/ }` to use the value. |
+| `describe()`          | `[...]`<br>(array of values)                                                  | Return key-value map of all detected properties in human-readable form.                                                                                                                                                                                                                                                                                        |
 
 ## Supported properties of each CI server
 
@@ -126,24 +127,24 @@ Most CI servers support (✔) detection of all information. However some don't e
 necessary environment variables, thus reading some information may be unsupported (❌).
 
 | CI server                          | Constant of `CiDetector` | `is​PullRequest` | `get​Branch` | `get​Target​Branch` | `get​Repository​Name` | `get​Repository​Url` | `get​Build​Url` |
-|------------------------------------|--------------------------|---|---|---|---|---|---|
-| [AppVeyor][appveyor]               | `CI_APPVEYOR`            | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
-| [AWS CodeBuild][aws-codebuild]     | `CI_AWS_CODEBUILD`       | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
-| [Azure Pipelines][azure-pipelines] | `CI_AZURE_PIPELINES`     | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Bamboo][bamboo]                   | `CI_BAMBOO`              | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Bitbucket Pipelines][bitbucket]   | `CI_BITBUCKET_PIPELINES` | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Buddy][buddy]                     | `CI_BUDDY`               | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [CircleCI][circleci]               | `CI_CIRCLE`              | ✔ | ✔ | ❌ | ✔ | ✔ | ✔ |
-| [Codeship][codeship]               | `CI_CODESHIP`            | ✔ | ✔ | ❌ | ✔ | ❌ | ✔ |
-| continuousphp                      | `CI_CONTINUOUSPHP`       | ✔ | ✔ | ❌ | ❌ | ✔ | ✔ |
-| [drone][drone]                     | `CI_DRONE`               | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [GitHub Actions][github-actions]   | `CI_GITHUB_ACTIONS`      | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [GitLab][gitlab]                   | `CI_GITLAB`              | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
-| [Jenkins][jenkins]                 | `CI_JENKINS`             | ❌ | ✔ | ❌ | ❌ | ✔ | ✔ |
-| [SourceHut][sourcehut]             | `CI_SOURCEHUT`           | ✔ | ❌ | ❌ | ❌ | ❌ | ✔ |
-| [TeamCity][teamcity]               | `CI_TEAMCITY`            | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| [Travis CI][travis-ci]             | `CI_TRAVIS`              | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
-| Wercker                            | `CI_WERCKER`             | ❌ | ✔ | ❌ | ✔ | ❌ | ✔ |
+|------------------------------------|--------------------------|------------------|--------------|---------------------|-----------------------|----------------------|-----------------|
+| [AppVeyor][appveyor]               | `CI_APPVEYOR`            | ✔                | ✔            | ✔                   | ✔                     | ❌                    | ✔               |
+| [AWS CodeBuild][aws-codebuild]     | `CI_AWS_CODEBUILD`       | ✔                | ✔            | ❌                   | ❌                     | ✔                    | ✔               |
+| [Azure Pipelines][azure-pipelines] | `CI_AZURE_PIPELINES`     | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [Bamboo][bamboo]                   | `CI_BAMBOO`              | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [Bitbucket Pipelines][bitbucket]   | `CI_BITBUCKET_PIPELINES` | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [Buddy][buddy]                     | `CI_BUDDY`               | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [CircleCI][circleci]               | `CI_CIRCLE`              | ✔                | ✔            | ❌                   | ✔                     | ✔                    | ✔               |
+| [Codeship][codeship]               | `CI_CODESHIP`            | ✔                | ✔            | ❌                   | ✔                     | ❌                    | ✔               |
+| continuousphp                      | `CI_CONTINUOUSPHP`       | ✔                | ✔            | ❌                   | ❌                     | ✔                    | ✔               |
+| [drone][drone]                     | `CI_DRONE`               | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [GitHub Actions][github-actions]   | `CI_GITHUB_ACTIONS`      | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [GitLab][gitlab]                   | `CI_GITLAB`              | ✔                | ✔            | ✔                   | ✔                     | ✔                    | ✔               |
+| [Jenkins][jenkins]                 | `CI_JENKINS`             | ❌                | ✔            | ❌                   | ❌                     | ✔                    | ✔               |
+| [SourceHut][sourcehut]             | `CI_SOURCEHUT`           | ✔                | ❌            | ❌                   | ❌                     | ❌                    | ✔               |
+| [TeamCity][teamcity]               | `CI_TEAMCITY`            | ❌                | ❌            | ❌                   | ❌                     | ❌                    | ❌               |
+| [Travis CI][travis-ci]             | `CI_TRAVIS`              | ✔                | ✔            | ✔                   | ✔                     | ❌                    | ✔               |
+| Wercker                            | `CI_WERCKER`             | ❌                | ✔            | ❌                   | ✔                     | ❌                    | ✔               |
 
 ## Testing
 
