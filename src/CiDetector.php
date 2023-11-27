@@ -30,9 +30,7 @@ class CiDetector implements CiDetectorInterface
      * @deprecated Will be removed in next major version
      */
     public const CI_WERCKER = 'Wercker';
-
-    /** @var Env */
-    private $environment;
+    private Env $environment;
 
     final public function __construct()
     {
