@@ -39,7 +39,7 @@ final class CiDetectorTest extends TestCase
     private static function createEmptyEnvironment(): Env
     {
         return new class() extends Env {
-            public function get(string $name)
+            public function get(string $name): bool
             {
                 return false;
             }

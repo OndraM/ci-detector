@@ -9,8 +9,7 @@ use OndraM\CiDetector\Env;
  */
 abstract class AbstractCi implements CiInterface
 {
-    /** @var Env */
-    protected $env;
+    protected Env $env;
 
     public function __construct(Env $env)
     {
