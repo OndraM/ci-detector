@@ -3,6 +3,8 @@
 <!-- There is always Unreleased section on the top. Subsections (Added, Changed, Fixed, Removed) should be added as needed. -->
 
 ## Unreleased
+
+## 4.2.0 - 2024-03-12
 - Require PHP ^7.4.
 - Deprecate Wercker, which ceased to exist.
 
