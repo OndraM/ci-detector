@@ -10,3 +10,4 @@
 /easy-coding-standard.yaml  export-ignore
 /phpstan.neon               export-ignore
 /phpunit.xml.dist           export-ignore
+/ecs.php                    export-ignore
