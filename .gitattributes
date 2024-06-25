@@ -7,6 +7,6 @@
 /.circleci                  export-ignore
 /.travis.php.ini            export-ignore
 /dump-current.php           export-ignore
-/easy-coding-standard.yaml  export-ignore
+/ecs.php                    export-ignore
 /phpstan.neon               export-ignore
 /phpunit.xml.dist           export-ignore
