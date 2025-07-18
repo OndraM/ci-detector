@@ -17,6 +17,7 @@ class CiDetector implements CiDetectorInterface
     public const CI_BITBUCKET_PIPELINES = 'Bitbucket Pipelines';
     public const CI_BUDDY = 'Buddy';
     public const CI_CIRCLE = 'CircleCI';
+    public const CI_CLAUDECODE = 'Claude Code';
     public const CI_CODESHIP = 'Codeship';
     public const CI_CONTINUOUSPHP = 'continuousphp';
     public const CI_DRONE = 'drone';
@@ -87,6 +88,7 @@ class CiDetector implements CiDetectorInterface
             Ci\TeamCity::class,
             Ci\Travis::class,
             Ci\Wercker::class,
+            Ci\ClaudeCode::class,
         ];
     }
 
