@@ -78,6 +78,7 @@ class CiDetector implements CiDetectorInterface
             Ci\BitbucketPipelines::class,
             Ci\Buddy::class,
             Ci\Circle::class,
+            Ci\ClaudeCode::class,
             Ci\Codeship::class,
             Ci\Continuousphp::class,
             Ci\Drone::class,
@@ -88,7 +89,6 @@ class CiDetector implements CiDetectorInterface
             Ci\TeamCity::class,
             Ci\Travis::class,
             Ci\Wercker::class,
-            Ci\ClaudeCode::class,
         ];
     }
 
