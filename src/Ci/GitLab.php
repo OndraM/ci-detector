@@ -28,9 +28,7 @@ class GitLab extends AbstractCi
 
     public function getBuildNumber(): string
     {
-        return !empty($this->env->getString('CI_JOB_ID'))
-            ? $this->env->getString('CI_JOB_ID')
-            : $this->env->getString('CI_BUILD_ID');
+        return $this->env->getString('CI_JOB_ID');
     }
 
     public function getBuildUrl(): string
@@ -40,16 +38,12 @@ class GitLab extends AbstractCi
 
     public function getCommit(): string
     {
-        return !empty($this->env->getString('CI_COMMIT_SHA'))
-            ? $this->env->getString('CI_COMMIT_SHA')
-            : $this->env->getString('CI_BUILD_REF');
+        return $this->env->getString('CI_COMMIT_SHA');
     }
 
     public function getBranch(): string
     {
-        return !empty($this->env->getString('CI_COMMIT_REF_NAME'))
-            ? $this->env->getString('CI_COMMIT_REF_NAME')
-            : $this->env->getString('CI_BUILD_REF_NAME');
+        return $this->env->getString('CI_COMMIT_REF_NAME');
     }
 
     public function getTargetBranch(): string
@@ -66,8 +60,6 @@ class GitLab extends AbstractCi
 
     public function getRepositoryUrl(): string
     {
-        return !empty($this->env->getString('CI_REPOSITORY_URL'))
-            ? $this->env->getString('CI_REPOSITORY_URL')
-            : $this->env->getString('CI_BUILD_REPO');
+        return $this->env->getString('CI_REPOSITORY_URL');
     }
 }
